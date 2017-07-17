@@ -27,8 +27,22 @@
       <script src="/assets/js/jquery.waypoints.js"></script>
       <script src="/assets/js/lightgallery.js"></script>
       <script src="/assets/js/lg-zoom.js"></script>
-      <script src="/assets/js/lg-thumbnail.js"></script>
-      <script src="/assets/js/lg-fullscreen.js"></script>
+      <!-- <script src="/assets/js/lg-thumbnail.js"></script> -->
+      <!-- <script src="/assets/js/lg-fullscreen.js"></script> -->
+
+      <script src="https://carnivalapp.io/sites/659/init.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          Carnival.init({
+            enabled: true,
+            article_author: "",
+            article_selector: ".Gallery:not(.full_bleed)",
+            block_selector: ":scope > a",
+            onNewComment: function(comment) { }
+          });
+        });
+      </script>
+
 
       <script src="/assets/js/main.js"></script>
     <% end %>
