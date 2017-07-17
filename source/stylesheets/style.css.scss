@@ -717,7 +717,7 @@ $index_padding: 20px;
   padding: 30px 0;
 
   .Wrapper {
-    max-width: 1000px;
+    max-width: 670px;
     margin: 0 auto 50px auto;
     width: 100%;
   }
@@ -753,7 +753,7 @@ $index_padding: 20px;
     flex-direction: row;
     width: 100%;
     padding: 16px;
-    transition: all .3s ease;
+    transition: all .8s ease;
 
     &:hover {
       z-index: 100;
@@ -779,7 +779,7 @@ $index_padding: 20px;
       width: 100%;
       transition: box-shadow 1s ease;
       flex-direction: row;
-      min-height: 197px;
+      min-height: 200px;
       max-height: 260px;
       flex-wrap: nowrap;
 
@@ -795,7 +795,7 @@ $index_padding: 20px;
       background-position: bottom center;
       min-width: 170px;
       height: 100%;
-      max-width: 250px;
+      max-width: 240px;
       flex-grow: 1;
     }
 
