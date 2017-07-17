@@ -1,0 +1,136 @@
+---
+pageable: false
+---
+
+<div class="Flex">
+
+  <div class="Drop">
+    <!-- <a class="Upload" href="#">Upload photos</a> -->
+    <div id="Drop_zone">
+      <header>
+        <h3><span>1</span>Add content</h3>
+        <p>Add text or drag photos to see available layouts.</p>
+
+        <a href="#" class="add_photos active">Photos</a>
+        <a href="#" class="add_text">Text</a>
+      </header>
+      <div class="Photos--wrap">
+        <div id="Photos"></div>
+        <input type="text" class="Caption" placeholder="Enter a caption (optional)">
+      </div>
+      <div class="Text--wrap">
+      <textarea placeholder="Start typing..."></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="Output">
+    <h3><span>2</span>Output</h3>
+    <p>Generate photo block code.</p>
+    <pre class="Code Code--block"><code class="ruby"></code></pre>
+    <a class="Info disabled" href="#">Add to template</a>
+  </div>
+
+  <div class="Template">
+    <h3><span>3</span>Template</h3>
+    <p>Add photo blocks to template.</p>
+    <pre class="Code--template Code--block"><code class="ruby"></code></pre>
+    <a class="Info disabled Clipboard" href="#">Copy to Clipboard</a>
+    <a class="Clear" href="#">Clear Template</a>
+    <span class="Clipboard--feedback">copied</span>
+  </div>
+</div>
+
+<div class="Filter--photo Panel">
+  <form class="Options" action="">
+    <div class="show_one disabled" >
+      <input type="radio" name="cluster_type" id="full_one" value="Full Width one up">
+      <label for = "full_one">
+        <img src="/images/generator/full.png">
+        Full-width
+      </label>
+    </div>
+    <div class="show_one disabled" >
+      <input type="radio" name="cluster_type" id="one_up" value="One up">
+      <label for = "one_up">
+        <img src="/images/generator/one-up.png">
+        One-up
+      </label>
+    </div>
+    <div class="show_two disabled">
+      <input type="radio" name="cluster_type" id="full_two" value="Full Width two up">
+      <label for = "full_two">
+        <img src="/images/generator/two-up-full.png">
+        Two-up full
+      </label>
+    </div>
+    <div class="show_two disabled">
+      <input type="radio" name="cluster_type" id="two_up" value="Two up">
+      <label for = "two_up">
+        <img src="/images/generator/two-up.png">
+        Two-up
+      </label>
+    </div>
+    <div class="show_two disabled">
+      <input type="radio" name="cluster_type" id="two_up_right" value="Two up offset right">
+      <label for = "two_up_right">
+        <img src="/images/generator/two-up-right.png">
+        Offset right
+      </label>
+    </div>
+    <div class="show_two disabled">
+      <input type="radio" name="cluster_type" id="two_up_left" value="Two up offset left">
+      <label for = "two_up_left">
+        <img src="/images/generator/two-up-left.png">
+        Offset left
+      </label>
+    </div>
+    <div class="show_three disabled">
+      <input type="radio" name="cluster_type" id="three_up" value="Three up">
+      <label for = "three_up">
+        <img src="/images/generator/three-up.png">
+        Three-up
+      </label>
+    </div>
+    <div class="show_four disabled">
+      <input type="radio" name="cluster_type" id="four_up" value="Four up">
+      <label for = "four_up">
+        <img src="/images/generator/four-up.png">
+        Four-up
+      </label>
+    </div>
+  </form>
+</div>
+
+<div class="Filter--text Panel is-hidden">
+  <form class="Options" action="">
+    <div class="disabled header">
+      <input type="radio" name="cluster_type_text" id="header" value="Header">
+      <label for = "header">
+        <img src="/images/generator/headline.png">
+        Header
+      </label>
+    </div>
+    <div class="disabled subheader">
+      <input type="radio" name="cluster_type_text" id="subheader" value="Subheader">
+      <label for = "subheader">
+        <img src="/images/generator/subheader.png">
+        Subheader
+      </label>
+    </div>
+    <div class="disabled one_col">
+      <input type="radio" name="cluster_type_text" id="one_col" value="One Column">
+      <label for = "one_col">
+        <img src="/images/generator/one_col.png">
+        One Column
+      </label>
+    </div>
+    <div class="disabled two_col">
+      <input type="radio" name="cluster_type_text" id="two_col" value="Two Columns">
+      <label for = "two_col">
+        <img src="/images/generator/two_col.png">
+        Two Columns
+      </label>
+    </div>
+  </form>
+</div>
+

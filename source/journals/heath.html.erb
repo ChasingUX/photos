@@ -1,0 +1,43 @@
+---
+title: "Heath Ceramics"
+date: 2016-09-13
+subheader: "A spent with Heath Ceramics learning about the creative, ideation, and manufacturing process."
+header: "heath.jpg"
+location: San Francisco, CA
+folder: heath
+published: false
+---
+
+<% folder = current_article.data.folder %>
+
+<%= partial(:subheader, :locals => { :copy => "The beginning..." }) %>
+
+<%= partial(:full, :locals => { :image_one => "full_2.png", :caption => "this is a caption", :height => 500 }) %>
+
+
+<%= partial(:text_two_col, :locals => { :col_one_copy => "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.", :col_two_copy => "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb." }) %>
+
+
+<%= partial(:half, :locals => { :image_one => "full_1.png", :image_two => "full_2.png"  }) %>
+
+<%= partial(:full_bleed, :locals => { :image_one => "full_1.png" }) %>
+
+<%= partial(:headline, :locals => { :copy => "A new chapter" }) %>
+
+<%= partial(:triplet, :locals => { :image_one => "full_1.png", :image_two => "full_2.png", :image_three => "full_1.png"  }) %>
+<%= partial(:triplet, :locals => { :image_one => "full_1.png", :image_two => "full_2.png", :image_three => "full_1.png"  }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Harvested in the cocoa regions of the world, tree-grown cacao pods (below) contain fruit and pulp-covered beans. At the farm level, the beans are scooped out and placed in a fermentation box for approximately 5 days. By the end of this period, only the bean is left. From here beans are lightly roasted, sorted, cracked and winnowed, a term for separated. We then hit the nib and of course, celebrate." }) %>
+
+<%= partial(:quad, :locals => { :image_one => "full_1.png", :image_two => "full_2.png", :image_three => "full_1.png", :image_four => "full_2.png", :caption => "this is a caption" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Harvested in the cocoa regions of the world, tree-grown cacao pods (below) contain fruit and pulp-covered beans. At the farm level, the beans are scooped out and placed in a fermentation box for approximately 5 days. By the end of this period, only the bean is left. From here beans are lightly roasted, sorted, cracked and winnowed, a term for separated. We then hit the nib and of course, celebrate." }) %>
+
+<%= partial(:full_bleed_split, :locals => { :image_one => "full_1.png", :image_two => "full_2.png" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Harvested in the cocoa regions of the world, tree-grown cacao pods (below) contain fruit and pulp-covered beans. At the farm level, the beans are scooped out and placed in a fermentation box for approximately 5 days. By the end of this period, only the bean is left. From here beans are lightly roasted, sorted, cracked and winnowed, a term for separated. We then hit the nib and of course, celebrate." }) %>
+
+<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => "full_1.png", :image_two => "full_2.png"  }) %>
+<%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => "full_1.png", :image_two => "full_2.png"  }) %>
+
+<%= partial(:text_two_col, :locals => { :col_one_copy => "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.", :col_two_copy => "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb." }) %>

@@ -1,0 +1,26 @@
+<% dimensions = '800x800' %>
+<% image_path = '/images/' %>
+
+<% if defined?(height).nil? %>
+  <section class="triplet Wrapper Gallery">
+<% else %>
+  <section class="triplet Wrapper Gallery" style="height: <%= height %>px">
+<% end %>
+  <a class="img_wrap" href="/images/<%= image_one %>">
+    <% imageURL = image_path image_path + image_one, resize_to: dimensions %>
+    <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+  </a>
+  <a class="img_wrap" href="/images/<%= image_two %>">
+    <% imageURL = image_path image_path + image_two, resize_to: dimensions %>
+    <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+  </a>
+  <a class="img_wrap" href="/images/<%= image_three %>">
+    <% imageURL = image_path image_path + image_three, resize_to: dimensions %>
+    <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+  </a>
+</section>
+
+<% if defined?(caption).nil? %>
+<% else %>
+  <section class="Caption Wrapper"><h4><%= caption %></h4></section>
+<% end %>

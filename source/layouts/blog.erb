@@ -1,0 +1,39 @@
+<% wrap_layout :layout do %>
+  <nav class="sticky">
+    <a class="back" href="../">
+      <div class="bubble"></div>
+      <div class="grid">
+        <span class="tl"></span>
+        <span class="tr"></span>
+        <span class="bl"></span>
+        <span class="br"></span>
+      </div>
+      <!-- <h4>Stories</h4> -->
+    </a>
+    <!-- <span class="interpunct">·</span> -->
+<!--     <h2> Jesse Chase</h2> -->
+    <h3><%= current_article.data.title %><span></span></h3>
+  </nav>
+  <article>
+    <section class="Header" id="Header">
+      <div class="header_wrap">
+        <% image_path = '/images/' %>
+        <% cover_path = '/cover.jpg' %>
+        <% dimensions = '2000x2000' %>
+        <% imageURL = image_path image_path + current_article.data.folder + cover_path, resize_to: dimensions %>
+        <div class="Header--bg" style="background-image: url(<%= imageURL %>)"></div>
+        <div class="Header--copy">
+          <div class="Wrapper">
+            <h1><%= current_article.title %></h1>
+            <% if current_article.data.subheader %>
+              <p><%= current_article.data.subheader %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="Gallery--wrap" itemscope itemtype="http://schema.org/ImageGallery">
+      <%= yield %>
+    </div>
+  </article>
+<% end %>

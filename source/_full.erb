@@ -1,0 +1,25 @@
+<% dimensions = '1320x1320' %>
+<% image_path = '/images/' %>
+
+<% if defined?(height).nil? %>
+  <section class="full Wrapper Gallery">
+<% else %>
+  <section class="full Wrapper Gallery" itemscope itemtype="http://schema.org/ImageGallery" style="height: <%= height %>px">
+<% end %>
+
+  <% if defined?(focus).nil? %>
+    <% classes = "img_wrap" %>
+  <% else %>
+    <% classes = "img_wrap " + focus %>
+  <% end %>
+
+  <a class="img_wrap" href="/images/<%= image_one %>">
+    <% imageURL = image_path image_path + image_one, resize_to: dimensions %>
+    <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+  </a>
+</section>
+
+<% if defined?(caption).nil? %>
+<% else %>
+  <section class="Caption Wrapper"><h4><%= caption %></h4></section>
+<% end %>
