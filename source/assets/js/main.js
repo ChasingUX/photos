@@ -53,7 +53,8 @@ $(function() {
   })
 
   // header waypoint - to remove banner
-  var docHeight = - $(window).height() - 20;
+  var headerHeight = $(".Header").css('height');
+  var docHeight = - headerHeight - 20;
   var waypoint = new Waypoint({
     element: document.getElementById('Header'),
     handler: function(direction) {
@@ -63,4 +64,27 @@ $(function() {
     },
     offset: docHeight
   })
+
+
+  var chapterCount = $(".sectionTitle").length;
+  $(".count a").text(chapterCount);
+
+
+  var titles = [];
+
+  $(".sectionTitle").each(function(){
+    var id = $(this).attr('id'),
+    title = $(this).find('h3,h2').text();
+
+    titles.push("<a href='#" + id + "'>" + title + "</a>");
+  });
+
+
+
+  var titlesLength = titles.length;
+
+  for (var i = 0; i < titlesLength; i++) {
+      $("#Chapter_dropdown ul").append("<li>"+ titles[i] +"</li>");
+  }
+
 });

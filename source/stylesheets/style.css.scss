@@ -150,12 +150,15 @@ img {
 
   .back {
     color: black;
-    padding: 4px;
+    padding: 0;
     display: inline-block;
     position: relative;
     width: 44px;
-    height: 44px;
-    margin: 10px 0 0 9px;
+    height: 100%;
+    margin: 0 0 0 9px;
+    vertical-align: middle;
+    border-right: 1px solid #e0e0e0;
+    padding-right: 51px;
 
     .bubble {
       background-color: #f3f3f3;
@@ -166,12 +169,18 @@ img {
       will-change: all;
       transform: scale(0);
       opacity: 0;
+      width: 35px;
+      height: 35px;
+      position: relative;
+      top: 13px;
+      left: 4px;
     }
 
     &:hover {
       .bubble {
         transform: scale(1);
         opacity: 1;
+
       }
     }
   }
@@ -180,7 +189,7 @@ img {
     position: absolute;
     margin: 0;
     padding: 0;
-    top: 14px;
+    top: 23px;
     left: 14px;
 
     span {
@@ -188,7 +197,7 @@ img {
       height: 5px;
       border-radius: 50%;
       position: absolute;
-      background: #5934f6;
+      background: #3700ff;
     }
     .tl {
 
@@ -258,6 +267,62 @@ img {
       &:before {
         content: ':';
         margin-right: 12px;
+      }
+    }
+  }
+
+  $countBubbleSize: 38px;
+  .count {
+    background: #3700ff;
+    height: $countBubbleSize;
+    width: $countBubbleSize;
+    float: right;
+    position: relative;
+    border-radius: 50%;
+    top: 12px;
+    right: 10px;
+
+    a {
+      color: white;
+      line-height: $countBubbleSize;
+      display: block;
+      text-align: center;
+      font-weight: 900;
+      font-size: 16px;
+    }
+  }
+}
+
+#Chapter_dropdown {
+  width: 300px;
+  position: fixed;
+  top: 56px;
+  right: 10px;
+  background: white;
+  //height: 300px;
+  border: 1px solid #e0e0e0;
+  z-index: 2000;
+  border-radius: 3px;
+  overflow: hidden;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 10px 15px;
+      list-style: none;
+      margin: none;
+      display: block;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      a {
+        font-size: 15px;
+        color: black;
+        display: block;
       }
     }
   }

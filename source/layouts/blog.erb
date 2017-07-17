@@ -1,4 +1,7 @@
 <% wrap_layout :layout do %>
+  <div id="Chapter_dropdown">
+    <ul></ul>
+  </div>
   <nav class="sticky">
     <a class="back" href="../">
       <div class="bubble"></div>
@@ -13,6 +16,10 @@
     <!-- <span class="interpunct">·</span> -->
 <!--     <h2> Jesse Chase</h2> -->
     <h3><%= current_article.data.title %><span></span></h3>
+
+    <div class="count">
+      <a href="#"></a>
+    </div>
   </nav>
   <article>
     <section class="Header" id="Header">
