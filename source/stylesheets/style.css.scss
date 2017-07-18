@@ -717,7 +717,7 @@ $index_padding: 20px;
   padding: 30px 0;
 
   .Wrapper {
-    max-width: 670px;
+    max-width: 960px;
     margin: 0 auto 50px auto;
     width: 100%;
   }
@@ -752,7 +752,7 @@ $index_padding: 20px;
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 16px;
+    padding: 14px;
     transition: all .8s ease;
 
     &:hover {
@@ -777,14 +777,14 @@ $index_padding: 20px;
       border: 1px solid #ececec;
       border-radius: 3px;
       width: 100%;
-      transition: box-shadow 1s ease;
+      transition: box-shadow .6s ease, border .1s ease;
       flex-direction: row;
-      min-height: 200px;
-      max-height: 260px;
+      max-height: 200px;
       flex-wrap: nowrap;
 
       &:hover {
-        box-shadow: 0px 0px 110px 10px rgba(228, 221, 255, 0.5);
+        box-shadow: 0px 0px 50px 10px rgba(228, 221, 255, 0.3);
+        border: 1px solid rgba(80, 32, 255, 0.21);
       }
     }
 
@@ -795,7 +795,7 @@ $index_padding: 20px;
       background-position: bottom center;
       min-width: 170px;
       height: 100%;
-      max-width: 240px;
+      max-width: 205px;
       flex-grow: 1;
     }
 
@@ -812,7 +812,7 @@ $index_padding: 20px;
       }
 
       h3 {
-        margin: 12px 0 0 0;
+        margin: 16px 0 0 0;
         font-size: 27px;
 
       }
