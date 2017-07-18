@@ -20,6 +20,8 @@ $(function() {
       $gallery.data('lightGallery').destroy(true);
       $gallery.lightGallery(galleryOptions);
     });
+
+    Waypoint.refreshAll();
   });
 
   // WAYPOINTS
@@ -113,7 +115,6 @@ $(function() {
 
   //scroll to correct area from dropdown
   $('#Chapter_dropdown a[href*="#"]').click(function(event) {
-
     if (
       location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
       &&
@@ -126,15 +127,13 @@ $(function() {
         $('html, body').animate({
           scrollTop: target.offset().top - 100
         }, 800, function() {
-          // Callback after animation
-          // Must change focus!
           var $target = $(target);
           $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
+          if ($target.is(":focus")) {
             return false;
           } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
+            $target.attr('tabindex','-1');
+            $target.focus();
           };
         });
       }
