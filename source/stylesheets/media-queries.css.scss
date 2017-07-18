@@ -1,0 +1,302 @@
+
+// MEDIA QUERIES
+
+@media all and (max-width: 1400px) {
+  .Wrapper {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  .Header {
+    .Wrapper {
+      width: 100%;
+    }
+
+    .Header--copy {
+      padding: 0;
+    }
+
+    p {
+      font-size: 23px;
+    }
+
+    h1 {
+      &:after {
+        margin: 22px 0 42px 3px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .Wrapper {
+    padding: 0 6px;
+
+    &.Text {
+      padding: 0 23px;
+    }
+  }
+
+  .Header {
+    .Header--copy {
+      padding: 20px;
+    }
+    .Wrapper {
+      margin-bottom: 20px;
+    }
+  }
+
+  .Columns {
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
+  }
+
+  .quad {
+    height: 75vw;
+    flex-wrap: wrap;
+    .img_wrap {
+      min-width: 50%;
+    }
+  }
+}
+
+@media all and (max-width: 580px) {
+  .Header {
+    margin-bottom: 25px;
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .Caption {
+    margin: -25px auto 50px auto;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.29);
+    position: relative;
+    top: -8px;
+    height: 25px;
+    line-height: 25px;
+
+    h4 {
+      color: white;
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .sticky {
+    .rightTools {
+      border: 0;
+      padding: 0 16px;
+    }
+
+    .back {
+      border: 0;
+      margin-left: 1px;
+    }
+
+    .count {
+      height: 22px;
+      width: 22px;
+      top: 21px;
+
+      a {
+        font-size: 12px;
+        line-height: 22px;
+      }
+    }
+
+    h3 {
+      font-size: 17px;
+      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      height: 100%;
+      justify-content: center;
+
+
+      span {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 13px;
+        margin-top: 4px;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #Chapter_dropdown {
+    width: 100%;
+    top: 62px;
+    right: 0;
+    left: 0;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    transform-origin: top;
+    box-shadow: 0 5px 30px 0px rgba(1, 1, 1, 0.09);
+
+    &:before, &:after {
+      display: none;
+    }
+
+    ul {
+      li {
+        a {
+          padding: 13px 16px;
+          font-size: 16px;
+
+
+          &:before {
+            margin-right: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  .Gallery {
+    height: auto!important;
+  }
+
+  h1 {
+    font-size: 40px;
+
+    &:after {
+      margin: 22px 0 25px 3px;
+    }
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  .divider {
+    margin: 40px 0!important;
+  }
+  .Gallery + .divider, .Caption + .divider  {
+    margin-top: -58px!important;
+  }
+
+  .divider + .Gallery {
+    margin-top: -50px;
+  }
+
+  .divider + .Subheader {
+    margin-top: 75px!important;
+  }
+
+  .Text + .divider {
+    margin: 50px 0 0 0;
+  }
+
+  .Text + .Text {
+    margin-top: -20px!important;
+  }
+
+  .Wrapper {
+    padding: 0;
+    margin-bottom: 0;
+
+    &.Header {
+      padding: 0 23px;
+    }
+
+    &.Text {
+      padding: 0 23px;
+      font-size: 16px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+
+    &.Subheader {
+      margin-top: 25px;
+    }
+  }
+  .img_wrap {
+    padding: 0;
+    flex: 1;
+    margin-bottom: 8px;
+  }
+
+  .full_bleed {
+    margin-bottom: 0;
+  }
+
+  .full_bleed_split {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    .img_wrap {
+      min-width: 100%;
+      padding: 0!important;
+    }
+  }
+
+  .img_wrap {
+    min-width: 100%!important;
+  }
+
+  .half_light, .half_heavy {
+    flex-wrap: wrap;
+
+    .img_wrap {
+      padding: 0!important;
+    }
+  }
+
+  .half {
+    flex-wrap: wrap;
+  }
+
+  .triplet {
+    flex-wrap: wrap;
+
+    & + .triplet {
+      margin-top: auto;
+    }
+  }
+
+  .quad {
+    .img_wrap {
+      min-width: 100%
+    }
+  }
+
+
+  .cards {
+    margin: 20px 6px 6px 6px;
+
+    li {
+      .inner {
+        padding: 30px;
+      }
+
+      a {
+        flex-direction: column;
+        border-color: #dedede;
+      }
+
+      .thumb {
+        width: 100%;
+        min-width: 100%;
+        height: 64vw;
+      }
+    }
+  }
+}
