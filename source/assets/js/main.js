@@ -25,6 +25,8 @@ $(function() {
   });
 
   // WAYPOINTS
+  var offset = 120;
+
   var waypoints = $('#Gallery--wrap section').waypoint({
     handler: function(direction) {
       var justPassed = $(this.element),
@@ -55,11 +57,11 @@ $(function() {
       if(justPassed[0] == firstWaypoint[0]) {
         if(direction == 'up') {
           $(".sticky").removeClass('is-visible');
-          $("#Chapter_dropdown").removeClass("is-visible");
+          $(".Dropdown").removeClass("is-visible");
         }
       }
     },
-    offset: 120
+    offset: offset
   })
 
   // header waypoint - to remove banner
@@ -101,6 +103,11 @@ $(function() {
   $(".count a").on('click', function(event){
     $("#Chapter_dropdown").toggleClass("is-visible");
     event.preventDefault();
+  });
+
+  $(".back").on('click', function(event){
+    $("#Stories_dropdown").toggleClass("is-visible");
+    event.preventDefault();
   })
 
 
@@ -109,6 +116,12 @@ $(function() {
     if($(e.target).parents('#Chapter_dropdown').length == 0) {
       if($(e.target).parents('.count').length == 0) {
         $("#Chapter_dropdown").removeClass("is-visible");
+      }
+    }
+
+    if($(e.target).parents('#Chapter_Stories').length == 0) {
+      if($(e.target).parents('.back').length == 0) {
+        $("#Stories_dropdown").removeClass("is-visible");
       }
     }
   });
@@ -125,7 +138,7 @@ $(function() {
       if (target.length) {
         event.preventDefault();
         $('html, body').animate({
-          scrollTop: target.offset().top - 100
+          scrollTop: target.offset().top - offset
         }, 800, function() {
           var $target = $(target);
           $target.focus();

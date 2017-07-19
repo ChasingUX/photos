@@ -1,9 +1,35 @@
 <% wrap_layout :layout do %>
-  <div id="Chapter_dropdown">
+  <div id="Stories_dropdown" class="Dropdown">
+    <h2>Other stories</h2>
+    <ul class="cards">
+    <% page_articles.each_with_index do |article, i| %>
+      <% if article.title != current_article.data.title %>
+        <li>
+          <% link_to article, class: "link" do %>
+          <% if article.data.header %>
+            <% dimensions = '500x500' %>
+            <% backgroundImagePath = article.data.folder + '/cover.jpg' %>
+            <%= image_tag backgroundImagePath, resize_to: dimensions, class: 'thumb' %>
+          <% end %>
+          <div class="inner">
+            <span><%= article.date.strftime('%b %e') %> · <%= article.data.location %></span>
+            <h3><%= article.title %></h3>
+            <% if article.data.subheader %>
+              <p><%= article.data.subheader %></p>
+            <% end %>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+  <div id="Chapter_dropdown" class="Dropdown">
+    <h2>Chapters</h2>
     <ul></ul>
   </div>
   <nav class="sticky">
-    <a class="back" href="../">
+    <a class="back" href='#'>
       <div class="bubble"></div>
       <div class="grid">
         <span class="tl"></span>
@@ -11,10 +37,7 @@
         <span class="bl"></span>
         <span class="br"></span>
       </div>
-      <!-- <h4>Stories</h4> -->
     </a>
-    <!-- <span class="interpunct">·</span> -->
-<!--     <h2> Jesse Chase</h2> -->
     <h3><%= current_article.data.title %><span></span></h3>
 
     <div class="rightTools">
