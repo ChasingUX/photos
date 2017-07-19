@@ -149,7 +149,8 @@ img {
   .back {
     color: black;
     padding: 0;
-    display: inline-block;
+    display: block;
+    float: left;
     position: relative;
     width: 44px;
     height: 100%;
