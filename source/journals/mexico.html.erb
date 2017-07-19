@@ -100,5 +100,13 @@ folder: mexico
 <%= partial(:subheader, :locals => { :copy => "The doors of Mexico City" }) %>
 <%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
 
+<%= partial(:full, :locals => { :image_one => folder + "/DSC02097.jpg", :height => 800, :focus => "bottom"}) %>
+
+<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/DSC02083.jpg", :image_two => folder + "/DSC02188.jpg", :height => 580}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC02127.jpg", :image_two => folder + "/DSC02129.jpg"}) %>
 
 
+<%= partial(:triplet, :locals => { :image_one => folder + "/DSC01543.jpg", :image_two => folder + "/DSC02132.jpg", :image_three => folder + "/DSC02197.jpg", :height => 600,}) %>
