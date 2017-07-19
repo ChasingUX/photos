@@ -13,7 +13,7 @@
     <% classes = "img_wrap " + focus %>
   <% end %>
 
-  <a class="img_wrap" href="/images/<%= image_one %>">
+  <a class="<%= classes %>" href="/images/<%= image_one %>">
     <% imageURL = image_path image_path + image_one, resize_to: dimensions %>
     <%= image_tag "blank.png", :data => { :src => imageURL }  %>
   </a>
