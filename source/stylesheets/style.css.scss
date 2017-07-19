@@ -356,13 +356,18 @@ section:focus {
     margin: 0;
     padding: 0;
     li {
-      border-bottom: 1px solid #e0e0e0;
+      //border-bottom: 1px solid #e0e0e0;
       list-style: none;
       margin: none;
       display: block;
 
+      &:first-child {
+        padding-top: 8px;
+      }
+
       &:last-child {
         border-bottom: 0;
+        padding-bottom: 8px;
       }
 
       &.active {
@@ -376,10 +381,11 @@ section:focus {
         font-size: 14px;
         color: black;
         display: block;
-        padding: 8px 15px;
+        padding: 8px 17px;
 
         &:hover {
-          background: rgba(224, 222, 234, 0.17);
+          // background: rgba(224, 222, 234, 0.17);
+          color: #3700ff;
         }
 
         &:before {
@@ -387,7 +393,7 @@ section:focus {
           content: counter(section);
           color: #3700ff;
           font-family: 'gt_americacondensed_bold';
-          margin-right: 8px;
+          margin-right: 9px;
         }
       }
     }
