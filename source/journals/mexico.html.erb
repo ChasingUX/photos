@@ -8,32 +8,51 @@ folder: mexico
 ---
 
 <% folder = current_article.data.folder %>
-<%= partial(:headline, :locals => { :copy => "Prologue" }) %>
+<%= partial(:headline, :locals => { :copy => "We decided to visit Mexico City" }) %>
 <%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst. Curabitur viverra pharetra luctus. Maecenas aliquam magna non metus tempor, non blandit lacus sollicitudin. Fusce commodo sed dolor eu tristique." }) %>
 
 <div class="divider"></div>
+
+
+<%= partial(:subheader, :locals => { :copy => "La Condesa & Roma Norte" }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }) %>
 
 <%= partial(:quad, :locals => { :image_one => folder + "/DSC01764.jpg", :image_two => folder + "/IMG_1714.jpg", :image_three => folder + "/DSC01752.jpg", :image_four => folder + "/DSC01765.jpg", :caption => "Deep purples and greens"}) %>
 
-<%= partial(:subheader, :locals => { :copy => "And another" }) %>
-<%= partial(:text_two_col, :locals => { :col_one_copy => "Frontmatter must come at the very top of the template and be separated from the rest of the content by a leading and trailing triple hyphen ---. Inside this block, you can create new data which will be available in the template using the current_page.data hash.", :col_two_copy =>  "My Title becomes current_page.data.title. The layout setting will pass directly to Middleman and change which layout is being used for rendering. You can also set ignored, directory_index, and some other page properties in this way."}) %>
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/DSC01525.jpg", :height => 900, :focus => "bottom" }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1810.jpg", :image_two => folder + "/IMG_1658.jpg", :image_three => folder + "/IMG_1740.jpg"}) %>
+
+
+<%= partial(:subheader, :locals => { :copy => "Street Snacks" }) %>
+<%= partial(:text_two_col, :locals => { :col_one_copy => "Frontmatter must come at the very top of the template and be separated from the rest of the content by a leading and trailing triple hyphen ---. Inside this block, you can create new data which will be available in the template using the current_page.data hash.", :col_two_copy =>  "My Title becomes current_page.data.title. The layout setting will pass directly to Middleman and change which layout is being used for rendering. You can also set ignored, directory_index, and some other page properties in this way."}) %>
+
+
+
 <%= partial(:quad, :locals => { :image_one => folder + "/DSC02088.jpg", :image_two => folder + "/DSC02206.jpg", :image_three => folder + "/DSC02200.jpg", :image_four => folder + "/DSC02122.jpg", :caption => "Amarillo en las calles"}) %>
 <%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst. Curabitur viverra pharetra luctus. Maecenas aliquam magna non metus tempor, non blandit lacus sollicitudin. Fusce commodo sed dolor eu tristique." }) %>
 <%= partial(:triplet, :locals => { :image_one => folder + "/DSC01708.jpg", :image_two => folder + "/DSC01709.jpg", :image_three => folder + "/DSC01712.jpg", :caption => "Not pictured: the plastic bag of jugos de coco"}) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst. Curabitur viverra pharetra luctus. Maecenas aliquam magna non metus tempor, non blandit lacus sollicitudin. Fusce commodo sed dolor eu tristique." }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst." }) %>
+
+<%= partial(:subheader, :locals => { :copy => "Jungle Streets" }) %>
+
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC01514.jpg", :image_two => folder + "/DSC01530.jpg"}) %>
+
+
+<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst." }) %>
+
 <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/DSC01542.jpg", :image_two => folder + "/DSC01549.jpg", :caption => "mmkay"}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Something about the animals and how it made jesse feel" }) %>
+
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/DSC01886.jpg", :height => 900, :focus => "bottom" }) %>
 <%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit." }) %>
-<%= partial(:half, :locals => { :image_one => folder + "/DSC02076b.jpg", :image_two => folder + "/DSC02079.jpg"}) %>
+<%#= partial(:half, :locals => { :image_one => folder + "/DSC02076b.jpg", :image_two => folder + "/DSC02079.jpg"}) %>
 
-<div class="divider"></div>
 
-<%= partial(:subheader, :locals => { :copy => "Jungle Vibes" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }) %>
-<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC01514.jpg", :image_two => folder + "/DSC01530.jpg"}) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst." }) %>
-<%= partial(:triplet, :locals => { :image_one => folder + "/DSC01563.jpg", :image_two => folder + "/DSC02114.jpg", :image_three => folder + "/DSC01752.jpg"}) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/DSC01563.jpg", :image_two => folder + "/DSC02114.jpg", :image_three => folder + "/DSC02076b.jpg", :height => 550}) %>
 
 <div class="divider"></div>
 
@@ -93,7 +112,8 @@ folder: mexico
 
 <%= partial(:text_two_col, :locals => { :col_one_copy => "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.", :col_two_copy => "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb." }) %>
 
-<%= partial(:triplet, :locals => { :image_one => folder + "/DSC02180.jpg", :image_two => folder + "/DSC02144.jpg", :image_three => folder + "/DSC02169.jpg", :height => 580}) %>
+<%= partial(:quad, :locals => { :image_one => folder + "/DSC02180.jpg", :image_two => folder + "/DSC02144.jpg", :image_three => folder + "/DSC02169.jpg", :image_four => folder + "/IMG_1789.jpg", :height => 375}) %>
+
 
 <div class="divider"></div>
 
@@ -109,4 +129,20 @@ folder: mexico
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC02127.jpg", :image_two => folder + "/DSC02129.jpg"}) %>
 
 
-<%= partial(:triplet, :locals => { :image_one => folder + "/DSC01543.jpg", :image_two => folder + "/DSC02132.jpg", :image_three => folder + "/DSC02197.jpg", :height => 600,}) %>
+<%= partial(:triplet, :locals => { :image_one => folder + "/DSC01543.jpg", :image_two => folder + "/DSC02132.jpg", :image_three => folder + "/DSC02197.jpg", :height => 600}) %>
+
+<%= partial(:subheader, :locals => { :copy => "Comida y bebida" }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC01799.jpg", :image_two => folder + "/DSC01804.jpg"}) %>
+
+
+<%= partial(:half, :locals => { :image_one => folder + "/DSC01796.jpg", :image_two => folder + "/DSC01809.jpg"}) %>
+
+<%= partial(:subheader, :locals => { :copy => "Pujol!" }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+
+<%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/DSC02254.jpg", :image_two => folder + "/DSC02222.jpg"}) %>
+
+<%= partial(:quad, :locals => { :image_one => folder + "/DSC02261.jpg", :image_two => folder + "/DSC02233.jpg", :image_three => folder + "/DSC02244.jpg", :image_four => folder + "/IMG_1801.jpg", :caption => "mmm"}) %>
+

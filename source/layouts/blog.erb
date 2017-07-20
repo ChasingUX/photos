@@ -69,3 +69,17 @@
     </div>
   </article>
 <% end %>
+
+<footer>
+  <div class="Wrapper">
+    <% prev_article = current_article.article_previous %>
+    <% if prev_article %>
+      <a href="<%= prev_article.url %>" class="prev" rel="prev" title="Previous article: <%= prev_article.title %>"> Previous: <%= prev_article.title %></a>
+    <% end %>
+
+    <% next_article = current_article.article_next %>
+    <% if next_article %>
+      <a href="<%= next_article.url %>" class="next" rel="next" title="Next article: <%= next_article.title %>"> Next: <%= next_article.title %></a>
+    <% end %>
+  </div>
+</footer>

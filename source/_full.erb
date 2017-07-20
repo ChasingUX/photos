@@ -2,7 +2,7 @@
 <% image_path = '/images/' %>
 
 <% if defined?(height).nil? %>
-  <section class="full Wrapper Gallery">
+  <section class="full Wrapper Gallery" itemscope itemtype="http://schema.org/ImageGallery">
 <% else %>
   <section class="full Wrapper Gallery" itemscope itemtype="http://schema.org/ImageGallery" style="height: <%= height %>px">
 <% end %>
