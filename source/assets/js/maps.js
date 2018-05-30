@@ -1,19 +1,6 @@
 $(function() {
   if($('body').hasClass('index')){
 
-    $(".voyages li a").on('click', function(){
-      $(".voyages li a").not(this).each(function(){
-        if($(this).hasClass('border')){
-          $(this).toggleClass('border');
-          $(this).next('.stops').toggleClass('open');
-          $(this).parent('li').toggleClass('expanded');
-        }
-      })
-      $(this).toggleClass('border');
-      $(this).parent('li').toggleClass('expanded');
-      $(this).next('.stops').toggleClass('open');
-    })
-
     mapboxgl.accessToken = 'pk.eyJ1IjoiamJpcmQxMTExIiwiYSI6ImNpazVwYzdhNzAwN3BpZm0yZHhhOWp6c3IifQ.6EQjuObxFgOTrafXG9Juig';
     var map = new mapboxgl.Map({
       container: 'map',
@@ -21,6 +8,28 @@ $(function() {
       center: [55,10],
       zoom: 2.4
     });
+
+    var popup = new mapboxgl.Popup({ offset: [0, -20] })
+    var oldCenter;
+
+    function collapseOthers(justChosen){
+       // go through all the items that are not clicked, and if expanded, collapse
+      $(".voyages li a").not(justChosen).each(function(){
+        if($(this).hasClass('border')){
+          $(this).toggleClass('border');
+          $(this).next('.stops').toggleClass('open');
+          $(this).parent('li').toggleClass('expanded');
+        }
+      })
+    }
+
+    function expandSelected(target){
+      var targetObj = $(target);
+
+      targetObj.toggleClass('border');
+      targetObj.parent('li').toggleClass('expanded');
+      targetObj.next('.stops').toggleClass('open');
+    }
 
     function getLatLng(){
       var lat = map.getCenter().lat,
@@ -39,8 +48,6 @@ $(function() {
       return frags.join(' ');
     }
 
-
-
     function fly(feature, speed){
       map.flyTo({
         center: feature.geometry.coordinates,
@@ -51,6 +58,8 @@ $(function() {
     }
 
     function tooltip(feature){
+      popup.remove();
+
       var location = feature.properties.name,
         flag = feature.properties.flag;
 
@@ -65,15 +74,63 @@ $(function() {
       }
 
       if(feature.layer.id == 'travel-stories'){
-        story = '<a href="/voyage/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a>';
+        story = '<div><a href="/voyage/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
+      } else {
+        story = '<div>The ' + country + ' story is coming soon!</div>'
       }
 
-      var popup = new mapboxgl.Popup({ offset: [0, -20] })
-        .setLngLat(feature.geometry.coordinates)
+      popup.setLngLat(feature.geometry.coordinates)
         .setHTML(html + story)
         .setLngLat(feature.geometry.coordinates)
         .addTo(map);
     }
+
+    function expandPanelFromMarker(feature){
+       //expand in panel
+      var countryLowerCase = humanize(feature.properties.flag).toLowerCase(),
+        parentElement = $('.' + countryLowerCase + '')
+        anchorElement = $('.' + countryLowerCase + ' a')
+
+      collapseOthers(anchorElement);
+
+      // check to see if element is already open. if it isnt, then perform expansion.
+      if(!parentElement.hasClass('expanded')){
+        expandSelected(anchorElement);
+      }
+    }
+
+    function flySpeedBasedOnDistance(oldCenter, feature){
+      var from = turf.point(oldCenter),
+       to = turf.point(feature.geometry.coordinates),
+       options = {units: 'miles'},
+       distance = turf.distance(from, to),
+       speed;
+
+      if (distance < 10000 && distance > 5000) {
+        speed = 1;
+      } else if (distance < 5000 && distance > 4000) {
+        speed = .7;
+      } else if (distance < 4000 && distance > 3000) {
+        speed = .5;
+      } else if (distance < 3000 && distance > 2000) {
+        speed = .45;
+      } else if (distance < 2000 && distance > 1000) {
+        speed = .4;
+      } else if (distance < 1000) {
+        speed = .3;
+      }
+
+      console.log("Distance is: " + distance);
+      console.log("Speed is: " + speed);
+
+      fly(feature, speed)
+    }
+
+    // when we click on menu, expend item, collapse others
+    $(".voyages li a").on('click', function(){
+      collapseOthers(this);
+      expandSelected(this);
+    })
 
     //show cursors when hovering over a marker
     map.on('mousemove', function (e) {
@@ -91,45 +148,28 @@ $(function() {
 
     // when we click on a marker
     map.on('click', function(e) {
-      var oldCenter = getLatLng(),
-        features = map.queryRenderedFeatures(e.point, {
-          layers: ['travels', 'travel-stories']
-        }),
-        feature = features[0];
+      oldCenter = getLatLng();
+
+      var features = map.queryRenderedFeatures(e.point, {
+        layers: ['travels', 'travel-stories']
+      }),
+      feature = features[0];
 
       if (!features.length) {
         return;
       }
 
-      var from = turf.point(oldCenter),
-       to = turf.point(feature.geometry.coordinates),
-       options = {units: 'miles'},
-       distance = turf.distance(from, to),
-       speed;
-
-      if (distance < 10000 && distance > 5000) {
-        speed = 1;
-      } else if (distance < 5000 && distance > 4000) {
-        speed = .7;
-      } else if (distance < 4000 && distance > 3000) {
-        speed = .5;
-      } else if (distance < 3000 && distance > 2000) {
-        speed = .3;
-      } else if (distance < 2000 && distance > 1000) {
-        speed = .2;
-      } else {
-        speed = .2;
-      }
-      console.log("Distance is: " + distance);
-      console.log("Speed is: " + speed);
-
-      if (distance > 1000) {
-        fly(feature, speed)
-      }
+      expandPanelFromMarker(feature);
+      flySpeedBasedOnDistance(oldCenter, feature)
 
       map.on('moveend', function(e){
         tooltip(feature)
       });
+    });
+
+    //when a map is done moving or zooming, store the center point
+    map.on('moveend', function(e){
+       oldCenter = getLatLng();
     });
   }
 });
