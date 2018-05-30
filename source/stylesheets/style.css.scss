@@ -1072,11 +1072,11 @@ footer {
 }
 
 .cardRail {
-  top: 26px;
+  top: 16px;
 }
 
 .cardRail_left {
-  left: 26px;
+  left: 16px;
   overflow: scroll;
   position: fixed;
   box-shadow: 0 3px 15px 0 rgba(26, 26, 62, 0.09);
@@ -1085,7 +1085,7 @@ footer {
 }
 
 .cardRail_right {
-  right: 26px;
+  right: 16px;
   position: absolute;
   bottom: 26px;
   top: auto;
@@ -1256,9 +1256,9 @@ footer {
   header {
     background-color: white;
     position: fixed;
-    left: 26px;
+    left: 16px;
     right: 27px;
-    top: 26px;
+    top: 16px;
     width: 350px;
     padding: 27px;
     z-index: 100;
@@ -1337,7 +1337,7 @@ footer {
 }
 
 .voyages {
-  margin: 159px 0 0 0;
+  margin: 158px 0 0 0;
   padding: 0;
 
   li {
@@ -1611,6 +1611,41 @@ footer {
 
       &:hover {
         color: $dark;
+      }
+    }
+  }
+}
+
+.mapboxgl-control-container {
+  .mapboxgl-ctrl-top-right {
+    .mapboxgl-ctrl {
+      margin: 16px 16px 0 0;
+
+      & > button:hover {
+        background-color: rgba(209, 215, 216, 0.52);
+      }
+    }
+  }
+
+  .mapboxgl-ctrl-icon {
+    &.mapboxgl-ctrl-zoom-in {
+
+    }
+
+    &.mapboxgl-ctrl-zoom-out {
+
+    }
+  }
+
+  .mapboxgl-ctrl-group {
+    // background-color: $dull-purple;
+    // border-radius: 30px;
+    box-shadow: 0 3px 15px 0 rgba(26, 26, 62, 0.09);
+    & > button {
+      // display: inline-block;
+
+      & + button {
+        // border: 0;
       }
     }
   }

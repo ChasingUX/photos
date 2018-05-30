@@ -9,6 +9,12 @@ $(function() {
       zoom: 2.4
     });
 
+    var nav = new mapboxgl.NavigationControl({
+      showCompass: false
+    });
+
+    map.addControl(nav, 'top-right');
+
     var popup = new mapboxgl.Popup({ offset: [0, -20] })
     var oldCenter;
 
@@ -53,7 +59,7 @@ $(function() {
         center: feature.geometry.coordinates,
         speed: speed,
         curve: 1.2,
-        zoom: 5,
+        zoom: 7,
       });
     }
 
@@ -123,7 +129,7 @@ $(function() {
       console.log("Distance is: " + distance);
       console.log("Speed is: " + speed);
 
-      fly(feature, speed)
+      fly(feature, speed);
     }
 
     // when we click on menu, expend item, collapse others
@@ -149,6 +155,7 @@ $(function() {
     // when we click on a marker
     map.on('click', function(e) {
       oldCenter = getLatLng();
+      //popup.remove();
 
       var features = map.queryRenderedFeatures(e.point, {
         layers: ['travels', 'travel-stories']
@@ -160,11 +167,14 @@ $(function() {
       }
 
       expandPanelFromMarker(feature);
+
       flySpeedBasedOnDistance(oldCenter, feature)
 
-      map.on('moveend', function(e){
+      map.once('moveend', function(e){
+        // TODO : make this work only after a click, not general moveend
         tooltip(feature)
       });
+
     });
 
     //when a map is done moving or zooming, store the center point
