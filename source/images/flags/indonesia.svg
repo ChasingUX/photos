@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="22px" viewBox="0 0 32 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Indonesia@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="FInalll" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-151.000000, -305.000000)" fill-rule="nonzero">
+            <g id="Indonesia@2x" transform="translate(151.000000, 305.000000)">
+                <path d="M28.8090141,0.112676056 L2.9971831,0.112676056 C1.41407053,0.112676056 0.130704225,1.39604194 0.130704225,2.97915399 L0.130704225,10.9295739 L31.68,10.9295739 L31.68,2.97915399 C31.6800009,2.21813523 31.3773792,1.4883515 30.8388349,0.950652859 C30.3002907,0.412954222 29.5700321,0.111479486 28.8090141,0.112676056 Z" id="Shape" fill="#ED5565"></path>
+                <path d="M0.126197183,18.4247887 C0.126197183,20.0079013 1.40956349,21.2912676 2.99267606,21.2912676 L28.8090141,21.2912676 C30.3921266,21.2912676 31.675493,20.0079013 31.675493,18.4247887 L31.675493,10.9295775 L0.126197183,10.9295775 L0.126197183,18.4247887 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

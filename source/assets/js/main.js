@@ -1,4 +1,19 @@
 $(function() {
+
+
+  if($('body').hasClass('index')){
+
+    setTimeout(function(){
+      $(".shapeA").addClass('rotated');
+    }, 50)
+
+    setTimeout(function(){
+      $(".shapeB").addClass('rotated');
+    }, 200)
+
+  }
+
+
    var galleryOptions= {
     thumbnail: false,
     counter: true,
@@ -63,20 +78,6 @@ $(function() {
     },
     offset: offset
   })
-
-  // header waypoint - to remove banner
-  // var headerHeight = $(".Header").css('height');
-  // var docHeight = - headerHeight - 20;
-  // var waypoint = new Waypoint({
-  //   element: document.getElementById('Header'),
-  //   handler: function(direction) {
-  //     if(direction == 'up') {
-  //       $(".sticky").removeClass('is-visible');
-  //     }
-  //   },
-  //   offset: docHeight
-  // })
-
 
   var chapterCount = $(".sectionTitle").length;
   $(".count a").text(chapterCount);
