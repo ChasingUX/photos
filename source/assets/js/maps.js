@@ -2,10 +2,11 @@ $(function() {
   if($('body').hasClass('index')){
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiamJpcmQxMTExIiwiYSI6ImNpazVwYzdhNzAwN3BpZm0yZHhhOWp6c3IifQ.6EQjuObxFgOTrafXG9Juig';
+    var startingPoint = [55,10];
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/jbird1111/cjg5rz0rf7kgj2soc21nvsgib',
-      center: [55,10],
+      center: startingPoint,
       zoom: 2.4
     });
 
@@ -82,13 +83,31 @@ $(function() {
       if(feature.layer.id == 'travel-stories'){
         story = '<div><a href="/voyage/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
       } else {
-        story = '<div>The ' + country + ' story is coming soon!</div>'
+        story = '<div>The ' + feature.properties.name + ' story is coming soon!</div>'
       }
 
       popup.setLngLat(feature.geometry.coordinates)
         .setHTML(html + story)
         .setLngLat(feature.geometry.coordinates)
         .addTo(map);
+    }
+
+    function highlightCity(feature){
+      //highlight the specific location in the panel for a moment
+      var location = feature.properties.name.replace(/ /g,"_").replace(/\./g, '').toLowerCase();
+      console.log("name: " + location)
+
+      $(".voyages .expanded li").each(function(){
+        var thisClass = $(this).attr('class');
+
+        if (thisClass == location) {
+          $(this).addClass('match')
+        }
+      });
+    }
+
+    function removeHighlightedCity(){
+      $(".match").removeClass('match');
     }
 
     function expandPanelFromMarker(feature){
@@ -103,6 +122,8 @@ $(function() {
       if(!parentElement.hasClass('expanded')){
         expandSelected(anchorElement);
       }
+
+      highlightCity(feature);
     }
 
     function flySpeedBasedOnDistance(oldCenter, feature){
@@ -132,6 +153,19 @@ $(function() {
       fly(feature, speed);
     }
 
+    function backToDefault(){
+      map.flyTo({
+        center: startingPoint,
+        speed: .5,
+        zoom: 2.4,
+      });
+
+      removeHighlightedCity();
+      popup.remove();
+
+      collapseOthers();
+    }
+
     // when we click on menu, expend item, collapse others
     $(".voyages li a").on('click', function(){
       collapseOthers(this);
@@ -156,6 +190,7 @@ $(function() {
     map.on('click', function(e) {
       oldCenter = getLatLng();
       //popup.remove();
+      removeHighlightedCity();
 
       var features = map.queryRenderedFeatures(e.point, {
         layers: ['travels', 'travel-stories']
@@ -170,16 +205,21 @@ $(function() {
 
       flySpeedBasedOnDistance(oldCenter, feature)
 
-      map.once('moveend', function(e){
-        // TODO : make this work only after a click, not general moveend
-        tooltip(feature)
-      });
+      tooltip(feature)
 
+      // at the end of the zoom, show the tooltip
+      // map.once('moveend', function(e){
+      //   tooltip(feature)
+      // });
     });
 
     //when a map is done moving or zooming, store the center point
     map.on('moveend', function(e){
        oldCenter = getLatLng();
     });
+
+    $(".back").on('click', function(){
+      backToDefault();
+    })
   }
 });
