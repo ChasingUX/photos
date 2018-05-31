@@ -92,7 +92,7 @@ $(function() {
         .addTo(map);
     }
 
-    function highlightCity(feature){
+    function highlightCityFromMap(feature){
       //highlight the specific location in the panel for a moment
       var location = feature.properties.name.replace(/ /g,"_").replace(/\./g, '').toLowerCase();
       console.log("name: " + location)
@@ -123,7 +123,7 @@ $(function() {
         expandSelected(anchorElement);
       }
 
-      highlightCity(feature);
+      highlightCityFromMap(feature);
     }
 
     function flySpeedBasedOnDistance(oldCenter, feature){
@@ -202,9 +202,7 @@ $(function() {
       }
 
       expandPanelFromMarker(feature);
-
       flySpeedBasedOnDistance(oldCenter, feature)
-
       tooltip(feature)
 
       // at the end of the zoom, show the tooltip
