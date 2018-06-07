@@ -205,7 +205,7 @@ $(function() {
       flySpeedBasedOnDistance(oldCenter, feature)
       tooltip(feature)
 
-      // at the end of the zoom, show the tooltip
+      // at the end of the zoom, show the tooltip (once per time)
       // map.once('moveend', function(e){
       //   tooltip(feature)
       // });
