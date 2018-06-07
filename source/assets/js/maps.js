@@ -19,6 +19,8 @@ $(function() {
     var popup = new mapboxgl.Popup({ offset: [0, -20] })
     var oldCenter;
 
+    var chromeHeight = $('.chrome').outerHeight(true);
+
     function collapseOthers(justChosen){
        // go through all the items that are not clicked, and if expanded, collapse
       $(".voyages li a").not(justChosen).each(function(){
@@ -26,6 +28,8 @@ $(function() {
           $(this).toggleClass('border');
           $(this).next('.stops').toggleClass('open');
           $(this).parent('li').toggleClass('expanded');
+
+          $('.mapWrap').toggleClass('panel_open');
         }
       })
     }
@@ -36,6 +40,8 @@ $(function() {
       targetObj.toggleClass('border');
       targetObj.parent('li').toggleClass('expanded');
       targetObj.next('.stops').toggleClass('open');
+
+      $('.mapWrap').toggleClass('panel_open');
     }
 
     function getLatLng(){
@@ -167,9 +173,11 @@ $(function() {
     }
 
     // when we click on menu, expend item, collapse others
-    $(".voyages li a").on('click', function(){
+    $(".voyages li a").on('click', function(e){
       collapseOthers(this);
       expandSelected(this);
+
+      e.preventDefault();
     })
 
     //show cursors when hovering over a marker
