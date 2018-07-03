@@ -48,6 +48,10 @@ $(function() {
       $('.stops').find('.' + clickedCountry).toggleClass('open');
       $('.mapWrap').toggleClass('panel_open');
 
+      // if ($('.stops').hasClass('open')){
+      //   $('.empty').toggleClass('hide');
+      // }
+
       if ($(window).width() < 581) {
         $('html, body').animate({
           scrollTop: $(".stops").offset().top

@@ -923,6 +923,10 @@ $reading_width: 600px;
     @media (max-width: 1024px) {
       padding: 0 48px;
     }
+
+    @media (max-width: 580px) {
+      padding: 0 24px;
+    }
   }
 
   h1 {
@@ -1168,6 +1172,8 @@ footer {
   bottom: 32px;
   left: calc(#{$col_width} + 128px);
   transition: transform .2s ease;
+  border-radius: 4px;
+  overflow: hidden;
 
   @media (max-width: 1024px) {
     position: relative;
@@ -1446,6 +1452,10 @@ footer {
   background-image: url(/images/flags/usa.svg);
 }
 
+.flag-singapore {
+  background-image: url(/images/flags/singapore.svg);
+}
+
 .voyages {
   margin: 0 0 6px 0;
   padding: 0 0 11px 0;
@@ -1461,7 +1471,6 @@ footer {
     padding: 0;
     margin: 0 18px 0 0;
     list-style: none;
-    // width: 148px;
     width:calc(#{$col_width} / 3 - 22px);
     display: inline-block;
 
@@ -1500,8 +1509,6 @@ footer {
     a {
       display: inline-block;
       color: $dark;
-      // padding: 9px;
-      // border-radius: 3px;
       width: 100%;
       margin: 9px 0;
       border-bottom: 0;
@@ -1526,19 +1533,23 @@ footer {
       &:hover {
         &:before {
           @include greyBG;
+          top: -10px;
+          bottom: -10px;
         }
       }
 
       &.border {
-        // background-color: #F3F3F3;
-
         @media (max-width: 580px) {
           background-color: transparent;
-          // border-bottom: 1px solid #EBEBEB;
         }
 
         &:before {
           @include greyBG;
+
+          @media (max-width: 580px) {
+            top: -10px;
+            bottom: -10px;
+          }
         }
       }
     }
@@ -1564,15 +1575,111 @@ footer {
 
       @media (max-width: 580px) {
         float: none;
+        line-height: 1;
       }
     }
   }
 }
 
 .stops {
-
   @media (max-width: 1024px) {
     margin-bottom: 4px;
+  }
+
+  .empty {
+    background-color: white;
+    border: 1px solid #EDEDED;
+    padding: 24px;
+    margin-top: 24px;
+    border-radius: 3px;
+    box-shadow: 0 3px 15px 0 rgba(161, 161, 169, 0.1);
+    opacity: 1;
+    transition: transform .4s ease, opacity .5s ease;
+    will-change: maxHeight, opacity;
+    max-height: auto;
+    overflow: hidden;
+    transform: translateY(0);
+
+    h4 {
+      font-family: 'apercu_bold';
+      font-size: 17px;
+      margin: 0 0 -5px 0;
+      color: $dark-purple;
+      padding: 0;
+      font-weight: normal;
+    }
+
+    p {
+      font-family: 'apercu_light';
+      font-size: 17px;
+      color: $dark-purple;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 0 0;
+      padding: 0;
+      max-height: none;
+      opacity: 1;
+      transform: translateY(0);
+
+      li {
+        padding: 24px 0 20px 0;
+        border: 0;
+        border-bottom: 1px solid #e0e0e0;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+        cursor: default;
+
+        &:hover {
+          border: 0;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+        &:before {
+          display: none;
+        }
+
+        &:last-child {
+          border: 0;
+          padding-bottom: 0;
+
+          &:hover {
+            border: 0;
+          }
+        }
+
+        p {
+          font-size: 17px;
+          font-family: 'apercu_light';
+          display: inline-block;
+          position: relative;
+          top: 1px;
+          color: #000;
+        }
+        span {
+          background-repeat: no-repeat;
+          width: 30px;
+          height: 30px;
+          margin-right: 16px;
+          float: left;
+        }
+
+        &.country {
+          span {
+            background-image: url(/images/country_click.svg);
+          }
+        }
+
+        &.map {
+          span {
+            background-image: url(/images/map_click.svg);
+          }
+        }
+      }
+    }
   }
 
   &.open{
@@ -1589,10 +1696,20 @@ footer {
       padding-top: 16px;
     }
 
+    .empty {
+      transform: translateY(-10px);
+      opacity: 0;
+      padding: 0 24px;
+      max-height: 0;
+      margin: 0;
+    }
+
     h3 {
       display: block;
     }
   }
+
+
 
   h3 {
     font-size: 22px;
@@ -1638,8 +1755,8 @@ footer {
       background-color: white;
       border: 1px solid #EDEDED;
       box-shadow: 0 3px 15px 0 rgba(161, 161, 169, 0.1);
-      transition: box-shadow .3s ease;
-      will-change: box-shadow;
+      transition: box-shadow .3s ease, border .3s ease;
+      will-change: box-shadow, border;
       line-height: 1;
       border-radius: 5px;
 
@@ -1671,7 +1788,9 @@ footer {
       }
 
       &:nth-child(3n+3){
-        margin-right: 0;
+        @media (max-width: 1024px) {
+          margin-right: 0;
+        }
 
         @media (max-width: 700px) {
           margin-right: 8px;
@@ -1686,6 +1805,7 @@ footer {
 
       &:hover {
         box-shadow: 0 3px 15px 0 rgba(161, 161, 169, 0.2);
+        border: 1px solid $dark-purple;
 
         h4 {
           @media (max-width: 580px) {
