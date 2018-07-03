@@ -26,9 +26,9 @@ $(function() {
       $(".voyages li a").not(justChosen).each(function(){
         if($(this).hasClass('border')){
           $(this).toggleClass('border');
-          $(this).next('.stops').toggleClass('open');
+          $('.stops').toggleClass('open');
+          $('.stops .open').toggleClass('open');
           $(this).parent('li').toggleClass('expanded');
-
           $('.mapWrap').toggleClass('panel_open');
         }
       })
@@ -39,9 +39,20 @@ $(function() {
 
       targetObj.toggleClass('border');
       targetObj.parent('li').toggleClass('expanded');
-      targetObj.next('.stops').toggleClass('open');
 
+      var clickedClasses = targetObj.parent().attr('class'),
+          clickedCountry = clickedClasses.replace(' expanded','');
+
+      $('.stops').toggleClass('open');
+      $('.stops h3 span').text(humanize(clickedCountry));
+      $('.stops').find('.' + clickedCountry).toggleClass('open');
       $('.mapWrap').toggleClass('panel_open');
+
+      if ($(window).width() < 581) {
+        $('html, body').animate({
+          scrollTop: $(".stops").offset().top
+        }, 600);
+      }
     }
 
     function getLatLng(){
