@@ -1588,7 +1588,7 @@ footer {
 
   .empty {
     background-color: white;
-    border: 1px solid #EDEDED;
+    border: 1px solid $light_border;
     padding: 24px;
     margin-top: 24px;
     border-radius: 3px;
@@ -1599,6 +1599,14 @@ footer {
     max-height: auto;
     overflow: hidden;
     transform: translateY(0);
+
+    @media (max-width: 1024px) {
+      margin: 8px 0 32px 0;
+    }
+
+    @media (max-width: 580px) {
+      display: none;
+    }
 
     h4 {
       font-family: 'apercu_bold';
@@ -1899,6 +1907,7 @@ footer {
   .mapboxgl-popup-content {
     padding: 20px;
     width: 275px;
+    font-family: 'apercu_light';
 
     .mapboxgl-popup-close-button {
       display: none;
@@ -1918,6 +1927,7 @@ footer {
       font-size: 21px;
       margin: 0 0 3px 0;
       padding: 0;
+      font-family: 'apercu_bold';
       float: left;
     }
 
@@ -1926,7 +1936,7 @@ footer {
       display: block;
       font-size: 16px;
       margin: 0;
-      font-family: 'plex_sans_light';
+      font-family: 'apercu_light';
     }
 
     div {

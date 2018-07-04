@@ -1,18 +1,42 @@
 $(function() {
   if($('body').hasClass('index')){
 
+    var mapLoaded = false;
+    var features;
+    var countryDictionary = [];
+
     mapboxgl.accessToken = 'pk.eyJ1IjoiamJpcmQxMTExIiwiYSI6ImNpazVwYzdhNzAwN3BpZm0yZHhhOWp6c3IifQ.6EQjuObxFgOTrafXG9Juig';
-    var startingPoint = [55,10];
+    var startingPoint = [11,20];
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/jbird1111/cjg5rz0rf7kgj2soc21nvsgib',
       center: startingPoint,
-      zoom: 2.4
+      zoom: 1.45,
     });
 
     var nav = new mapboxgl.NavigationControl({
       showCompass: false
     });
+
+
+    map.on('load', onMapLoad)
+
+    function onMapLoad(){
+      console.log('map loaded')
+      mapLoaded = true;
+
+      features = map.querySourceFeatures('composite', {sourceLayer: 'Countries'})
+
+      $.each(features, function (e) {
+        var countryName = this.properties.name,
+            countryCoords = this.geometry.coordinates;
+
+        countryDictionary.push({
+          key:   countryName,
+          value: countryCoords
+        });
+      })
+    }
 
     map.addControl(nav, 'top-right');
 
@@ -20,6 +44,14 @@ $(function() {
     var oldCenter;
 
     var chromeHeight = $('.chrome').outerHeight(true);
+
+    function flyToClickedLocation(location) {
+      $.each(countryDictionary, function (e) {
+        if(this.key == location) {
+          flyToGeo(this.value, .5, 5);
+        }
+      })
+    }
 
     function collapseOthers(justChosen){
        // go through all the items that are not clicked, and if expanded, collapse
@@ -48,10 +80,6 @@ $(function() {
       $('.stops').find('.' + clickedCountry).toggleClass('open');
       $('.mapWrap').toggleClass('panel_open');
 
-      // if ($('.stops').hasClass('open')){
-      //   $('.empty').toggleClass('hide');
-      // }
-
       if ($(window).width() < 581) {
         $('html, body').animate({
           scrollTop: $(".stops").offset().top
@@ -77,11 +105,23 @@ $(function() {
     }
 
     function fly(feature, speed){
+
+      //console.log(feature.geometry.coordinates)
+
       map.flyTo({
         center: feature.geometry.coordinates,
         speed: speed,
         curve: 1.2,
         zoom: 7,
+      });
+    }
+
+    function flyToGeo(geo, speed, zoom){
+      map.flyTo({
+        center: geo,
+        speed: speed,
+        curve: 1.2,
+        zoom: zoom,
       });
     }
 
@@ -116,7 +156,7 @@ $(function() {
     function highlightCityFromMap(feature){
       //highlight the specific location in the panel for a moment
       var location = feature.properties.name.replace(/ /g,"_").replace(/\./g, '').toLowerCase();
-      console.log("name: " + location)
+      //console.log("name: " + location)
 
       $(".voyages .expanded li").each(function(){
         var thisClass = $(this).attr('class');
@@ -168,8 +208,8 @@ $(function() {
         speed = .3;
       }
 
-      console.log("Distance is: " + distance);
-      console.log("Speed is: " + speed);
+      // console.log("Distance is: " + distance);
+      // console.log("Speed is: " + speed);
 
       fly(feature, speed);
     }
@@ -189,8 +229,11 @@ $(function() {
 
     // when we click on menu, expend item, collapse others
     $(".voyages li a").on('click', function(e){
+      var location = $(this).find('h3').text();
+
       collapseOthers(this);
       expandSelected(this);
+      flyToClickedLocation(location);
 
       e.preventDefault();
     })
@@ -216,7 +259,7 @@ $(function() {
       removeHighlightedCity();
 
       var features = map.queryRenderedFeatures(e.point, {
-        layers: ['travels', 'travel-stories']
+        layers: ['travels']
       }),
       feature = features[0];
 
