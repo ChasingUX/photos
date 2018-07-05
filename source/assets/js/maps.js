@@ -271,16 +271,29 @@ $(function() {
       e.preventDefault();
     });
 
-    $('.stops ul li').mouseover(function() {
+    $('.stops ul:not(.options) li').mouseenter(function() {
+      var cityName = $(this).find('h4').text();
+      var coordinates;
 
-      // if(typeof popup !== "undefined"){
-      //   popup.remove();
-      // }
+      $.each(cityDictionary, function (e) {
+        if(this.key == cityName) {
+          coordinates = this.value;
 
-      // popup = new mapboxgl.Popup({offset: popupOffsets})
-      //   .setLngLat(feature.geometry.coordinates)
-      //   .setHTML(html + story)
-      //   .addTo(map);
+          if(typeof popup !== "undefined"){
+            popup.remove();
+          }
+
+          popup = new mapboxgl.Popup({offset: popupOffsets})
+            .setLngLat(coordinates)
+            // .setHTML(html + story)
+            .setHTML("works")
+            .addTo(map);
+        }
+      })
+    });
+
+    $('.stops ul:not(.options) li').mouseleave(function() {
+      popup.remove();
     });
 
     //show cursors when hovering over a marker
