@@ -1166,7 +1166,7 @@ footer {
 }
 
 .mapWrap {
-  position: absolute;
+  position: fixed;
   top: 32px;
   right: 32px;
   bottom: 32px;
@@ -1436,7 +1436,7 @@ footer {
   background-image: url(/images/flags/morocco.svg);
 }
 
-.flag-south_africa {
+.flag-southafrica {
   background-image: url(/images/flags/south_africa.svg);
 }
 

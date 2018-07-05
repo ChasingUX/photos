@@ -93,6 +93,8 @@ $(function() {
     function expandSelected(target){
       var targetObj = $(target);
 
+      console.log(target)
+
       targetObj.toggleClass('border');
       targetObj.parent('li').toggleClass('expanded');
 
@@ -188,6 +190,7 @@ $(function() {
 
       collapseOthers(anchorElement);
 
+      console.log(anchorElement)
       // check to see if element is already open. if it isnt, then perform expansion.
       if(!parentElement.hasClass('expanded')){
         expandSelected(anchorElement);
