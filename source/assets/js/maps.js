@@ -42,13 +42,15 @@ $(function() {
 
     var popup = new mapboxgl.Popup({ offset: [0, -20] })
     var oldCenter;
-
     var chromeHeight = $('.chrome').outerHeight(true);
 
     function flyToClickedLocation(location) {
+      oldCenter = getLatLng();
+
       $.each(countryDictionary, function (e) {
         if(this.key == location) {
-          flyToGeo(this.value, .5, 5);
+          var coordinates = this.value;
+          flySpeedBasedOnDistance(oldCenter, coordinates, 5)
         }
       })
     }
@@ -104,15 +106,15 @@ $(function() {
       return frags.join(' ');
     }
 
-    function fly(feature, speed){
+    function fly(coordinates, speed, zoom){
 
       //console.log(feature.geometry.coordinates)
 
       map.flyTo({
-        center: feature.geometry.coordinates,
+        center: coordinates,
         speed: speed,
         curve: 1.2,
-        zoom: 7,
+        zoom: zoom,
       });
     }
 
@@ -187,9 +189,12 @@ $(function() {
       highlightCityFromMap(feature);
     }
 
-    function flySpeedBasedOnDistance(oldCenter, feature){
+    function flySpeedBasedOnDistance(oldCenter, coordinates, zoom){
+
+      console.log(turf.point(oldCenter))
+
       var from = turf.point(oldCenter),
-       to = turf.point(feature.geometry.coordinates),
+       to = turf.point(coordinates),
        options = {units: 'miles'},
        distance = turf.distance(from, to),
        speed;
@@ -208,17 +213,18 @@ $(function() {
         speed = .3;
       }
 
-      // console.log("Distance is: " + distance);
-      // console.log("Speed is: " + speed);
+      console.log("Distance is: " + distance);
+      console.log("Speed is: " + speed);
+      console.log("Zoom is: " + zoom);
 
-      fly(feature, speed);
+      fly(coordinates, speed, zoom);
     }
 
     function backToDefault(){
       map.flyTo({
         center: startingPoint,
         speed: .5,
-        zoom: 2.4,
+        zoom: 1.45,
       });
 
       removeHighlightedCity();
@@ -254,6 +260,7 @@ $(function() {
 
     // when we click on a marker
     map.on('click', function(e) {
+      var zoom = 7;
       oldCenter = getLatLng();
       //popup.remove();
       removeHighlightedCity();
@@ -263,12 +270,14 @@ $(function() {
       }),
       feature = features[0];
 
+      var coordinates = feature.geometry.coordinates;
+
       if (!features.length) {
         return;
       }
 
       expandPanelFromMarker(feature);
-      flySpeedBasedOnDistance(oldCenter, feature)
+      flySpeedBasedOnDistance(oldCenter, coordinates, zoom)
       tooltip(feature)
 
       // at the end of the zoom, show the tooltip (once per time)
