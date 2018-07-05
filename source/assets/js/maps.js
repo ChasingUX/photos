@@ -12,6 +12,7 @@ $(function() {
       style: 'mapbox://styles/jbird1111/cjg5rz0rf7kgj2soc21nvsgib',
       center: startingPoint,
       zoom: 1.45,
+      minZoom: 1.45
     });
 
     var nav = new mapboxgl.NavigationControl({
@@ -267,6 +268,8 @@ $(function() {
     map.on('click', function(e) {
       var zoom = 7;
       oldCenter = getLatLng();
+
+      console.log(e);
       //popup.remove();
       removeHighlightedCity();
 
@@ -275,15 +278,21 @@ $(function() {
       }),
       feature = features[0];
 
-      var coordinates = feature.geometry.coordinates;
+      if(typeof feature !== "undefined") {
+        var coordinates = feature.geometry.coordinates;
 
-      if (!features.length) {
-        return;
+        expandPanelFromMarker(feature);
+        flySpeedBasedOnDistance(oldCenter, coordinates, zoom)
+        tooltip(feature)
       }
 
-      expandPanelFromMarker(feature);
-      flySpeedBasedOnDistance(oldCenter, coordinates, zoom)
-      tooltip(feature)
+
+
+      // if (!features.length) {
+      //   return;
+      // }
+
+
 
       // at the end of the zoom, show the tooltip (once per time)
       // map.once('moveend', function(e){
