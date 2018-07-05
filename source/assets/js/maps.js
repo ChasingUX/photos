@@ -35,7 +35,7 @@ $(function() {
           key:   countryName,
           value: countryCoords
         });
-      })
+      });
     }
 
     map.addControl(nav, 'top-right');
@@ -47,12 +47,34 @@ $(function() {
     function flyToClickedLocation(location) {
       oldCenter = getLatLng();
 
+      var coordinates,
+          zoom,
+          matchFound = false;
+
+      if(location =='Japan'){
+        var zoom = 5.5;
+      } else if(location =='USA'){
+        zoom = 3.5;
+      } else if(location =='Thailand'){
+        zoom = 4.5;
+      } else if(location =='Israel'){
+        zoom = 6;
+      } else if(location =='Singapore'){
+        zoom = 9;
+      } else {
+        zoom = 5;
+      }
+
       $.each(countryDictionary, function (e) {
         if(this.key == location) {
-          var coordinates = this.value;
-          flySpeedBasedOnDistance(oldCenter, coordinates, 5)
+          matchFound = true;
+          coordinates = this.value;
         }
       })
+
+      if(matchFound = true) {
+        flySpeedBasedOnDistance(oldCenter, coordinates, zoom)
+      }
     }
 
     function collapseOthers(justChosen){
@@ -107,20 +129,8 @@ $(function() {
     }
 
     function fly(coordinates, speed, zoom){
-
-      //console.log(feature.geometry.coordinates)
-
       map.flyTo({
         center: coordinates,
-        speed: speed,
-        curve: 1.2,
-        zoom: zoom,
-      });
-    }
-
-    function flyToGeo(geo, speed, zoom){
-      map.flyTo({
-        center: geo,
         speed: speed,
         curve: 1.2,
         zoom: zoom,
@@ -158,7 +168,6 @@ $(function() {
     function highlightCityFromMap(feature){
       //highlight the specific location in the panel for a moment
       var location = feature.properties.name.replace(/ /g,"_").replace(/\./g, '').toLowerCase();
-      //console.log("name: " + location)
 
       $(".voyages .expanded li").each(function(){
         var thisClass = $(this).attr('class');
@@ -190,16 +199,13 @@ $(function() {
     }
 
     function flySpeedBasedOnDistance(oldCenter, coordinates, zoom){
-
-      console.log(turf.point(oldCenter))
-
       var from = turf.point(oldCenter),
        to = turf.point(coordinates),
        options = {units: 'miles'},
        distance = turf.distance(from, to),
        speed;
 
-      if (distance < 10000 && distance > 5000) {
+      if (distance < 100000 && distance > 5000) {
         speed = 1;
       } else if (distance < 5000 && distance > 4000) {
         speed = .7;
@@ -212,7 +218,6 @@ $(function() {
       } else if (distance < 1000) {
         speed = .3;
       }
-
       console.log("Distance is: " + distance);
       console.log("Speed is: " + speed);
       console.log("Zoom is: " + zoom);
