@@ -3,12 +3,18 @@ $(function() {
 
     var defaultZoom = 1.4;
     var mapLoaded = false;
-    var features;
+    var countries;
+    var cities;
     var popup;
     var countryDictionary = [];
+    var cityDictionary = [];
     var startingPoint = [10,20];
     var oldCenter;
     var chromeHeight = $('.chrome').outerHeight(true);
+    var popupOffsets = {
+     'top': [0, 24],
+     'bottom': [0, -24]
+    };
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiamJpcmQxMTExIiwiYSI6ImNpazVwYzdhNzAwN3BpZm0yZHhhOWp6c3IifQ.6EQjuObxFgOTrafXG9Juig';
 
@@ -31,15 +37,26 @@ $(function() {
       console.log('map data loaded')
       mapLoaded = true;
 
-      features = map.querySourceFeatures('composite', {sourceLayer: 'Countries'})
+      countries = map.querySourceFeatures('composite', {sourceLayer: 'Countries'})
+      cities = map.querySourceFeatures('composite', {sourceLayer: 'Travels'})
 
-      $.each(features, function (e) {
+      $.each(countries, function (e) {
         var countryName = this.properties.name,
             countryCoords = this.geometry.coordinates;
 
         countryDictionary.push({
           key:   countryName,
           value: countryCoords
+        });
+      });
+
+      $.each(cities, function (e) {
+        var cityName = this.properties.name,
+            cityCoords = this.geometry.coordinates;
+
+        cityDictionary.push({
+          key:   cityName,
+          value: cityCoords
         });
       });
     }
@@ -136,11 +153,6 @@ $(function() {
       var location = feature.properties.name,
         flag = feature.properties.flag;
 
-      var popupOffsets = {
-       'top': [0, 24],
-       'bottom': [0, -24]
-      };
-
       if (flag === undefined) {
         var html = '<h3>' + location + '</h3>',
           story ='';
@@ -157,7 +169,7 @@ $(function() {
         story = '<div>The ' + feature.properties.name + ' story is coming soon!</div>'
       }
 
-      popup = new mapboxgl.Popup({offset: popupOffsets, className: 'tooly' })
+      popup = new mapboxgl.Popup({offset: popupOffsets})
         .setLngLat(feature.geometry.coordinates)
         .setHTML(html + story)
         .addTo(map);
@@ -257,7 +269,19 @@ $(function() {
       flyToClickedLocation(location);
 
       e.preventDefault();
-    })
+    });
+
+    $('.stops ul li').mouseover(function() {
+
+      // if(typeof popup !== "undefined"){
+      //   popup.remove();
+      // }
+
+      // popup = new mapboxgl.Popup({offset: popupOffsets})
+      //   .setLngLat(feature.geometry.coordinates)
+      //   .setHTML(html + story)
+      //   .addTo(map);
+    });
 
     //show cursors when hovering over a marker
     map.on('mousemove', function (e) {
