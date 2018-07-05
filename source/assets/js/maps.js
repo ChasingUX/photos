@@ -24,11 +24,11 @@ $(function() {
       showCompass: false
     });
 
-
+    map.addControl(nav, 'top-right');
     map.on('load', onMapLoad)
 
     function onMapLoad(){
-      console.log('map loaded')
+      console.log('map data loaded')
       mapLoaded = true;
 
       features = map.querySourceFeatures('composite', {sourceLayer: 'Countries'})
@@ -43,13 +43,6 @@ $(function() {
         });
       });
     }
-
-    map.addControl(nav, 'top-right');
-
-    // var popup = new mapboxgl.Popup({
-    //   offset: popupOffsets,
-    //   closeOnClick: true
-    // })
 
     function flyToClickedLocation(location) {
       oldCenter = getLatLng();
@@ -135,15 +128,6 @@ $(function() {
       return frags.join(' ');
     }
 
-    function fly(coordinates, speed, zoom){
-      map.flyTo({
-        center: coordinates,
-        speed: speed,
-        curve: 1.2,
-        zoom: zoom,
-      });
-    }
-
     function tooltip(feature){
       if(typeof popup !== "undefined"){
         popup.remove();
@@ -210,6 +194,15 @@ $(function() {
       }
 
       highlightCityFromMap(feature);
+    }
+
+    function fly(coordinates, speed, zoom){
+      map.flyTo({
+        center: coordinates,
+        speed: speed,
+        curve: 1.2,
+        zoom: zoom,
+      });
     }
 
     function flySpeedBasedOnDistance(oldCenter, coordinates, zoom){
@@ -286,8 +279,6 @@ $(function() {
       var zoom = 7;
       oldCenter = getLatLng();
 
-      // popup.remove();
-
       removeHighlightedCity();
 
       var features = map.queryRenderedFeatures(e.point, {
@@ -298,15 +289,20 @@ $(function() {
       if(typeof feature !== "undefined") {
         var coordinates = feature.geometry.coordinates;
 
+        //disable scroll
+        map.scrollZoom.disable();
+        console.log('scrolling offset')
+
         expandPanelFromMarker(feature);
         flySpeedBasedOnDistance(oldCenter, coordinates, zoom)
         tooltip(feature)
       }
 
-      // at the end of the zoom, show the tooltip (once per time)
-      // map.once('moveend', function(e){
-      //   tooltip(feature)
-      // });
+      // when zooming has ended
+      map.once('moveend', function(e){
+        //turn scrolling back on
+        map.scrollZoom.enable();
+      });
     });
 
     //when a map is done moving or zooming, store the center point
