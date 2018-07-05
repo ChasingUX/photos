@@ -1,18 +1,23 @@
 $(function() {
   if($('body').hasClass('index')){
 
+    var defaultZoom = 1.4;
     var mapLoaded = false;
     var features;
+    var popup;
     var countryDictionary = [];
+    var startingPoint = [10,20];
+    var oldCenter;
+    var chromeHeight = $('.chrome').outerHeight(true);
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiamJpcmQxMTExIiwiYSI6ImNpazVwYzdhNzAwN3BpZm0yZHhhOWp6c3IifQ.6EQjuObxFgOTrafXG9Juig';
-    var startingPoint = [11,20];
+
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/jbird1111/cjg5rz0rf7kgj2soc21nvsgib',
       center: startingPoint,
-      zoom: 1.45,
-      minZoom: 1.45
+      zoom: defaultZoom,
+      minZoom: defaultZoom
     });
 
     var nav = new mapboxgl.NavigationControl({
@@ -41,9 +46,10 @@ $(function() {
 
     map.addControl(nav, 'top-right');
 
-    var popup = new mapboxgl.Popup({ offset: [0, -20] })
-    var oldCenter;
-    var chromeHeight = $('.chrome').outerHeight(true);
+    // var popup = new mapboxgl.Popup({
+    //   offset: popupOffsets,
+    //   closeOnClick: true
+    // })
 
     function flyToClickedLocation(location) {
       oldCenter = getLatLng();
@@ -139,10 +145,17 @@ $(function() {
     }
 
     function tooltip(feature){
-      popup.remove();
+      if(typeof popup !== "undefined"){
+        popup.remove();
+      }
 
       var location = feature.properties.name,
         flag = feature.properties.flag;
+
+      var popupOffsets = {
+       'top': [0, 24],
+       'bottom': [0, -24]
+      };
 
       if (flag === undefined) {
         var html = '<h3>' + location + '</h3>',
@@ -160,9 +173,9 @@ $(function() {
         story = '<div>The ' + feature.properties.name + ' story is coming soon!</div>'
       }
 
-      popup.setLngLat(feature.geometry.coordinates)
-        .setHTML(html + story)
+      popup = new mapboxgl.Popup({offset: popupOffsets, className: 'tooly' })
         .setLngLat(feature.geometry.coordinates)
+        .setHTML(html + story)
         .addTo(map);
     }
 
@@ -227,14 +240,18 @@ $(function() {
     }
 
     function backToDefault(){
+
+      if(typeof popup !== "undefined"){
+        popup.remove();
+      }
+
       map.flyTo({
         center: startingPoint,
         speed: .5,
-        zoom: 1.45,
+        zoom: defaultZoom,
       });
 
       removeHighlightedCity();
-      popup.remove();
 
       collapseOthers();
     }
@@ -269,8 +286,8 @@ $(function() {
       var zoom = 7;
       oldCenter = getLatLng();
 
-      console.log(e);
-      //popup.remove();
+      // popup.remove();
+
       removeHighlightedCity();
 
       var features = map.queryRenderedFeatures(e.point, {
@@ -285,14 +302,6 @@ $(function() {
         flySpeedBasedOnDistance(oldCenter, coordinates, zoom)
         tooltip(feature)
       }
-
-
-
-      // if (!features.length) {
-      //   return;
-      // }
-
-
 
       // at the end of the zoom, show the tooltip (once per time)
       // map.once('moveend', function(e){
