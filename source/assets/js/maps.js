@@ -233,19 +233,14 @@ $(function() {
     }
 
     function backToDefault(){
+      oldCenter = getLatLng();
 
       if(typeof popup !== "undefined"){
         popup.remove();
       }
 
-      map.flyTo({
-        center: startingPoint,
-        speed: .5,
-        zoom: defaultZoom,
-      });
-
+      flySpeedBasedOnDistance(oldCenter, startingPoint, defaultZoom)
       removeHighlightedCity();
-
       collapseOthers();
     }
 
@@ -291,7 +286,6 @@ $(function() {
 
         //disable scroll
         map.scrollZoom.disable();
-        console.log('scrolling offset')
 
         expandPanelFromMarker(feature);
         flySpeedBasedOnDistance(oldCenter, coordinates, zoom)
