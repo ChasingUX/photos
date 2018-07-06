@@ -39,6 +39,10 @@ $(function() {
 
       $('.loader').fadeOut(300);
 
+      setTimeout(function(){
+        $('.loader').remove();
+      }, 500)
+
       countries = map.querySourceFeatures('composite', {sourceLayer: 'Countries'})
       cities = map.querySourceFeatures('composite', {sourceLayer: 'Travels'})
 
@@ -334,15 +338,28 @@ $(function() {
       map.once('moveend', function(e){
         //turn scrolling back on
         map.scrollZoom.enable();
+
+        // $('.back').fadeIn(300);
+
+
       });
     });
 
     //when a map is done moving or zooming, store the center point
     map.on('moveend', function(e){
        oldCenter = getLatLng();
+       var currentZoom = map.getZoom();
+
+       if (currentZoom == defaultZoom) {
+        console.log("original zoom level")
+        $('.back').fadeOut(100);
+       } else {
+        $('.back').fadeIn(300);
+       }
     });
 
     $(".back").on('click', function(){
+      $('.back').fadeOut(100);
       backToDefault();
     })
   }
