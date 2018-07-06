@@ -1467,6 +1467,25 @@ footer {
     margin-bottom: 0;
   }
 
+  .loader {
+    position: absolute;
+    background-color: rgba(255,255,255,.8);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    img {
+      position: absolute;
+      width: 33px;
+      height: 8px;
+      top: 50%;
+      left: 50%;
+      margin: -17px 0 0 -19px;
+    }
+  }
+
   li {
     padding: 0;
     margin: 0 18px 0 0;
@@ -1879,6 +1898,7 @@ footer {
         font-size: 11px;
         text-transform: uppercase;
         display: block;
+        color: black;
         letter-spacing: .8px;
       }
 
@@ -1968,8 +1988,9 @@ footer {
     a {
       color: $dark-purple;
       font-size: 16px;
-      font-family: 'plex_sans_regular';
+      font-family: 'apercu';
       display: block;
+      padding-right: 25px;
       background-image: url(/images/right.svg);
       background-repeat: no-repeat;
       background-position: bottom 2px right;

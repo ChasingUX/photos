@@ -37,6 +37,8 @@ $(function() {
       console.log('map data loaded')
       mapLoaded = true;
 
+      $('.loader').fadeOut(300);
+
       countries = map.querySourceFeatures('composite', {sourceLayer: 'Countries'})
       cities = map.querySourceFeatures('composite', {sourceLayer: 'Travels'})
 
@@ -163,11 +165,7 @@ $(function() {
           story ='';
       }
 
-      if(feature.layer.id == 'travel-stories'){
-        story = '<div><a href="/voyage/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
-      } else {
-        story = '<div>The ' + feature.properties.name + ' story is coming soon!</div>'
-      }
+      story = '<div><a href="/voyage/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
 
       popup = new mapboxgl.Popup({offset: popupOffsets})
         .setLngLat(feature.geometry.coordinates)
@@ -274,11 +272,9 @@ $(function() {
     $('.stops ul:not(.options) li').mouseenter(function() {
       var cityName = $(this).find('h4').text();
       var date = $(this).find('span').text();
+      var link = $(this).find('a').attr('href');
       var countryName = $(this).parent('ul').attr('class').split(' ')[0];
-
       var coordinates;
-
-      // need to get class of parent country, remove open from it, and then use it to display the flag in the tooltip.
 
       $.each(cityDictionary, function (e) {
         if(this.key == cityName) {
@@ -288,18 +284,16 @@ $(function() {
             popup.remove();
           }
 
+          var html = '<h3>' + this.key + '</h3><span class="flag flag-' + countryName + '"></span><p>' + countryName.charAt(0).toUpperCase() + countryName.substr(1) + ' · ' + date + '</p>'
+          var story = '<div><a href="/voyage/' + link + '/">Read the ' + this.key + ' story</a></div>';
+
           popup = new mapboxgl.Popup({offset: popupOffsets})
             .setLngLat(coordinates)
-            // .setHTML(html + story)
-            .setHTML('<h3>' + this.key + '</h3><span class="flag flag-' + countryName + '"></span><p>' + countryName.charAt(0).toUpperCase() + countryName.substr(1) + ' · ' + date + '</p>')
+            .setHTML(html + story)
             .addTo(map);
         }
       })
     });
-
-    // $('.stops ul:not(.options) li').mouseleave(function() {
-    //   popup.remove();
-    // });
 
     //show cursors when hovering over a marker
     map.on('mousemove', function (e) {
@@ -307,10 +301,8 @@ $(function() {
           feature = features[0];
 
       if(typeof feature !== "undefined"){
-        if(feature.layer.id == "travels" || feature.layer.id == "travel-stories"){
+        if(feature.layer.id == "travels"){
           map.getCanvas().style.cursor = 'pointer';
-        } else {
-          map.getCanvas().style.cursor = '';
         }
       }
     });
