@@ -273,7 +273,11 @@ $(function() {
 
     $('.stops ul:not(.options) li').mouseenter(function() {
       var cityName = $(this).find('h4').text();
+      var countryName = $(this).parent('ul').attr('class').split(' ')[0];
+
       var coordinates;
+
+      // need to get class of parent country, remove open from it, and then use it to display the flag in the tooltip.
 
       $.each(cityDictionary, function (e) {
         if(this.key == cityName) {
@@ -286,15 +290,15 @@ $(function() {
           popup = new mapboxgl.Popup({offset: popupOffsets})
             .setLngLat(coordinates)
             // .setHTML(html + story)
-            .setHTML("works")
+            .setHTML('<h3>' + this.key + '</h3><span class="flag flag-' + countryName + '"></span><p>afd</p>')
             .addTo(map);
         }
       })
     });
 
-    $('.stops ul:not(.options) li').mouseleave(function() {
-      popup.remove();
-    });
+    // $('.stops ul:not(.options) li').mouseleave(function() {
+    //   popup.remove();
+    // });
 
     //show cursors when hovering over a marker
     map.on('mousemove', function (e) {
