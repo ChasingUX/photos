@@ -226,18 +226,20 @@ $(function() {
        distance = turf.distance(from, to),
        speed;
 
+
+      //higher the speed, faster it goes. So higher distance should be lower speed
       if (distance < 100000 && distance > 5000) {
-        speed = 1;
+        speed = .6;
       } else if (distance < 5000 && distance > 4000) {
-        speed = .7;
+        speed = .65;
       } else if (distance < 4000 && distance > 3000) {
-        speed = .5;
+        speed = .7;
       } else if (distance < 3000 && distance > 2000) {
-        speed = .45;
+        speed = .73;
       } else if (distance < 2000 && distance > 1000) {
-        speed = .4;
+        speed = .77;
       } else if (distance < 1000) {
-        speed = .3;
+        speed = .8;
       }
       console.log("Distance is: " + distance);
       console.log("Speed is: " + speed);
@@ -338,10 +340,6 @@ $(function() {
       map.once('moveend', function(e){
         //turn scrolling back on
         map.scrollZoom.enable();
-
-        // $('.back').fadeIn(300);
-
-
       });
     });
 
