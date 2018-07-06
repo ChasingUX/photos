@@ -1476,6 +1476,10 @@ footer {
     right: 0;
     z-index: 10;
 
+    @media (max-width: 580px) {
+      display: none;
+    }
+
     img {
       position: absolute;
       width: 33px;
