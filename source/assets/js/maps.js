@@ -273,6 +273,7 @@ $(function() {
 
     $('.stops ul:not(.options) li').mouseenter(function() {
       var cityName = $(this).find('h4').text();
+      var date = $(this).find('span').text();
       var countryName = $(this).parent('ul').attr('class').split(' ')[0];
 
       var coordinates;
@@ -290,7 +291,7 @@ $(function() {
           popup = new mapboxgl.Popup({offset: popupOffsets})
             .setLngLat(coordinates)
             // .setHTML(html + story)
-            .setHTML('<h3>' + this.key + '</h3><span class="flag flag-' + countryName + '"></span><p>afd</p>')
+            .setHTML('<h3>' + this.key + '</h3><span class="flag flag-' + countryName + '"></span><p>' + countryName.charAt(0).toUpperCase() + countryName.substr(1) + ' · ' + date + '</p>')
             .addTo(map);
         }
       })
