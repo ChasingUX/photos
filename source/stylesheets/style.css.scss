@@ -63,16 +63,21 @@ $light_border: #E7E7E7;
 }
 
 body {
-  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.7;
-  font-size: 18px;
-  font-weight: 300;
+
+  &.voyage {
+    font-family: 'apercu_light';
+    font-size: 20px;
+    line-height: 1.4;
+  }
 }
 
 h1,h2, h3 {
-  font-weight: 700;
-  font-family: 'gt_americacondensed_bold';
+  // font-weight: 700;
+  // font-family: 'gt_americacondensed_bold';
+  font-family: 'spectral_bold';
+  font-weight: normal;
+  letter-spacing: -1.1px;
 }
 
 h1 {
@@ -91,11 +96,11 @@ h3 {
 
 h4 {
   margin: 0;
-  font-weight: 100;
   font-size: 15px;
-  color: #585858;
+  color: #a7a7a7;
   text-align: center;
   padding: 0 10px;
+  letter-spacing: .3px;
 }
 
 a {
@@ -105,7 +110,6 @@ a {
 
 .Wrapper {
   width: $wrapper_width;
-  padding: 0 64px;
   margin: 0 auto 50px auto;
 }
 
@@ -266,7 +270,7 @@ img {
 
   h1, h3 {
     font-weight: normal;
-    font-size: 20px;
+    font-size: 17px;
     padding: 0;
     margin: 0;
     display: inline-block;
@@ -306,9 +310,13 @@ img {
     left: 210px;
     right: 0;
     text-indent: -210px;
+    font-family: 'apercu_bold';
+    letter-spacing: 0;
 
     span {
       opacity:0;
+      font-family: 'apercu';
+          letter-spacing: .2px;
 
       &.is-visible {
         opacity: 1;
@@ -316,7 +324,7 @@ img {
 
       &:before {
         content: ':';
-        margin-right: 12px;
+        margin-right: 7px;
       }
     }
   }
@@ -507,10 +515,12 @@ section:focus {
       }
 
       a {
-        font-size: 14px;
+        font-size: 16px;
         color: black;
         display: block;
         padding: 8px 0;
+        margin-left: 15px;
+        text-indent: -15px;
 
         &:hover {
           color: $neon-purple;
@@ -521,7 +531,7 @@ section:focus {
           content: counter(section);
           color: $neon-purple;
           font-family: 'gt_americacondensed_bold';
-          margin-right: 9px;
+          margin-right: 7px;
         }
       }
     }
@@ -698,7 +708,7 @@ section:focus {
 .Columns {
   columns: 2;
   padding: 40px 20% 40px 0;
-  font-size: 16px;
+  font-size: 20px;
   column-gap: 80px;
 
   p {
@@ -1040,7 +1050,7 @@ $reading_width: 600px;
 .divider {
   width: 100%;
   border-top: 1px solid #d8d8d8;
-  margin: 120px 0;
+  margin: 90px 0;
 }
 
 .divider + .Text {
