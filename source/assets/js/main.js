@@ -1,19 +1,5 @@
 $(function() {
 
-
-  if($('body').hasClass('index')){
-
-    setTimeout(function(){
-      $(".shapeA").addClass('rotated');
-    }, 50)
-
-    setTimeout(function(){
-      $(".shapeB").addClass('rotated');
-    }, 200)
-
-  }
-
-
    var galleryOptions= {
     thumbnail: false,
     counter: true,
@@ -27,6 +13,8 @@ $(function() {
    $gallery.lightGallery(galleryOptions);
 
   $(".img_wrap img").unveil(300, function() {
+
+    console.log('unveiled')
     var $thisImage = $(this),
     thisParent = $(this).parent();
 

@@ -229,17 +229,17 @@ $(function() {
 
       //higher the speed, faster it goes. So higher distance should be lower speed
       if (distance < 100000 && distance > 5000) {
-        speed = .6;
-      } else if (distance < 5000 && distance > 4000) {
-        speed = .65;
-      } else if (distance < 4000 && distance > 3000) {
-        speed = .7;
-      } else if (distance < 3000 && distance > 2000) {
-        speed = .73;
-      } else if (distance < 2000 && distance > 1000) {
-        speed = .77;
-      } else if (distance < 1000) {
         speed = .8;
+      } else if (distance < 5000 && distance > 4000) {
+        speed = .85;
+      } else if (distance < 4000 && distance > 3000) {
+        speed = .9;
+      } else if (distance < 3000 && distance > 2000) {
+        speed = .95;
+      } else if (distance < 2000 && distance > 1000) {
+        speed = 1;
+      } else if (distance < 1000) {
+        speed = 1.05;
       }
       console.log("Distance is: " + distance);
       console.log("Speed is: " + speed);
@@ -309,6 +309,8 @@ $(function() {
       if(typeof feature !== "undefined"){
         if(feature.layer.id == "travels"){
           map.getCanvas().style.cursor = 'pointer';
+        } else {
+          map.getCanvas().style.cursor = 'move';
         }
       }
     });
