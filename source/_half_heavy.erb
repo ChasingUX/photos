@@ -14,14 +14,39 @@
     <section class="half_heavy Wrapper Gallery" style="height: <%= height %>px">
   <% end %>
 <% end %>
-  <a class="img_wrap" href="/images/<%= image_one %>">
-    <% imageURL = image_path image_path + image_one, resize_to: dimensions %>
-    <%= image_tag "blank.png", :data => { :src => imageURL }  %>
-  </a>
-  <a class="img_wrap" href="/images/<%= image_two %>">
-    <% imageURL = image_path image_path + image_two, resize_to: dimensions %>
-    <%= image_tag "blank.png", :data => { :src => imageURL }  %>
-  </a>
+
+  <% if defined?(image_one_is_movie).nil? %>
+    <a class="img_wrap" href="/images/<%= image_one %>">
+      <% imageURL = image_path image_path + image_one, resize_to: dimensions %>
+      <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+    </a>
+  <% else %>
+    <% videoURL = image_path image_path + movies_one %>
+    <% imageURL = image_path image_path + image_one %>
+
+    <div class="video_wrap">
+      <video class="videos" controls playsinline poster="<%= imageURL %>">
+        <source src="<%= videoURL %>" type="video/mp4" size="300">
+      </video>
+    </div>
+  <% end %>
+
+  <% if defined?(image_two_is_movie).nil? %>
+    <a class="img_wrap" href="/images/<%= image_two %>">
+      <% imageURL = image_path image_path + image_two, resize_to: dimensions %>
+      <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+    </a>
+  <% else %>
+    <% videoURL = image_path image_path + movies_two %>
+    <% imageURL = image_path image_path + image_two %>
+
+    <div class="video_wrap">
+      <video class="videos" controls playsinline poster="<%= imageURL %>">
+        <source src="<%= videoURL %>" type="video/mp4" size="300">
+      </video>
+    </div>
+  <% end %>
+
 </section>
 
 <% if defined?(caption).nil? %>

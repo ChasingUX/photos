@@ -10,6 +10,10 @@ folder: nara
 
 <% folder = current_article.data.folder %>
 
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3432.jpg", :image_two => folder + "/IMG_3432.jpg", :image_three => folder + "/IMG_3432.jpg", :caption => "something"}) %>
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3432.jpg", :image_one_is_movie => true, :movies_one => folder + "/IMG_3432.mp4", :image_two => folder + "/IMG_3432.jpg", :image_three => folder + "/IMG_3432.jpg", :image_three_is_movie => true, :movies_three => folder + "/IMG_3432.mp4", :height => 580, :caption => "something"}) %>
 
+<%= partial(:half, :locals => { :image_one => folder + "/IMG_3432.jpg", :image_one_is_movie => true, :movies_one => folder + "/IMG_3432.mp4", :image_two => folder + "/IMG_3432.jpg", :image_two_is_movie => true, :movies_two => folder + "/IMG_3432.mp4", :caption => "two up", :height => 800}) %>
 
+<%= partial(:full, :locals => { :image_one => folder + "/IMG_3432.jpg", :image_one_is_movie => true, :movies_one => folder + "/IMG_3432.mp4", :height => 800, :focus => "bottom"}) %>
+
+<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_3432.jpg", :image_one_is_movie => true, :movies_one => folder + "/IMG_3432.mp4", :image_two => folder + "/IMG_3432.jpg", :image_two_is_movie => true, :movies_two => folder + "/IMG_3432.mp4", :caption => "two up", :height => 700}) %>
