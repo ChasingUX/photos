@@ -10,6 +10,14 @@ folder: nara
 
 <% folder = current_article.data.folder %>
 
+<%= partial(:subheader, :locals => { :copy => "The sounds" }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. " }) %>
+
+<%= partial(:audio, :locals => { :clip => folder + "/buoy.mp3" }) %>
+
+<%= partial(:subheader, :locals => { :copy => "The vids" }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. " }) %>
+
 <%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3432.jpg", :image_one_is_movie => true, :movies_one => folder + "/IMG_3432.mp4", :image_two => folder + "/IMG_3432.jpg", :image_three => folder + "/IMG_3432.jpg", :image_three_is_movie => true, :movies_three => folder + "/IMG_3432.mp4", :height => 580, :caption => "something"}) %>
 
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_3432.jpg", :image_one_is_movie => true, :movies_one => folder + "/IMG_3432.mp4", :image_two => folder + "/IMG_3432.jpg", :image_two_is_movie => true, :movies_two => folder + "/IMG_3432.mp4", :caption => "two up", :height => 800}) %>

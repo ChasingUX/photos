@@ -538,10 +538,29 @@ section:focus {
   }
 }
 
-// .video_wrap {
-//   opacity: 1!important;
-//   transform: translateY(0)!important;
+// .plyr__control--overlaid {
+//   background: #3700ff94 !important;
+
+//   &:hover {
+//     background: #3700ffd1 !important;
+//   }
 // }
+
+.plyr--audio {
+  .plyr__controls {
+    input[type=range] {
+      color: $neon-purple;
+    }
+
+    .plyr--audio .plyr__progress__buffer {
+      color: white!important;
+    }
+  }
+}
+
+.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+  background: $neon-purple!important;
+}
 
 .video_wrap {
   padding: 6px;

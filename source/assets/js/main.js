@@ -5,6 +5,10 @@ $(function() {
     controls: ['play-large', 'play', 'progress', 'mute', 'fullscreen']
   });
 
+  const audioPlayer = Plyr.setup('.audio',{
+    controls: ['play-large', 'play', 'progress', 'mute']
+  });
+
   window.player = player;
 
   var galleryOptions= {
