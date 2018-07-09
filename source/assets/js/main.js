@@ -1,16 +1,27 @@
 $(function() {
 
-   var galleryOptions= {
+  const player = Plyr.setup('.videos',{
+    captions: {active: false},
+    controls: ['play-large', 'play', 'progress', 'mute', 'fullscreen']
+  });
+
+  const audioPlayer = Plyr.setup('.audio',{
+    controls: ['play-large', 'play', 'progress', 'mute']
+  });
+
+  window.player = player;
+
+  var galleryOptions= {
     thumbnail: false,
     counter: true,
     download: false,
     fullScreen: false,
     getCaptionFromTitleOrAlt: false,
     selector: '.img_wrap'
-   }
+  }
 
-   var $gallery = $('#Gallery--wrap');
-   $gallery.lightGallery(galleryOptions);
+  var $gallery = $('#Gallery--wrap');
+  $gallery.lightGallery(galleryOptions);
 
   $(".img_wrap img").unveil(300, function() {
 
