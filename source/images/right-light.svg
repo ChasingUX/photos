@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Tall/Wide-Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-22" transform="translate(-253.000000, -664.000000)" fill="#D9D9D9" fill-rule="nonzero" stroke="#D9D9D9">
+            <g id="Group-8-Copy-3" transform="translate(67.000000, 631.000000)">
+                <g id="Group-21-Copy-2">
+                    <path d="M197.243041,44.4142314 C197.373157,44.544347 197.584116,44.544347 197.714231,44.4142314 C197.844347,44.2841158 197.844347,44.0731567 197.714231,43.9430411 L191.050595,37.2794049 C190.920479,37.1492893 190.70952,37.1492893 190.579405,37.2794049 L183.915769,43.9430411 C183.785653,44.0731567 183.785653,44.2841158 183.915769,44.4142314 C184.045884,44.544347 184.256843,44.544347 184.386959,44.4142314 L190.818147,37.9830435 L197.243041,44.4142314 Z" id="Shape" transform="translate(190.815000, 40.846818) rotate(90.000000) translate(-190.815000, -40.846818) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

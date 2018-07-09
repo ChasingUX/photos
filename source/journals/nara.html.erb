@@ -1,0 +1,15 @@
+---
+title: "Nara"
+date: 2017-06-08
+subheader: "A trip to Japan's ancient capital city"
+header: "nara.jpg"
+location: Nara
+country: Japan
+folder: nara
+---
+
+<% folder = current_article.data.folder %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3432.jpg", :image_two => folder + "/IMG_3432.jpg", :image_three => folder + "/IMG_3432.jpg", :caption => "something"}) %>
+
+

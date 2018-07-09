@@ -2,269 +2,331 @@
 pageable: false
 ---
 
-<div id="map"></div>
-<a class="back" href="#"></a>
 
-<div class="cardRail_left cardRail">
-  <div class="mainCard card">
-    <header>
-      <h1>Our Voyages</h1>
-      <span></span>
-      <p>Join us on our journey to the far ends of the world. We’re capturing our favorite moments & stories and sharing them here.</p>
-      <div class="signature"></div>
+<div class="Wrapper">
+
+  <div class="chrome">
+    <header class="intro">
+      <h1>The voyage</h1>  <p>Join us on our journey to the far ends of the world. We’re capturing our favorite moments & stories and sharing them here.</p>
     </header>
 
-    <% page_articles.each_with_index do |article, i| %>
-    <% link_to article, class: "link" do %>
-    <div class="inner">
-      <h3><%= article.title %></h3>
-    </div>
-    <% end %>
-
-    <% end %>
-
     <ul class="voyages">
+      <div class="loader">
+        <%= image_tag 'three-dots.svg' %>
+      </div>
       <li class="mexico">
         <a href="#">
-          <h3>Mexico</h3>
-          <p>
-            <span>1 stops</span> ·
-            <span>July, 2017</span>
-          </p>
           <div class="flag flag-mexico"></div>
+          <h3>Mexico</h3>
         </a>
-
-        <ul class="stops">
-          <li class="mexico_city">
-            <h4>Mexico City</h4>
-            <span>12 days</span>
-            <a class="story" href="/voyage/mexico-html/"><p>Read the Mexico City story</p></a>
-          </li>
-        </ul>
       </li>
       <li class="japan">
         <a href="#">
-          <h3>Japan</h3>
-          <p>
-            <span>7 stops</span> ·
-            <span>May, 2018</span>
-          </p>
           <div class="flag flag-japan"></div>
+          <h3>Japan</h3>
         </a>
-
-        <ul class="stops">
-          <li class="kyoto">
-            <h4>Kyoto</h4>
-            <span>6 days</span>
-          </li>
-
-          <li class="nara">
-            <h4>Nara</h4>
-            <span>3 days</span>
-          </li>
-
-          <li class="mt_koyasan">
-            <h4>Mt. Koyasan</h4>
-            <span>2 days</span>
-          </li>
-
-          <li class="yoshino">
-            <h4>Yoshino</h4>
-            <span>2 days</span>
-          </li>
-          <li class="osaka">
-            <h4>Osaka</h4>
-            <span>5 days</span>
-          </li>
-          <li class="nozawa-onsen">
-            <h4>Nozawa Onsen</h4>
-            <span>5 days</span>
-          </li>
-          <li class="tokyo">
-            <h4>Tokyo</h4>
-            <span>9 days</span>
-          </li>
-        </ul>
       </li>
-      <li class="thailand">
+
+      <li class="southafrica">
         <a href="#">
-          <h3>Thailand</h3>
-          <p>
-            <span>7 stops</span> ·
-            <span>June, 2018</span>
-          </p>
-          <div class="flag flag-thailand"></div>
+          <div class="flag flag-southafrica"></div>
+          <h3>S. Africa</h3>
         </a>
-        <ul class="stops">
-          <li class="chiang_mai">
-            <h4>Chiang Mai</h4>
-            <span>8 days</span>
-          </li>
-          <li class="doi_inthanon">
-            <h4>Doi Inthanon</h4>
-            <span>1 day</span>
-          </li>
-          <li class="mae_sariang">
-            <h4>Mae Sariang</h4>
-            <span>2 days</span>
-          </li>
-          <li class="mae_hong_son">
-            <h4>Mae Hong Son</h4>
-            <span>2 days</span>
-          </li>
-          <li class="pai">
-            <h4>Pai</h4>
-            <span>3 days</span>
-          </li>
-          <li class="ko_samui">
-            <h4>Ko Samui</h4>
-            <span>5 days</span>
-          </li>
-          <li class="bangkok">
-            <h4>Bangkok</h4>
-            <span>5 days</span>
-          </li>
-        </ul>
       </li>
+
       <li class="indonesia">
         <a href="#">
-          <h3>Indonesia</h3>
-          <p>
-            <span>2 stops</span> ·
-            <span>July, 2018</span>
-          </p>
           <div class="flag flag-indonesia"></div>
+          <h3>Indonesia</h3>
         </a>
-        <ul class="stops">
-          <li>
-            <h4>Bali - Canggu</h4>
-            <span>20 days</span>
-          </li>
-          <li>
-            <h4>Bali - Ubud</h4>
-            <span>10 days</span>
-          </li>
-        </ul>
       </li>
-      <li class="south_africa">
-        <a href="#">
-          <h3>South Africa</h3>
-          <p>
-            <span>2 stops</span> ·
-            <span>September, 2018</span>
-          </p>
-          <div class="flag flag-south_africa"></div>
-        </a>
-        <ul class="stops">
-          <li class="cape_town">
-            <h4>Cape Town</h4>
-            <span>10 days</span>
-          </li>
 
-          <li class="johannesburg">
-            <h4>Johannesburg</h4>
-            <span>3 days</span>
-          </li>
-        </ul>
+      <li class="thailand">
+        <a href="#">
+          <div class="flag flag-thailand"></div>
+          <h3>Thailand</h3>
+        </a>
       </li>
 
       <li class="zimbabwe">
         <a href="#">
-          <h3>Zimbabwe</h3>
-          <p>
-            <span>2 stops</span> ·
-            <span>September, 2018</span>
-          </p>
           <div class="flag flag-zimbabwe"></div>
+          <h3>Zimbabwe</h3>
         </a>
-        <ul class="stops">
-          <li class="victoria_falls">
-            <h4>Victoria Falls</h4>
-            <span>2 days</span>
-          </li>
-
-          <li class="somalisa_camp">
-            <h4>Somalisa Camp</h4>
-            <span>5 days</span>
-          </li>
-        </ul>
       </li>
 
       <li class="morocco">
         <a href="#">
-          <h3>Morocco</h3>
-          <p>
-            <span>3 stops</span> ·
-            <span>October, 2018</span>
-          </p>
           <div class="flag flag-morocco"></div>
+          <h3>Morocco</h3>
         </a>
-        <ul class="stops">
-          <li class="marrakesh">
-            <h4>Marrakesh</h4>
-            <span>15 days</span>
-          </li>
-          <li class="fes">
-            <h4>Fes</h4>
-            <span>8 days</span>
-          </li>
-          <li class="tangier">
-            <h4>Tangier</h4>
-            <span>7 days</span>
-          </li>
-        </ul>
       </li>
 
       <li class="israel">
         <a href="#">
-          <h3>Israel</h3>
-          <p>
-            <span>1 stop</span> ·
-            <span>November, 2018</span>
-          </p>
           <div class="flag flag-israel"></div>
+          <h3>Israel</h3>
         </a>
-        <ul class="stops">
-          <li class="tel_aviv">
-            <h4>Tel Aviv</h4>
-            <span>15 days</span>
-          </li>
+      </li>
+
+      <li class="singapore">
+        <a href="#">
+          <div class="flag flag-singapore"></div>
+          <h3>Singapore</h3>
+        </a>
+      </li>
+
+      <li class="usa">
+        <a href="#">
+          <div class="flag flag-usa"></div>
+          <h3>USA</h3>
+        </a>
       </li>
     </ul>
+
+    <div class="stops">
+      <div class="empty">
+        <h4>Now sure what to do?</h4>
+        <p>There are two ways to discover our travel stories:</p>
+        <ul class="options">
+          <li class="country"><span></span><p>Click on a country above</p></li>
+          <li class="map"><span></span><p>Zoom and click on the map’s markers</p></li>
+        </ul>
+      </div>
+
+      <h3>Stories from <span></span></h3>
+      <ul class="mexico">
+        <li class="mexico_city">
+          <a href="/voyage/mexico-html/">
+            <span>June, 2016</span>
+            <h4>Mexico City</h4>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="japan">
+        <li class="kyoto">
+          <a href="#">
+            <span>May, 2018</span>
+            <h4>Kyoto</h4>
+          </a>
+        </li>
+        <li class="nara">
+          <a href="#">
+            <span>May, 2018</span>
+            <h4>Nara</h4>
+          </a>
+        </li>
+        <li class="mt_koyasan">
+          <a href="#">
+            <span>May, 2018</span>
+            <h4>Mt. Koyasan</h4>
+          </a>
+        </li>
+
+        <li class="yoshino">
+          <a href="#">
+            <span>May, 2018</span>
+            <h4>Yoshino</h4>
+          </a>
+        </li>
+        <li class="osaka">
+          <a href="#">
+            <span>May, 2018</span>
+            <h4>Osaka</h4>
+          </a>
+        </li>
+        <li class="nozawa">
+          <a href="#">
+            <span>May, 2018</span>
+            <h4>Nozawa</h4>
+          </a>
+        </li>
+        <li class="tokyo">
+          <a href="#">
+            <span>May, 2018</span>
+            <h4>Tokyo</h4>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="southafrica">
+        <li class="cape_town">
+          <a href="#">
+            <span>August, 2018</span>
+            <h4>Cape Town</h4>
+          </a>
+        </li>
+
+        <li class="johannesburg">
+          <a href="#">
+            <span>August, 2018</span>
+            <h4>Johannesburg</h4>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="indonesia">
+        <li>
+          <a href="#">
+            <span>July, 2018</span>
+            <h4>Bali - Canggu</h4>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>July, 2018</span>
+            <h4>Bali - Ubud</h4>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="thailand">
+        <li class="chiang_mai">
+          <a href="#">
+            <span>June, 2018</span>
+            <h4>Chiang Mai</h4>
+          </a>
+        </li>
+        <li class="doi_inthanon">
+          <a href="#">
+            <span>June, 2018</span>
+            <h4>Doi Inthanon</h4>
+          </a>
+        </li>
+        <li class="mae_sariang">
+          <a href="#">
+            <span>June, 2018</span>
+            <h4>Mae Sariang</h4>
+          </a>
+        </li>
+        <li class="mae_hong_son">
+          <a href="#">
+            <span>June, 2018</span>
+            <h4>Mae Hong Son</h4>
+          </a>
+        </li>
+        <li class="pai">
+          <a href="#">
+            <span>June, 2018</span>
+            <h4>Pai</h4>
+          </a>
+        </li>
+        <li class="ko_samui">
+          <a href="#">
+            <span>June, 2018</span>
+            <h4>Ko Samui</h4>
+          </a>
+        </li>
+        <li class="bangkok">
+          <a href="#">
+            <span>June, 2018</span>
+            <h4>Bangkok</h4>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="zimbabwe">
+        <li class="victoria_falls">
+          <a href="#">
+            <span>August, 2018</span>
+            <h4>Victoria Falls</h4>
+          </a>
+        </li>
+
+        <li class="somalisa_camp">
+          <a href="#">
+            <span>August, 2018</span>
+            <h4>Somalisa Camp</h4>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="morocco">
+        <li class="marrakesh">
+          <a href="#">
+            <span>September, 2018</span>
+            <h4>Marrakesh</h4>
+          </a>
+        </li>
+        <li class="fes">
+          <a href="#">
+            <span>September, 2018</span>
+            <h4>Fes</h4>
+          </a>
+        </li>
+        <li class="tangier">
+          <a href="#">
+            <span>September, 2018</span>
+            <h4>Tangier</h4>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="israel">
+        <li class="tel_aviv">
+          <a href="#">
+            <span>October, 2018</span>
+            <h4>Tel Aviv</h4>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="singapore">
+        <li class="singapore">
+          <a href="#">
+            <span>August, 2018</span>
+            <h4>Singapore</h4>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="usa">
+        <li class="zion">
+          <a href="#">
+            <span>September, 2018</span>
+            <h4>Zion National Park</h4>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="cardRail_right cardRail">
+
+    <div class="introCard card">
+      <span></span>
+      <h2>Greetings</h2>
+      <p>We're Madi & Jesse. We call San Francisco home, but are currently eating and exploring our way through the world. Please join us!</p>
+      <div class="signature"></div>
+    </div>
+
+    <div class="locationCard card">
+      <h4>CURRENT LOCATION</h4>
+      <h3>Kyoto, Japan</h3>
+      <div class="sonar">
+         <div class="dot"></div>
+         <div class="inner"></div>
+         <div class="outer"></div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <ul class="cards">
+  <%# page_articles.each_with_index do |article, i| %>
+    <li>
+      <%# link_to article, class: "link" do %>
+      <div class="inner">
+        <h3><%#= article.title %></h3>
+        <%# if article.data.subheader %>
+          <p><%#= article.data.subheader %></p>
+        <%# end %>
+      </div>
+      <%# end %>
+    </li>
+  <%# end %>
+  </ul> -->
+  <div class="mapWrap">
+    <div id="map"></div>
+    <a class="back" href="#">Back to world view</a>
   </div>
 </div>
-
-<!-- <div class="cardRail_right cardRail">
-
-  <div class="introCard card">
-    <span></span>
-    <h2>Greetings</h2>
-    <p>We're Madi & Jesse. We call San Francisco home, but are currently eating and exploring our way through the world. Please join us!</p>
-    <div class="signature"></div>
-  </div>
-
-  <div class="locationCard card">
-    <h4>CURRENT LOCATION</h4>
-    <h3>Kyoto, Japan</h3>
-    <div class="sonar">
-       <div class="dot"></div>
-       <div class="inner"></div>
-       <div class="outer"></div>
-    </div>
-  </div>
-</div> -->
-
-<!-- <ul class="cards">
-<%# page_articles.each_with_index do |article, i| %>
-  <li>
-    <%# link_to article, class: "link" do %>
-    <div class="inner">
-      <h3><%#= article.title %></h3>
-      <%# if article.data.subheader %>
-        <p><%#= article.data.subheader %></p>
-      <%# end %>
-    </div>
-    <%# end %>
-  </li>
-<%# end %>
-</ul> -->

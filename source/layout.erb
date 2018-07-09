@@ -7,16 +7,19 @@
 
     <title>Voyages <%= current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-    <%= stylesheet_link_tag 'normalize', 'lightgallery', 'style', 'media-queries', 'dropzone' %>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400|Rubik:700" rel="stylesheet">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-    <!--<script src="/assets/js/jquery-1.8.3.min.js"></script> -->
+    <%= stylesheet_link_tag 'normalize', 'lightgallery', 'style', 'media-queries'%>
+
+    <% if page_classes.include? "uploader" %>
+      <%= stylesheet_link_tag 'dropzone' %>
+    <% end %>
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400|Rubik:700" rel="stylesheet"> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
-    <script src="/assets/js/jquery-1.8.3.min.js"></script>
+    <!-- <script src="/assets/js/jquery-1.8.3.min.js"></script> -->
 
     <% if page_classes.include? "uploader" %>
       <script src="/assets/js/dropzone.js"></script>
@@ -24,7 +27,7 @@
       <script src="/assets/js/cookie.js"></script>
       <script src="/assets/js/highlight.pack.js"></script>
       <script src="/assets/js/uploader.js"></script>
-    <% else %>
+    <% elsif page_classes.include? "voyage" %>
       <script src="/assets/js/unveil.js"></script>
       <script src="/assets/js/jquery.waypoints.js"></script>
       <script src="/assets/js/lightgallery.js"></script>
@@ -32,10 +35,12 @@
       <script src="/assets/js/lg-thumbnail.js"></script>
       <script src="/assets/js/lg-fullscreen.js"></script>
       <script src="/assets/js/main.js"></script>
-      <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js"></script>
-      <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css" rel="stylesheet" />
+    <% elsif page_classes.include? "index" %>
+      <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js"></script>
+      <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css" rel="stylesheet" />
       <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js" charset="utf-8"></script>
       <script src="/assets/js/maps.js"></script>
+
     <% end %>
   </head>
   <body class="<%= page_classes %>">

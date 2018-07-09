@@ -1,13 +1,29 @@
 $(function() {
   if($('body').hasClass('index')){
 
+    var defaultZoom = 1.4;
+    var mapLoaded = false;
+    var countries;
+    var cities;
+    var popup;
+    var countryDictionary = [];
+    var cityDictionary = [];
+    var startingPoint = [10,20];
+    var oldCenter;
+    var chromeHeight = $('.chrome').outerHeight(true);
+    var popupOffsets = {
+     'top': [0, 24],
+     'bottom': [0, -24]
+    };
+
     mapboxgl.accessToken = 'pk.eyJ1IjoiamJpcmQxMTExIiwiYSI6ImNpazVwYzdhNzAwN3BpZm0yZHhhOWp6c3IifQ.6EQjuObxFgOTrafXG9Juig';
-    var startingPoint = [55,10];
+
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/jbird1111/cjg5rz0rf7kgj2soc21nvsgib',
       center: startingPoint,
-      zoom: 2.4
+      zoom: defaultZoom,
+      minZoom: defaultZoom
     });
 
     var nav = new mapboxgl.NavigationControl({
@@ -15,17 +31,84 @@ $(function() {
     });
 
     map.addControl(nav, 'top-right');
+    map.on('load', onMapLoad)
 
-    var popup = new mapboxgl.Popup({ offset: [0, -20] })
-    var oldCenter;
+    function onMapLoad(){
+      console.log('map data loaded')
+      mapLoaded = true;
+
+      $('.loader').fadeOut(300);
+
+      setTimeout(function(){
+        $('.loader').remove();
+      }, 500)
+
+      countries = map.querySourceFeatures('composite', {sourceLayer: 'Countries'})
+      cities = map.querySourceFeatures('composite', {sourceLayer: 'Travels'})
+
+      $.each(countries, function (e) {
+        var countryName = this.properties.name,
+            countryCoords = this.geometry.coordinates;
+
+        countryDictionary.push({
+          key:   countryName,
+          value: countryCoords
+        });
+      });
+
+      $.each(cities, function (e) {
+        var cityName = this.properties.name,
+            cityCoords = this.geometry.coordinates;
+
+        cityDictionary.push({
+          key:   cityName,
+          value: cityCoords
+        });
+      });
+    }
+
+    function flyToClickedLocation(location) {
+      oldCenter = getLatLng();
+
+      var coordinates,
+          zoom,
+          matchFound = false;
+
+      if(location =='Japan'){
+        var zoom = 5.5;
+      } else if(location =='USA'){
+        zoom = 3.5;
+      } else if(location =='Thailand'){
+        zoom = 4.5;
+      } else if(location =='Israel'){
+        zoom = 6;
+      } else if(location =='Singapore'){
+        zoom = 9;
+      } else {
+        zoom = 5;
+      }
+
+      $.each(countryDictionary, function (e) {
+        if(this.key == location) {
+          matchFound = true;
+          coordinates = this.value;
+        }
+      })
+
+      if(matchFound = true) {
+        flySpeedBasedOnDistance(oldCenter, coordinates, zoom)
+      }
+    }
 
     function collapseOthers(justChosen){
        // go through all the items that are not clicked, and if expanded, collapse
       $(".voyages li a").not(justChosen).each(function(){
         if($(this).hasClass('border')){
           $(this).toggleClass('border');
-          $(this).next('.stops').toggleClass('open');
+          $('.stops').toggleClass('open');
+          $('.stops .open').toggleClass('open');
           $(this).parent('li').toggleClass('expanded');
+          $('.mapWrap').toggleClass('panel_open');
         }
       })
     }
@@ -35,7 +118,20 @@ $(function() {
 
       targetObj.toggleClass('border');
       targetObj.parent('li').toggleClass('expanded');
-      targetObj.next('.stops').toggleClass('open');
+
+      var clickedClasses = targetObj.parent().attr('class'),
+          clickedCountry = clickedClasses.replace(' expanded','');
+
+      $('.stops').toggleClass('open');
+      $('.stops h3 span').text(humanize(clickedCountry));
+      $('.stops').find('.' + clickedCountry).toggleClass('open');
+      $('.mapWrap').toggleClass('panel_open');
+
+      if ($(window).width() < 581) {
+        $('html, body').animate({
+          scrollTop: $(".stops").offset().top
+        }, 600);
+      }
     }
 
     function getLatLng(){
@@ -55,17 +151,10 @@ $(function() {
       return frags.join(' ');
     }
 
-    function fly(feature, speed){
-      map.flyTo({
-        center: feature.geometry.coordinates,
-        speed: speed,
-        curve: 1.2,
-        zoom: 7,
-      });
-    }
-
     function tooltip(feature){
-      popup.remove();
+      if(typeof popup !== "undefined"){
+        popup.remove();
+      }
 
       var location = feature.properties.name,
         flag = feature.properties.flag;
@@ -80,22 +169,17 @@ $(function() {
           story ='';
       }
 
-      if(feature.layer.id == 'travel-stories'){
-        story = '<div><a href="/voyage/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
-      } else {
-        story = '<div>The ' + feature.properties.name + ' story is coming soon!</div>'
-      }
+      story = '<div><a href="/voyage/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
 
-      popup.setLngLat(feature.geometry.coordinates)
-        .setHTML(html + story)
+      popup = new mapboxgl.Popup({offset: popupOffsets})
         .setLngLat(feature.geometry.coordinates)
+        .setHTML(html + story)
         .addTo(map);
     }
 
     function highlightCityFromMap(feature){
       //highlight the specific location in the panel for a moment
       var location = feature.properties.name.replace(/ /g,"_").replace(/\./g, '').toLowerCase();
-      console.log("name: " + location)
 
       $(".voyages .expanded li").each(function(){
         var thisClass = $(this).attr('class');
@@ -126,51 +210,96 @@ $(function() {
       highlightCityFromMap(feature);
     }
 
-    function flySpeedBasedOnDistance(oldCenter, feature){
+    function fly(coordinates, speed, zoom){
+      map.flyTo({
+        center: coordinates,
+        speed: speed,
+        curve: 1.2,
+        zoom: zoom,
+      });
+    }
+
+    function flySpeedBasedOnDistance(oldCenter, coordinates, zoom){
       var from = turf.point(oldCenter),
-       to = turf.point(feature.geometry.coordinates),
+       to = turf.point(coordinates),
        options = {units: 'miles'},
        distance = turf.distance(from, to),
        speed;
 
-      if (distance < 10000 && distance > 5000) {
-        speed = 1;
-      } else if (distance < 5000 && distance > 4000) {
-        speed = .7;
-      } else if (distance < 4000 && distance > 3000) {
-        speed = .5;
-      } else if (distance < 3000 && distance > 2000) {
-        speed = .45;
-      } else if (distance < 2000 && distance > 1000) {
-        speed = .4;
-      } else if (distance < 1000) {
-        speed = .3;
-      }
 
+      //higher the speed, faster it goes. So higher distance should be lower speed
+      if (distance < 100000 && distance > 5000) {
+        speed = .8;
+      } else if (distance < 5000 && distance > 4000) {
+        speed = .85;
+      } else if (distance < 4000 && distance > 3000) {
+        speed = .9;
+      } else if (distance < 3000 && distance > 2000) {
+        speed = .95;
+      } else if (distance < 2000 && distance > 1000) {
+        speed = 1;
+      } else if (distance < 1000) {
+        speed = 1.05;
+      }
       console.log("Distance is: " + distance);
       console.log("Speed is: " + speed);
+      console.log("Zoom is: " + zoom);
 
-      fly(feature, speed);
+      fly(coordinates, speed, zoom);
     }
 
     function backToDefault(){
-      map.flyTo({
-        center: startingPoint,
-        speed: .5,
-        zoom: 2.4,
-      });
+      oldCenter = getLatLng();
 
+      if(typeof popup !== "undefined"){
+        popup.remove();
+      }
+
+      flySpeedBasedOnDistance(oldCenter, startingPoint, defaultZoom)
       removeHighlightedCity();
-      popup.remove();
-
       collapseOthers();
     }
 
     // when we click on menu, expend item, collapse others
-    $(".voyages li a").on('click', function(){
+    $(".voyages li a").on('click', function(e){
+      var location = $(this).find('h3').text();
+
+      if(typeof popup !== "undefined"){
+        popup.remove();
+      }
+
       collapseOthers(this);
       expandSelected(this);
-    })
+      flyToClickedLocation(location);
+
+      e.preventDefault();
+    });
+
+    $('.stops ul:not(.options) li').mouseenter(function() {
+      var cityName = $(this).find('h4').text();
+      var date = $(this).find('span').text();
+      var link = $(this).find('a').attr('href');
+      var countryName = $(this).parent('ul').attr('class').split(' ')[0];
+      var coordinates;
+
+      $.each(cityDictionary, function (e) {
+        if(this.key == cityName) {
+          coordinates = this.value;
+
+          if(typeof popup !== "undefined"){
+            popup.remove();
+          }
+
+          var html = '<h3>' + this.key + '</h3><span class="flag flag-' + countryName + '"></span><p>' + countryName.charAt(0).toUpperCase() + countryName.substr(1) + ' · ' + date + '</p>'
+          var story = '<div><a href="/voyage/' + link + '/">Read the ' + this.key + ' story</a></div>';
+
+          popup = new mapboxgl.Popup({offset: popupOffsets})
+            .setLngLat(coordinates)
+            .setHTML(html + story)
+            .addTo(map);
+        }
+      })
+    });
 
     //show cursors when hovering over a marker
     map.on('mousemove', function (e) {
@@ -178,45 +307,59 @@ $(function() {
           feature = features[0];
 
       if(typeof feature !== "undefined"){
-        if(feature.layer.id == "travels" || feature.layer.id == "travel-stories"){
+        if(feature.layer.id == "travels"){
           map.getCanvas().style.cursor = 'pointer';
         } else {
-          map.getCanvas().style.cursor = '';
+          map.getCanvas().style.cursor = 'move';
         }
       }
     });
 
     // when we click on a marker
     map.on('click', function(e) {
+      var zoom = 7;
       oldCenter = getLatLng();
-      //popup.remove();
+
       removeHighlightedCity();
 
       var features = map.queryRenderedFeatures(e.point, {
-        layers: ['travels', 'travel-stories']
+        layers: ['travels']
       }),
       feature = features[0];
 
-      if (!features.length) {
-        return;
+      if(typeof feature !== "undefined") {
+        var coordinates = feature.geometry.coordinates;
+
+        //disable scroll
+        map.scrollZoom.disable();
+
+        expandPanelFromMarker(feature);
+        flySpeedBasedOnDistance(oldCenter, coordinates, zoom)
+        tooltip(feature)
       }
 
-      expandPanelFromMarker(feature);
-      flySpeedBasedOnDistance(oldCenter, feature)
-      tooltip(feature)
-
-      // at the end of the zoom, show the tooltip
-      // map.once('moveend', function(e){
-      //   tooltip(feature)
-      // });
+      // when zooming has ended
+      map.once('moveend', function(e){
+        //turn scrolling back on
+        map.scrollZoom.enable();
+      });
     });
 
     //when a map is done moving or zooming, store the center point
     map.on('moveend', function(e){
        oldCenter = getLatLng();
+       var currentZoom = map.getZoom();
+
+       if (currentZoom == defaultZoom) {
+        console.log("original zoom level")
+        $('.back').fadeOut(100);
+       } else {
+        $('.back').fadeIn(300);
+       }
     });
 
     $(".back").on('click', function(){
+      $('.back').fadeOut(100);
       backToDefault();
     })
   }

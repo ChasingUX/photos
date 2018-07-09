@@ -7,12 +7,6 @@
     padding: 0 40px;
   }
 
-  .index {
-    .Wrapper {
-      padding: 0 60px;
-    }
-  }
-
   footer {
     .Wrapper {
       padding: 40px;
@@ -92,12 +86,6 @@
     }
   }
 
-  .index {
-    .Wrapper {
-      padding: 0 30px;
-    }
-  }
-
   footer {
     .Wrapper {
       padding: 20px 10px;
@@ -165,9 +153,11 @@
 
 
       span {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 13px;
+        font-size: 14px;
         margin-top: 4px;
+        font-family: 'apercu_light';
+        letter-spacing: .2px;
+
         &:before {
           display: none;
         }
@@ -217,11 +207,12 @@
   }
 
   h2 {
-    font-size: 36px;
+    font-size: 33px;
+    line-height: 1.2;
   }
 
   h3 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .divider {
@@ -257,7 +248,7 @@
 
     &.Text {
       padding: 0 23px;
-      font-size: 16px;
+      font-size: 18px;
       margin-bottom: 30px;
       margin-top: 30px;
     }
