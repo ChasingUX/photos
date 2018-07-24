@@ -9,13 +9,13 @@ folder: mexico
 
 <% folder = current_article.data.folder %>
 <%= partial(:headline, :locals => { :copy => "We decided to visit Mexico City" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst. Curabitur viverra pharetra luctus. Maecenas aliquam magna non metus tempor, non blandit lacus sollicitudin. Fusce commodo sed dolor eu tristique." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Morgan and Chris were living there (and throughout Central America) for the summer; painting, skating and chilling. They were looking for company. We were intrigued. Molly wanted in. So the 5 of us rendezvoused in CDMX in July of 2017." }) %>
 
 <div class="divider"></div>
 
 
 <%= partial(:subheader, :locals => { :copy => "La Condesa & Roma Norte" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We stayed in La Condesa and Roma Norte and wouldn’t have it any other way. You can step out your door and find a beautiful restaurant, a taco stand and a coffee shop within a block - or you can just walk around in awe of the greenery." }) %>
 
 <%= partial(:quad, :locals => { :image_one => folder + "/DSC01764.jpg", :image_two => folder + "/IMG_1714.jpg", :image_three => folder + "/DSC01752.jpg", :image_four => folder + "/DSC01765.jpg", :caption => "Deep purples and greens"}) %>
 
@@ -25,29 +25,28 @@ folder: mexico
 
 
 <%= partial(:subheader, :locals => { :copy => "Street Snacks" }) %>
-<%= partial(:text_two_col, :locals => { :col_one_copy => "Frontmatter must come at the very top of the template and be separated from the rest of the content by a leading and trailing triple hyphen ---. Inside this block, you can create new data which will be available in the template using the current_page.data hash.", :col_two_copy =>  "My Title becomes current_page.data.title. The layout setting will pass directly to Middleman and change which layout is being used for rendering. You can also set ignored, directory_index, and some other page properties in this way."}) %>
+<%= partial(:text_one_col, :locals => { :copy => "Street food is the bread and butter of Mexico City. 20 minutes after landing, we got tacos and a coke from a street vendor - before even stepping foot in our Airbnb. " }) %>
 
 
 
 <%= partial(:quad, :locals => { :image_one => folder + "/DSC02088.jpg", :image_two => folder + "/DSC02206.jpg", :image_three => folder + "/DSC02200.jpg", :image_four => folder + "/DSC02122.jpg", :caption => "Amarillo en las calles"}) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst. Curabitur viverra pharetra luctus. Maecenas aliquam magna non metus tempor, non blandit lacus sollicitudin. Fusce commodo sed dolor eu tristique." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Outside of the all-important tacos, pasteles (pastries), fresh fruit, coconuts and flans were mainstays. " }) %>
 <%= partial(:triplet, :locals => { :image_one => folder + "/DSC01708.jpg", :image_two => folder + "/DSC01709.jpg", :image_three => folder + "/DSC01712.jpg", :caption => "Not pictured: the plastic bag of jugos de coco"}) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst." }) %>
 
 <%= partial(:subheader, :locals => { :copy => "Jungle Streets" }) %>
 
+<%= partial(:text_one_col, :locals => { :copy => "The overarching vibe of Mexico City is jungle-y. There’s more green hanging plants and large palms than any other city we’ve seen. This made for great outdoor verandas and curbside cafe seating. The restaurants felt hidden amongst the trees." }) %>
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC01514.jpg", :image_two => folder + "/DSC01530.jpg"}) %>
 
 
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst." }) %>
 
 <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/DSC01542.jpg", :image_two => folder + "/DSC01549.jpg", :caption => "mmkay"}) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "Something about the animals and how it made jesse feel" }) %>
+<%= partial(:text_one_col, :locals => { :copy => "The dogs in Mexico City deserve an honorable mention. Unbelievably well behaved and gorgeous breeds of all shapes and sizes. Jesse was in doggy heaven. " }) %>
 
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/DSC01886.jpg", :height => 900, :focus => "bottom" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "The Parque had more of a Central Park vibe, but was a lovely place to wander around and escape the city for a bit." }) %>
 <%#= partial(:half, :locals => { :image_one => folder + "/DSC02076b.jpg", :image_two => folder + "/DSC02079.jpg"}) %>
 
 
@@ -57,24 +56,24 @@ folder: mexico
 <div class="divider"></div>
 
 <%= partial(:subheader, :locals => { :copy => "Oh, the markets" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Unlike most vacations, the markets that cater to tourists in Mexico City were so worth the visit. There was certainly a good chunk of crafts that were repeated in every stall, but there were also many artisans creating unique and quality crafts." }) %>
 <%= partial(:triplet, :locals => { :image_one => folder + "/DSC01780.jpg", :image_two => folder + "/DSC01794.jpg", :image_three => folder + "/DSC01772.jpg", :height => 630}) %>
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC01793.jpg", :image_two => folder + "/cover.jpg", :caption => "Skull party"}) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat. Vivamus libero lorem, vulputate tincidunt mauris hendrerit, dapibus imperdiet risus. Vestibulum auctor nibh nec vulputate dignissim. Integer at fringilla urna. In hac habitasse platea dictumst." }) %>
-<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_0074.jpg", :image_two => folder + "/DSC01785.jpg", :caption => "Skull party"}) %>
+<%= partial(:text_one_col, :locals => { :copy => "We walked away with wooden spoons, woven kitchen towels, a stone mortar and pestle and of course, one of those painted skulls everyone else buys." }) %>
+<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_0074.jpg", :image_two => folder + "/DSC01785.jpg", :caption => "Market mamas"}) %>
 
 <div class="divider"></div>
 
 <%= partial(:subheader, :locals => { :copy => "Cabrera 7" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
-<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/DSC01650.jpg", :image_two => folder + "/kitchen.jpg", :caption => "Gorgeous kitchen", :height => 630}) %>
+<%= partial(:text_one_col, :locals => { :copy => "Our favorite spot of the trip was Cabrera 7, we had to go back a few times. We experienced fish tacos that come close to godliness, great tequila and a wonderful hanging-garden, bright walled atmosphere. The greenery was incredible and the margaritas were flowin’!" }) %>
+<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/DSC01650.jpg", :image_two => folder + "/kitchen.jpg", :caption => "Gorgeous kitchen, open air, muraled walls and hanging plants galore.", :height => 630}) %>
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC01667.jpg", :image_two => folder + "/DSC01676.jpg"}) %>
 <%= partial(:triplet, :locals => { :image_one => folder + "/DSC01668.jpg", :image_two => folder + "/DSC01706.jpg", :image_three => folder + "/DSC01672.jpg"}) %>
 
 <div class="divider"></div>
 
 <%= partial(:subheader, :locals => { :copy => "Pyramid of the Sun" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "A $40, 1 hour cab took us from downtown to Teotihuacan. The Pyramid of the Sun is the 3rd largest pyramid in the world and was constructed in 200 CE. It felt a bit eerie walking through a city, one that used to be the epicenter of Mesoamerica and home to hundreds of thousands of people, that was now just rubble. The “Avenue of the Dead” connected us to the Pyramid of the Moon, said to hold the feminine energy of creation (as opposed to the sun, which is traditionally masculine). The heavy tourism of the whole site took away from the spiritual symbolism - but hey, it was nice to get out of the city for a day." }) %>
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/DSC01919wide.jpg"}) %>
 <%= partial(:half, :locals => { :image_one => folder + "/DSC01947.jpg", :image_two => folder + "/DSC01901large.jpg"}) %>
 <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/DSC01898.jpg", :image_two => folder + "/IMG_0166.jpg", :height => 560}) %>
@@ -83,17 +82,17 @@ folder: mexico
 <div class="divider"></div>
 
 <%= partial(:subheader, :locals => { :copy => "Airbnb Hangin" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We’re strong believers in investing in a good place to lay your head (especially at the end of a long travel day). We stayed in 3 awesome Airbnbs in 3 different neighborhoods. They featured a few awesome rooftops to drink margs on, comfy couches and above all, powerful A/C systems." }) %>
 <%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/DSC02050.jpg", :image_two => folder + "/DSC01506.jpg"}) %>
 <%= partial(:quad, :locals => { :image_one => folder + "/DSC01882.jpg", :image_two => folder + "/DSC02065.jpg", :image_three => folder + "/DSC02068.jpg", :image_four => folder + "/DSC02072.jpg", :caption => "Mescal all day", :height => 300}) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We spent a rainy afternoon picking up (super affordable!) fresh fish from the market and making some ceviche - and we successfully didn’t give ourselves food poisoning! The bottle of mezcal helped wash it all down :)" }) %>
 <%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_1746.jpg", :image_two => folder + "/DSC02056.jpg"}) %>
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/DSC01874.jpg", :height => 700, :focus => "bottom"}) %>
 
 <div class="divider"></div>
 
 <%= partial(:subheader, :locals => { :copy => "The Churros!" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We waited in the 30 minute lines, then we waited again the next day, and one more time for good measure. Il Moro is the churro godfather of Mexico City and the Mexican hot chocolate pairings were too good to indulge in just once." }) %>
 
 <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/DSC01824.jpg", :image_two => folder + "/DSC01835.jpg"}) %>
 
@@ -102,15 +101,14 @@ folder: mexico
 <div class="divider"></div>
 
 <%= partial(:subheader, :locals => { :copy => "Frida Kahlo Museum" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We all see Frida Kahlo as a highly commercialized modern-day feminist icon. We started the day skeptical, like it might just be another tourist attraction to check off the list.  But this was actually one of the most memorable experiences of Mexico City. We left feeling connected to her story and spirit." }) %>
 
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/DSC02113.jpg", :caption => "Frida street art on the way over", :height => 800}) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Being in the actual space this artist created in was so special, and unlike any museum we’d ever experienced. It was viscerally intimate. We walked through her bedroom, her gardens, her kitchen. We saw her dresses, her jewelry and her crutches." }) %>
 
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC02181.jpg", :image_two => folder + "/DSC02182.jpg"}) %>
 
-<%= partial(:text_two_col, :locals => { :col_one_copy => "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.", :col_two_copy => "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb." }) %>
 
 <%= partial(:quad, :locals => { :image_one => folder + "/DSC02180.jpg", :image_two => folder + "/DSC02144.jpg", :image_three => folder + "/DSC02169.jpg", :image_four => folder + "/IMG_1789.jpg", :height => 375}) %>
 
@@ -118,13 +116,11 @@ folder: mexico
 <div class="divider"></div>
 
 <%= partial(:subheader, :locals => { :copy => "The doors of Mexico City" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Jesse, the pappo of the trip, and the one who deserves credit for every preserved memory had a thing for the doors of Cuidad Mexico. It’s true - they exemplify the wide array of styles, colors and architecture in different parts of the city." }) %>
 
 <%= partial(:full, :locals => { :image_one => folder + "/DSC02097.jpg", :height => 800, :focus => "bottom"}) %>
 
 <%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/DSC02083.jpg", :image_two => folder + "/DSC02188.jpg", :height => 580}) %>
-
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
 
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC02127.jpg", :image_two => folder + "/DSC02129.jpg"}) %>
 
@@ -132,7 +128,7 @@ folder: mexico
 <%= partial(:triplet, :locals => { :image_one => folder + "/DSC01543.jpg", :image_two => folder + "/DSC02132.jpg", :image_three => folder + "/DSC02197.jpg", :height => 600}) %>
 
 <%= partial(:subheader, :locals => { :copy => "Comida y bebida" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "There is no shortage of epic restaurants in Mexico City. When our feet were tired and our bodies too hot, we popped in a bar for an afternoon mezcal. Weirdness ensued, followed by a siesta." }) %>
 
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/DSC01799.jpg", :image_two => folder + "/DSC01804.jpg"}) %>
 
@@ -140,7 +136,10 @@ folder: mexico
 <%= partial(:half, :locals => { :image_one => folder + "/DSC01796.jpg", :image_two => folder + "/DSC01809.jpg"}) %>
 
 <%= partial(:subheader, :locals => { :copy => "Pujol!" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur sem vel pulvinar sagittis. Duis consectetur velit cursus, dictum augue dignissim, faucibus erat." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We could talk all day about the mole, but honestly, the best part of Pujol was how we got there. Our cab was late to arrive (some may claim we called it too late). Pujol’s policy is to charge the full price if diners aren’t there on time. Chris, wanting to be a hero, jumped out of the en route cab and sprinted south. The restaurant was north but by the time we yelled down the street, he was a trail of dust. Then, Jesse bailed, running north. The Oie girls stayed, screaming and laughing in a tizzy. Like magic, the 3 parties converged on Pujol at 8:15, the minute we were due at the restaurant. 
+
+We arrived to this beautiful, spa-like atmosphere sweating and in a panic. Salud!
+" }) %>
 
 <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/DSC02254.jpg", :image_two => folder + "/DSC02222.jpg"}) %>
 
