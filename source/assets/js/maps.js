@@ -169,14 +169,12 @@ $(function() {
           story ='';
       }
 
-      story = '<div><a href="/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
+      story = '<div><a href="' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
 
       popup = new mapboxgl.Popup({offset: popupOffsets})
         .setLngLat(feature.geometry.coordinates)
         .setHTML(html + story)
         .addTo(map);
-
-        console.log(feature.properties.story_url)
     }
 
     function highlightCityFromMap(feature){
