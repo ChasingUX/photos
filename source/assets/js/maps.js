@@ -75,7 +75,7 @@ $(function() {
           matchFound = false;
 
       if(location =='Japan'){
-        var zoom = 5.5;
+        var zoom = 6.3;
       } else if(location =='USA'){
         zoom = 3.5;
       } else if(location =='Thailand'){
