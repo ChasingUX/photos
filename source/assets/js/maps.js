@@ -75,7 +75,7 @@ $(function() {
           matchFound = false;
 
       if(location =='Japan'){
-        var zoom = 5.5;
+        var zoom = 6.3;
       } else if(location =='USA'){
         zoom = 3.5;
       } else if(location =='Thailand'){
@@ -169,7 +169,7 @@ $(function() {
           story ='';
       }
 
-      story = '<div><a href="/voyage/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
+      story = '<div><a href="' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
 
       popup = new mapboxgl.Popup({offset: popupOffsets})
         .setLngLat(feature.geometry.coordinates)
@@ -291,7 +291,7 @@ $(function() {
           }
 
           var html = '<h3>' + this.key + '</h3><span class="flag flag-' + countryName + '"></span><p>' + countryName.charAt(0).toUpperCase() + countryName.substr(1) + ' · ' + date + '</p>'
-          var story = '<div><a href="/voyage/' + link + '/">Read the ' + this.key + ' story</a></div>';
+          var story = '<div><a href="' + link + '">Read the ' + this.key + ' story</a></div>';
 
           popup = new mapboxgl.Popup({offset: popupOffsets})
             .setLngLat(coordinates)

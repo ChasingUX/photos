@@ -6,11 +6,10 @@
       <% if article.title != current_article.data.title %>
         <li>
           <% link_to article, class: "link" do %>
-          <% if article.data.header %>
-            <% dimensions = '500x500' %>
-            <% backgroundImagePath = article.data.folder + '/cover.jpg' %>
-            <%= image_tag backgroundImagePath, resize_to: dimensions, class: 'thumb' %>
-          <% end %>
+          <% dimensions = '500x500' %>
+          <% backgroundImagePath = article.data.folder + '/cover.jpg' %>
+          <%= image_tag backgroundImagePath, resize_to: dimensions, class: 'thumb' %>
+
           <div class="inner">
             <span><%= article.date.strftime('%b %e') %> · <%= article.data.location %></span>
             <h3><%= article.title %></h3>

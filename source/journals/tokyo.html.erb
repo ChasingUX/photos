@@ -1,0 +1,12 @@
+---
+title: "Tokyo"
+date: 2018-05-25
+subheader: "A trip to Tokyo"
+location: Tokyo
+country: Japan
+folder: tokyo
+---
+
+<% folder = current_article.data.folder %>
+
+<%= partial(:subheader, :locals => { :copy => "The sounds" }) %>
