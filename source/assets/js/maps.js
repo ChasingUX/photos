@@ -169,12 +169,14 @@ $(function() {
           story ='';
       }
 
-      story = '<div><a href="/voyage/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
+      story = '<div><a href="/' + feature.properties.story_url + '/">Read the ' + feature.properties.name + ' story</a></div>';
 
       popup = new mapboxgl.Popup({offset: popupOffsets})
         .setLngLat(feature.geometry.coordinates)
         .setHTML(html + story)
         .addTo(map);
+
+        console.log(feature.properties.story_url)
     }
 
     function highlightCityFromMap(feature){
@@ -291,7 +293,7 @@ $(function() {
           }
 
           var html = '<h3>' + this.key + '</h3><span class="flag flag-' + countryName + '"></span><p>' + countryName.charAt(0).toUpperCase() + countryName.substr(1) + ' · ' + date + '</p>'
-          var story = '<div><a href="/voyage/' + link + '/">Read the ' + this.key + ' story</a></div>';
+          var story = '<div><a href="' + link + '">Read the ' + this.key + ' story</a></div>';
 
           popup = new mapboxgl.Popup({offset: popupOffsets})
             .setLngLat(coordinates)
