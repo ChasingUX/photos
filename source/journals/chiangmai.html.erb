@@ -1,12 +1,49 @@
 ---
 title: "Chiang Mai"
 date: 2018-06-01
-subheader: "A trip to Chiang Mai"
+subheader: "May 31st - June 8th, 2018."
 location: Chiang Mai
 country: Thailand
 folder: chiangmai
 ---
 
 <% folder = current_article.data.folder %>
+<%= partial(:headline, :locals => { :copy => "Hello, Thailand." }) %>
 
-<%= partial(:subheader, :locals => { :copy => "The sounds" }) %>
+<%= partial(:text_one_col, :locals => { :copy => "First and foremost, we were ecstatic to have access to new, different foods. At this point, I never wanted to see sushi again. Our first night in Thailand, we had to sit down and take a breather to contain our excitement. It’s almost alarming how much our satisfaction with food influences our happiness on this trip. 
+" }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_0265.jpg", :image_two => folder + "/StillVideo.png", :image_two_is_movie => true, :movies_two => folder + "/IMG_0024.mp4", :image_three => folder + "/IMG_0296.jpg", :height => 650, :focus => "bottom"}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "The cultural differences between the Thai  and the Japanese was immediately striking and palpable. This adjustment felt quite smooth as Thailand is much more laid-back, friendly and tourist-friendly. The Thai are so warm and kind. Not only to us, but we often seen waitresses hugging each other, dudes with their arms around each other - and just so much laughter and playfulness. I’m not sure if tourism became huge here because of this warmth or vice versa. Either way, it was a welcomed change.
+" }) %>
+
+<%= partial(:full, :locals => { :image_one => folder + "/IMG_0311.jpg", :height => 600,  :caption => "View from our new home. We spent lots of time on this balcony."}) %>
+
+<%= partial(:subheader, :locals => { :copy => "Nimann, An Expat Paradise" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "We stayed in the up and coming hipster neighborhood Nimann for the first 5 days in Chiang Mai. We were thrilled by the heat, deep green plant life and tropical vibes. This hood is packed with Expats - 5,000 of them currently residing in this city." }) %>
+
+<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_0303.jpg", :image_two => folder + "/IMG_0102.jpg",  :caption => "Fresh fruit for breakfast, lunch and dinner."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "The color pallette of Thailand was such a stark contrast to Japan's. We started buying coconuts for 500 baht (the tourist price of $1, breakfast from the fruitstands and ____. We felt immediately refreshed." }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_0046.jpg", :image_two => folder + "/IMG_0126.jpg", :image_three => folder + "/IMG_0178.jpg", :height => 450, :caption => "The vibrant colors of Nimann's restaurants."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "The plant-based food scene in Chiang Mai is off the charts. I can’t think of a single American restaurant that compares to places like Rustic & Blue (vegan nachos with turmeric hummus craziness) and Ginger Farm Kitchen (coconut milk, thai chili, lemongrass, ginger drink) and blue dumplings were packed with tempeh." }) %>
+
+<%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_0317.jpg", :image_two => folder + "/IMG_0430.jpg", :height => 550, :caption => "Lemon-Verbana Coffee Tonic. WHAT."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Since hot coffee doesn't exactly sell in the sweltering 90 degree weather, Graph Cafe and a few other coffee shops specialize in these crazy cold concoctions like espresso, rose water, charcoal, burnt orange and tonic. When we finally got up the courage to try a few, we were super impressed." }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_0089.jpg", :image_two => folder + "/IMG_0083.jpg", :image_three => folder + "/IMG_0036.jpg", :height => 500, :caption => "Exploring the art, plant-life and night scene of Nimann."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "It is in Nimann where we learned of the Ed Sheeran craze. Ed Sheeran. Non-stop. Everywhere. Always. It as if Ed is sponsoring the country of Thailand because his music is playing in every store and restaurant on repeat. We heard the same Ed Sheeran song twice in 15 minutes at the same restaurant. No exaggeration. It’s truly unbelievable. This is not Chiang Mai  specific, it is the entire country. 😂" }) %>
+
+<%= partial(:subheader, :locals => { :copy => "Old City,The Traditional Thailand" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Intro copy." }) %>
+
+<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_0477.jpg", :image_two => folder + "/IMG_0220.jpg", :caption => "Lemon-Verbana Coffee Tonic. WHAT."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Intro copy." }) %>
