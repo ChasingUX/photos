@@ -13,49 +13,93 @@ folder: kyoto
 
 <%= partial(:text_one_col, :locals => { :copy => "What a surreal feeling. We’d been planning our travels for over a year so there was certainly a weird “ok, now what?” feeling, followed by a “let’s freaking do this!” feeling. This city has a traditional Japanese vibe with outdoorsy twist. There’s the a bit of everything here - rolling residential hills, hipster back alleys, a bustling downtown, uppity department stores and of course, gorgeous temples swarming with tourists. 
 " }) %>
-<%= partial(:half, :locals => { :image_one => folder + "/IMG_3215 2.jpg", :image_two => folder + "/IMG_1008.jpg", :height => 650, :focus => "bottom" }) %>
+
+<%= partial(:half, :locals => { :image_one => folder + "/IMG_3215 2.jpg", :image_two => folder + "/IMG_1008.jpg", :height => 650, :focus => "bottom", :caption => "Traditional dress (Kimono) and traditional drink (Sake)." }) %>
+
 <%= partial(:subheader, :locals => { :copy => "First takes on the culture
 " }) %><%= partial(:text_one_col, :locals => { :copy => "Politeness or death. The cliche that Japanese people deeply value respect and civility stands. You receive at least 12 “arigatou gozaimasu” (thank you very much) each time you dine.  God forbid, a small unintentional error is made...apologies for days. If the walk light is red and there isn’t a car in sight, the Japanese will all wait patiently at the light. It’s ingrained in all the little things.
 " }) %>
 
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/IMG_1009.jpg", :caption => "Jesse was very obedient, following all the rules to a T."}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "It's crazy safe. People don’t lock their bikes when they go in a store. A man left his wallet, cash and cellphone on a streetside cafe table while he went in the bathroom. Crime doesn’t seem to be a viable concern. This creates a really warm, community feeling - especially as a tourist, this is a relief." }) %>
+
 <%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1010.jpg", :image_two => folder + "/IMG_0975-1.jpg", :image_three => folder + "/IMG_0974.jpg", :height => 600, :focus => "bottom" }) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "We stayed in the outskirts of the city in Kyoto-shi. We became quickly acquainted with windy neighborhood roads and e-bikes (electric assist bikes), which our lovely Airbnb hosts, Koji + Miho provided us. They were a truly awesome component of this chapter." }) %>
+
 <%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_8164 2.JPG", :image_two => folder + "/IMG_3417 2.jpg", :height => 600, :focus => "bottom" , :caption => "Our Airbnb was tucked up in the hills, we felt like locals."}) %>
+
 <%= partial(:headline, :locals => { :copy => "Food First Takes" }) %><%= partial(:text_one_col, :locals => { :copy => "Week 1 of eating in a new country came with a lot of interesting twists and turns - and honestly, a lot of hanger-fueled arguments. " }) %>
+
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_0012 2.jpg", :image_two => folder + "/IMG_8179 2.JPG", :caption => "Tofu set meal near the Bamboo Forest."}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "We’re obsessed with Teishoku (aka set meals), found at traditional Japanese restaurants. They come with 8-12 tiny plates of different foods (completely foreign to us). Lots of fermented items, tofu based dishes, a miso soup, a rice and usually a fish of some sort." }) %>
+
 <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_1016.jpg", :image_two => folder + "/IMG_0977.jpg", :caption => "Matcha everywhere, all the time."}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "Desserts, especially ice cream, are everywhere here. For every lunch/dinner spot, there’s probably 2 spots for cookies, baked good or ice cream. We’re still learning the dessert lay of the land. " })
  %>
- <%= partial(:full, :locals => { :image_one => folder + "/IMG_3105.jpg", :caption => "Need to add video here!"}) %>
+ 
+ <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_3105.jpg", :image_two => folder + "/SushiScreenshot.png"}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "Sushi convey-ers are our best friend. The fish is high quality, super affordable and most importantly - you know exactly what you’re getting. Since menus are in English only about 50% of the time, a conveyer is a welcomed comfort." }) %>
+
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_3142 3.jpg", :image_two => folder + "/IMG_3376 2.jpg", :caption => "Nothing like sitting on a curb with sushi."}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "We visited 7/11s (which are on every block) at least twice a day in Week 1. When we get hangry (a travel faux paus we’re working on), we grab a 7/11 sushi or soba and eat it on a curb. It’s a fun little tradition we’ve developed. We’re not-so-obsessed with grocery stores (no recognizable products) and any non-Japanese food (we’ve tried getting pizza and pasta - no bueno). " }) %>
 
-<%= partial(:subheader, :locals => { :copy => "Arashiyama Bamboo + Monkey Forest" }) %><%= partial(:text_one_col, :locals => { :copy => "We rode our beloved e-bikes to the Arashiyama Bamboo forest and Iwatayama Monkey forest. We strolled through gardens and hiked trails to recover from our jet lag." }) %>
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1006.jpg", :image_two => folder + "/IMG_3193.jpg", :image_three => folder + "/IMG_3167.jpg", :height => 600, :focus => "bottom"}) %>
+<%= partial(:subheader, :locals => { :copy => "Arashiyama Bamboo + Monkey Forest" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "We rode our beloved e-bikes to the Arashiyama Bamboo forest and Iwatayama Monkey forest. We strolled through gardens and hiked trails to recover from our jet lag." }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1006.jpg", :image_two => folder + "/IMG_3193.jpg", :image_three => folder + "/IMG_3167.jpg", :height => 600, :focus => "bottom", :caption => "Serene, spring vibes in Kyoto."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Our rainy day in Arashiyama felt like our first foray into Traditional Japan. We happened to be there on a holiday, the ___, so we saw many women in traditional kimonos and wooden sandals. The bamboo and temples set the very Japanese feeling scene." }) %>
+
 <%= partial(:full, :locals => { :image_one => folder + "/IMG_1005.jpg"}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Emas, prayer cards with wishes and requests are left at the temples so the gods will receive them. These little wooden pieces are ceremonially burned, freeing the wisher from their request." }) %>
+
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_1003.jpg", :image_two => folder + "/DSC02394.jpg", :height => 700, :focus => "bottom"}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "After a short hike, we arrived in the Monkey Forest. Hundreds of monkeys (including tons of babies clung to their Mamas) sauntered around nonchalantly. This park is home to the Japanese macaque monkey, aka Snow Monkeys as they also live up north. These are the ones you see bathing in Onsens with big white beards. Large signs warned us not to stare at the monkeys and to keep 3m distance. Naturally, that didn't stop Jesse from getting all up in their face. As a bonus, the views of Kyoto from the monkey forest were epic." }) %>
+
 <%= partial(:full, :locals => { :image_one => folder + "/IMG_1002.jpg"}) %>
+
 <%= partial(:subheader, :locals => { :copy => "Nishiki Market" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "We dove straight in and did a self-led eating tour centered around Nishiki Market on Day 3. We were exposed to what Japanese cuisine looks like outside of sushi and ramen - animal shaped baked goods, little octopuses and oh-so-many pickled things. Our highlight was a standing sake bar - which kicked off our now deep love for sake." }) %>
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_0181.jpg", :image_two => folder + "/IMG_0979-2.jpg", :image_three => folder + "/IMG_0976-2.jpg", :height => 600, :focus => "bottom", :caption => "Hedgehog shaped pastries, the new normal."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "We did a self-led eating tour centered around Nishiki Market on Day 3. We were exposed to what Japanese cuisine looks like outside of sushi and ramen - animal shaped baked goods, little octopuses and oh-so-many pickled things. Our highlight was a standing sake bar - our deep love for sake blossomed from here." }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_0181.jpg", :image_two => folder + "/IMG_0979-2.jpg", :image_three => folder + "/IMG_0976-2.jpg", :height => 600, :focus => "bottom", :caption => "Hedgehog shaped pastries and unlimited pickles, the new normal."}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "The raw ingredients opened our eyes to parts of Japanese cuisine we didn’t know existed! Dried fish is a staple (often turned into flakes then made into broth or sauce), fresh wasabi root (very different than the horseradish we’re served in the States) and - chestnuts (still no clue when these are used, but they’re everywhere)! " }) %>
-<%= partial(:half, :locals => { :image_one => folder + "/IMG_0162.jpg", :image_two => folder + "/IMG_1012.jpg"}) %>
-<%= partial(:half, :locals => { :image_one => folder + "/IMG_0965.jpg", :image_two => folder + "/IMG_1007.JPG"}) %>
+
+<%= partial(:half, :locals => { :image_one => folder + "/IMG_0162.jpg", :image_two => folder + "/IMG_1012.jpg", :caption => "Dried fish of every kind. Green buns with sweet red bean paste inside."}) %>
+
+<%= partial(:half, :locals => { :image_one => folder + "/IMG_0965.jpg", :image_two => folder + "/IMG_1007.JPG", :caption => "Octupus pops. Fresh wasabi root, ready to be ground."}) %>
 
 <%= partial(:subheader, :locals => { :copy => " The Owl Cafe Trauma" }) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "We don’t recommend visiting owl cafes. It was an upsetting and disturbing experience. The owls are chained by the ankles to a branch and they clearly don’t like being touched by humans. The vibes were all wrong. We left a little heartbroken. We regretted supporting this business with our tourism dollars and didn’t visit anymore (non-cat) animal cafes for the rest of our time in Japan. " }) %>
-<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_1011.jpg", :image_two => folder + "/IMG_0980-1.jpg", :height => 900, :focus => "bottom"}) %>
+
+<%= partial(:half, :locals => { :image_one => folder + "/OwlStill.png", :image_one_is_movie => true, :movies_one => folder + "/IMG_0192.mp4", :image_two => folder + "/IMG_1011.JPG", :caption => "They're truly majestic creatures."}) %>
+
 <%= partial(:subheader, :locals => { :copy => "Kinkakuji Golden Temple" }) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "Real talk, the photos below do a great job at excluding the swarms of tourists with selfie sticks. This beautiful temple was our first foray into a Japanese tourist trap, which is fine and just a part of the journey. We’ve accepted we’ll be part of that mess from time to time over the next 7 months. The history and landscapes was worth the 300 yen ticket and 45 minutes we spent here." }) %>
+
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/IMG_3388.jpg"}) %>
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3389.jpg", :image_two => folder + "/IMG_3397.jpg", :image_three => folder + "/IMG_3405.jpg", :height => 800, :focus => "bottom"}) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3389.jpg", :image_two => folder + "/IMG_3397.jpg", :image_three => folder + "/IMG_3405.jpg", :height => 700}) %>
+
 <%= partial(:headline, :locals => { :copy => "Big Jesse, Little Japan
 " }) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "On our first sleep, Jesse woke up to go to the bathroom and slammed his head against the door frame :( Thus began his constant struggle to fit in this country (and Madison’s constant source of entertainment). His head scraped the ceiling of grocery stores, he ducked through every doorway and his size 13 feet didn’t fit any of the slippers. " }) %>
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_0016 2.jpg", :image_two => folder + "/IMG_3188 2.jpg", :image_three => folder + "/IMG_3494 2.jpg", :height => 600, :focus => "bottom"}) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_0016 2.jpg", :image_two => folder + "/IMG_3188 2.jpg", :image_three => folder + "/IMG_3494 2.jpg", :height => 600, :focus => "bottom", :caption => "Luckily, the bathrooms had a attachable showerhead unit."}) %>
+
 <%= partial(:subheader, :locals => { :copy => "Travel Woes" }) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "What this doesn’t show was the times we were jetlagged, when we got stranded without money and fumbled with the currency, when we ordered some awful meals and various other real-life travel situations. Our travelling skills were put to the test on week 1 and I’d give us a B minus - lots of room for improvement :) " }) %>
