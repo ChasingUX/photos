@@ -10,33 +10,55 @@ folder: tokyo
 <% folder = current_article.data.folder %>
 
 <%= partial(:headline, :locals => { :copy => "Our Last Stop in Japan" }) %>
-<%= partial(:text_one_col, :locals => { :copy => "We’re feeling so incredibly lucky to have just lived an entire month as if it was a Saturday. Our days are mostly stress free and we’re not accountable to any schedule. It’s easy to live in the present this way. We’re also on our travel A game. I’m astonished at how quickly one can adapt to a completely new and foreign lifestyle. Sleeping in a new bed each night, eating totally different food, not seeing any familiar faces - we’re surviving all of it." }) %>
-<%= partial(:full, :locals => { :image_one => folder + "/IMG_1396 2.jpg"}) %>
-<%= partial(:text_one_col, :locals => { :copy => "However, on our last week in Japan, we started getting really antsy to move on. There are certainly parts of Japanese culture that we don’t jive with. In general, there isn’t a lot of friendliness and sociability. We see people at dinner together playing games on their phones. We smile at people as we walk down the street and they look away or avoid eye contact all together. The overall level of formality in this country leads to a bit of uptightness, like they’re taking everything a bit too seriously. It was fascinating at first but isn’t exactly a personality fit with us. Our first dose of homesickness hits towards the end of our month in Japan.
-" }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We’re feeling so incredibly lucky to have just lived an entire month as if it was a Saturday. Our days are mostly stress free and we’re not accountable to any schedule. It’s easy to live in the present this way. I’m astonished at how quickly one can adapt to a completely new and foreign lifestyle. Sleeping in a new bed each night, eating totally different food, not seeing any familiar faces - we’re surviving all of it." }) %>
+
+<%= partial(:half, :locals => { :image_one => folder + "/IMG_1341.jpg", :image_two => folder + "/RobotCafeVidScreenshot.png", :caption => "Figure 1: The Chaos. **change to video**"}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "In Tokyo, there was something surprising on every block, each one that contradicted the next. A traditional coffee ceremony in a zen garden or an 'arcade' for taking selfies - and everything in between. The people were quiet in real life but in marketing they had large cartoonish personalities (and googly eyes). This makes it hard to label the city as anything but - crazy." }) %>
+
+<%= partial(:half, :locals => { :image_one => folder + "/IMG_1419.jpg", :image_two => folder + "/IMG_1236.jpg", :height => 600, :caption => "Figure 2: The Calm."}) %>
+
 <%= partial(:subheader, :locals => { :copy => "An Infinite City" }) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "In Tokyo, we clocked 5 miles / day on foot. When we took the subways,  you could look miles in the distance and see only more urban areas, more Tokyo. The city felt like endless in its footprint but also because each time we went out to explore, we found new, unique pockets of  city." }) %>
+
 <%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1350.jpg", :image_two => folder + "/IMG_1577.jpg", :image_three => folder + "/IMG_1456.jpg", :height => 600, :focus => "bottom", :caption => "Scenes from Shimokitazawa."}) %>
+
 <%= partial(:text_two_col, :locals => { :col_one_copy => "Right off the Shimo-takaido train station, lives a lovely and lively hood called Shimokitazawa. Some call it the Brooklyn of Tokyo. Props to Jesse for picking this neighborhood because it had all our essentials (1 million restaurants, good coffee, a health food store and a MUJI) but managed to stay out of the madness of downtown Tokyo. The neighborhood felt walkable, homey but still so crammed with fascinating shops, people and sites.", :col_two_copy =>  "In Shimokitazawa, we learned (the hard way) to avoid trains before 10am and between 4-6pm. The stations are so pack that they shove you on, you end up face-to-face pushed up against a stranger for the 20 minute ride. Do not recommend!"}) %>
 
 <%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1336.jpg", :image_two => folder + "/IMG_1324.jpg", :image_three => folder + "/IMG_1286.jpg", :height => 600, :focus => "bottom", :caption => "The more urban side of Shibuya + Harajuku "}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "The best place to get lost are the alleys of Shibuya + Harujuku. I’ve been blown away by the amount of small, cool boutiques in this city. It’s endless. Get lost off the main drags and you’re guaranteed to find some amazing stuff. We walked 9 miles the first day we went to this area - we couldn’t stop! Hot tip: Meiji-dori Street, Cat Street, Jingumae - but it feels like you can’t really go wrong." }) %>
+
 <%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1313.jpg", :image_two => folder + "/IMG_1277.jpg", :image_three => folder + "/IMG_1289.jpg"}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "Harajuku lack grittiness, unlike the rest of Tokyo (and every other city). It was idyllic. Perfect plants, beautiful restaurants, shiny buildings. We even started taking pictures of the man hole covers - which were little unique pieces of art :) " }) %>
-<%= partial(:half, :locals => { :image_one => folder + "/IMG_1475.jpg", :image_two => folder + "/IMG_1495.jpg", :height => 600, :focus => "bottom", :caption => "The Notting Hill of Tokyo perhaps?"}) %>
+
+<%= partial(:half, :locals => { :image_one => folder + "/IMG_1475.jpg", :image_two => folder + "/IMG_1495.jpg", :height => 450, :focus => "bottom", :caption => "The Notting Hill of Tokyo perhaps?"}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "Our 2nd week, we stayed in Daikenyama. Favorite spots include Artless Craft Tea & Coffee (coffee section below), Tsutaya Daikanyama (a famous bookstore) and for dude’s shopping Saturday’s NYC store (great back patio). This hood feels more local and green, a welcomed atmosphere for a week in which we needed more rest." }) %>
+
 <%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1499.jpg", :image_two => folder + "/IMG_1316.jpg", :image_three => folder + "/IMG_1505.jpg"}) %>
 
 <%= partial(:subheader, :locals => { :copy => "Brace Yourself For Akihabara " }) %>
 <%= partial(:text_one_col, :locals => { :copy => "Akihabara is the Tokyo you see in the movies - crazy amounts of people, so much Anime and entirely lit by neon.  It’s the mecca for geeks intro electronics and gaming. Not going to lie, it was all pretty fun. We got involved in our fair share of DDR and slurped up a bowl of ramen to top off the day. " }) %>
+
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_5532.jpg", :image_two => folder + "/IMG_1667.JPG", :caption => "Gaming + Ramen, a killer combo."}) %>
-<%= partial(:full, :locals => { :image_one => folder + "/IMG_1663.jpg", :caption => "ADD GAMING VIDEOS"}) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/CircleGame.png", :image_two => folder + "/Akihabara.png", :image_three => folder + "/DDR.png", :caption => "Take the overwhelming-ness of these videos and multiply it by an entire day."}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "Akihabara is known for its arcades. The arcades are about 8 stories high, each level with a  different type of game (dance, driving, cranes, role-play - I don’t know?) and feature no natural lighting - they’re designed to keep you hooked on gaming. The gamers in these places are HARDCORE. We’re talkin’ specialty gloves, sweat towels - some even drew crowds of admirers. " }) %>
+
 <%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_1633.jpg", :image_two => folder + "/IMG_1635.jpg", :height => 500, :focus => "top", :caption => "Not pictured: blow-up girlfriends for sale."}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "Another lovely feature of Akihabara is the sexism! The population of this neighborhood seemed to be about 80% Japanese men, 10% tourists and 10% women dressed up as sexy Anime characters. Maid Cafes (in which the waitresses serve you on their hands and knees and call you master) are everywhere. The fetish for schoolgirls is imbued in nearly all of the marketing - from ramen shops to convenience stores. I suspect many of these men have mostly interacted with women via video games. It certainly put a damper on the Akihabara experience, we felt really sad for the women working in this industry but also for the gamer men who seemed hypnotized by the misogynistic game plots and stories. Read more here." }) %>
-<%= partial(:full, :locals => { :image_one => folder + "/IMG_1663.jpg", :caption => "ADD VIDEO OF CAT CAFE!"}) %>
+
+<%= partial(:half, :locals => { :image_one => folder + "/CatCafe.png", :image_two => folder + "/IMG_1663.jpg", :height => 500, :caption => "The look of joy as Jesse is swarmed by an animal he's allergic to."}) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "After our traumatizing Owl Cafe experience, we were hesitant to dive into more animal cafes (other options included hedgehogs, puppies, rabbits) but it didn’t feel right not going to at least 1 cat cafe in Japan. Per usual, Jesse’s freakish animal magnetism meant swarms of cats vying for his attention. The cats were healthy, happy and beautiful (although nonchalant to everyone but Jess). Pro tip: buy the treats. " }) %>
+
 <%= partial(:subheader, :locals => { :copy => "A Great Day: Cooking Class" }) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "By this point, we’ve kinda mastered what to eat and order at various types of Japanese restaurants. By mastered, we mean we can more-or-less tell you what we’re putting in our mouths. We felt like it was our duty to learn the craft behind some Japanese staples - so we booked time with an expert on Airbnb Experiences." }) %>
 <%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1356.jpg", :image_two => folder + "/IMG_1355.jpg", :image_three => folder + "/IMG_1370.jpg", :caption => "Our host, a wasabi grater and mushrooms (which were in almost everything)!", :height => 600, :focus => "bottom"}) %>
 <%= partial(:text_one_col, :locals => { :copy => "Our host, Yukari took us to a grocery store and introduced tons of crazy ingredients (tip: this would have been useful on week 1) then took us to her home cooking studio. First and foremost, we started sipping on the most delicious Yuzu Sake known to man. Then, we began prepping a meal of beef rice bowls, miso soup, Japanese omelet and green beans. " }) %>
@@ -45,7 +67,16 @@ folder: tokyo
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_1373.jpg", :image_two => folder + "/IMG_1382.jpg", :height => 700, :focus => "top", :caption => "The expression says, I didn't sign up for cooking beef :("}) %>
 <%= partial(:full, :locals => { :image_one => folder + "/IMG_1385 2.jpg", :caption => "Our Final Product!"}) %>
 <%= partial(:subheader, :locals => { :copy => "The Coffee Scene" }) %>
+
 <%= partial(:text_one_col, :locals => { :copy => "Everything here is a place holder!!! Some copy about how happy you were to be drinking delicious coffee every day will go here. Remember when you bought a cup for $9? Remember the first cup of blueberries? Remember how many miles we’d trek to try a new spot? That was fun, my babe." }) %>
-<%= partial(:full, :locals => { :image_one => folder + "/IMG_1264.jpg", :caption => "A menu."}) %>
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1236.jpg", :image_two => folder + "/IMG_1257.jpg", :image_three => folder + "/IMG_1246.jpg", :caption => "The best coffee experience, rec from Canyon Coffee."}) %>
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1588.jpg", :image_two => folder + "/IMG_1487.jpg", :image_three => folder + "/IMG_1486.jpg", :caption => "Artless Coffee Shop in Daikenyama."}) %>
+
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_1233.jpg", :image_two => folder + "/IMG_1588.jpg", :caption => "The coffee experience recommended by Canyon."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Everything here is a place holder!!! Some copy about how happy you were to be drinking delicious coffee every day will go here. Remember when you bought a cup for $9? Remember the first cup of blueberries? Remember how many miles we’d trek to try a new spot? That was fun, my babe." }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1257 2.jpg", :image_two => folder + "/IMG_1487.jpg", :image_three => folder + "/IMG_1486.jpg", :caption => "Artless Coffee Shop in Daikenyama."}) %>
+
+<%= partial(:subheader, :locals => { :copy => "Arrigato Gozimasu, Japan." }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "On our last week in Japan, we started getting really antsy to move on. There are certainly parts of Japanese culture that we don’t jive with. In general, we didn't experience much friendliness or sociability. We see people at dinner together playing games on their phones instead of connecting. We smile at people as we walk down the street and they look away or avoid eye contact all together. Our take is: the overall level of formality leads to a bit of stiffness. It was fascinating at first but isn’t exactly a personality fit with us. We felt a bit homesick and ready to move on. But all in all, living in Japan for 1 month was an eye-opening, odd in the most interesting ways and strangely fun experience.
+" }) %>
