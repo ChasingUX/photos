@@ -1,7 +1,7 @@
 ---
 title: "Yoshino"
 date: 2018-05-13
-subheader: "A trip to Yoshino"
+subheader: "May 9-10th, 2018."
 location: Yoshino
 country: Japan
 folder: yoshino
@@ -9,4 +9,28 @@ folder: yoshino
 
 <% folder = current_article.data.folder %>
 
-<%= partial(:subheader, :locals => { :copy => "The sounds" }) %>
+<%= partial(:headline, :locals => { :copy => "The Yoshino House" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "We visited Yoshino, a small lumber town outside of Osaka, for the Yoshino House. An architectural gem, built by Airbnb, and maintained by the Yoshino community. Each night you stay in the Yoshino house, a local hosts you. The first night, we were hosted by a 'Guardian of the Forest' named ___ who greeted us with a bottle of sake. We used Google Translate to communicate with him through an entire dinner. The house sleeps 5; we shared the space with guests from Mexico and Australia." }) %>
+
+<%= partial(:half, :locals => { :image_one => folder + "/IMG_3776.jpg", :image_two => folder + "/IMG_3752.jpg", :caption => "Soft as silk, warm woods for every surface."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Everywhere you turned in the Yoshino house, was a beautiful, thoughtful detail. Light and shadow were highly considered, the house changed drastically from morning to night. The soft, warm wood created the coziest vibe - perfect for nights in, cooking dinner, sharing Sake and getting to know one another." }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3758.jpg", :image_two => folder + "/IMG_4069.jpg", :image_three => folder + "/IMG_3856.jpg", :caption => "The perfect little riverside lodge."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Everywhere you turned in the Yoshino house, was a beautiful, thoughtful detail. Light and shadow were highly considered, the house changed drastically from morning to night. The soft, warm wood created the coziest vibe - perfect for nights in, cooking dinner, sharing Sake and getting to know one another." }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3832.jpg", :image_two => folder + "/IMG_3798.jpg", :image_three => folder + "/IMG_3827.jpg", :caption => "Activities at Yoshino were simple: eating, walking, reading."}) %>
+
+<%= partial(:subheader, :locals => { :copy => "Exploring a Lumbertown." }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "placeholder text." }) %>
+
+<%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_4030.jpg", :image_two => folder + "/IMG_4038.jpg", :focus => "bottom", :caption => "Yoshino by bike."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "We made quick friends with Diego and Ana, honeymooners from Mexico who we met up with again in Osaka. The 4 of us set out to bike around town and discovered the _____." }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_4045.jpg", :image_two => folder + "/IMG_4032.jpg", :image_three => folder + "/IMG_4013.jpg", :focus => "bottom"}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Yoshino was a quick 2 day, 2 night trip but it was surely our most memorable Airbnb experience to date. The house itself was inspiring, and the friendships forged within the walls made it even more special." }) %>
