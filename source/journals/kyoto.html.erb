@@ -7,32 +7,41 @@ country: Japan
 folder: kyoto
 ---
 
+<!-- IMG_3351.gif -->
+
 <% folder = current_article.data.folder %>
 
 <%= partial(:headline, :locals => { :copy => "Touchdown in Kyoto" }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "What a surreal feeling. We’d been planning our travels for over a year so there was certainly a weird “ok, now what?” feeling, followed by a “let’s freaking do this!” feeling. This city has a traditional Japanese vibe with outdoorsy twist. There’s the a bit of everything here - rolling residential hills, hipster back alleys, a bustling downtown, uppity department stores and of course, gorgeous temples swarming with tourists. 
+<%= partial(:text_one_col, :locals => { :copy => "As we arrived at our first stop in Japan, it felt surreal. We’d been planning our travels for over a year so there was certainly a weird “ok, now what?” feeling, followed by a “let’s freaking do this!” feeling. After reading Murakami novels, we felt that Kyoto satisfied our expectations of beautiful winding residential alleys laiden with bamboo trees and mysterious cats. Kyoto has a traditional Japanese vibe with an outdoorsy twist. There’s the a bit of everything here - rolling residential hills, hipster back alleys, a bustling downtown, uppity department stores and of course, gorgeous temples swarming with tourists.
 " }) %>
 
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_3215 2.jpg", :image_two => folder + "/IMG_1008.jpg", :height => 650, :focus => "bottom", :caption => "Traditional dress (Kimono) and traditional drink (Sake)." }) %>
 
 <%= partial(:subheader, :locals => { :copy => "First takes on the culture
-" }) %><%= partial(:text_one_col, :locals => { :copy => "Politeness or death. The cliche that Japanese people deeply value respect and civility stands. You receive at least 12 “arigatou gozaimasu” (thank you very much) each time you dine.  God forbid, a small unintentional error is made...apologies for days. If the walk light is red and there isn’t a car in sight, the Japanese will all wait patiently at the light. It’s ingrained in all the little things.
+" }) %><%= partial(:text_one_col, :locals => { :copy => "Politeness or death. The cliche that Japanese people deeply value respect and civility stands. You receive at least 12 “arigatou gozaimasu” (thank you very much) each time you dine.  God forbid, a small unintentional error is made...apologies for days. If the walk light is red and there isn’t a car in sight, the Japanese will typically  wait patiently at the light. It’s ingrained in all the little things.
 " }) %>
 
-<%= partial(:full_bleed, :locals => { :image_one => folder + "/IMG_1009.jpg", :caption => "Jesse was very obedient, following all the rules to a T."}) %>
+<%= partial(:full_bleed, :locals => { :image_one => folder + "/IMG_1009.jpg", :caption => "Jesse was very obedient, following all the rules to a T.", :height => 750, :focus => "bottom" }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "It's crazy safe. People don’t lock their bikes when they go in a store. A man left his wallet, cash and cellphone on a streetside cafe table while he went in the bathroom. Crime doesn’t seem to be a viable concern. This creates a really warm, community feeling - especially as a tourist, this is a relief." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "It's crazy safe. People don’t lock their bikes when they go in a store. A man left his wallet, cash and cellphone on a streetside cafe table while he went in the bathroom. Crime doesn’t seem to be a viable concern. This created a really warm, community feeling - especially as a tourist, this was a relief. " }) %>
 
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1010.jpg", :image_two => folder + "/IMG_0975-1.jpg", :image_three => folder + "/IMG_0974.jpg", :height => 600, :focus => "bottom" }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "We stayed in the outskirts of the city in Kyoto-shi. We became quickly acquainted with windy neighborhood roads and e-bikes (electric assist bikes), which our lovely Airbnb hosts, Koji + Miho provided us. They were a truly awesome component of this chapter." }) %>
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1010.JPG", :image_two => folder + "/IMG_3169.jpg", :image_three => folder + "/IMG_3382.jpg", :height => 600 }) %>
 
-<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_8164 2.JPG", :image_two => folder + "/IMG_3417 2.jpg", :height => 600, :focus => "bottom" , :caption => "Our Airbnb was tucked up in the hills, we felt like locals."}) %>
+<%= partial(:text_one_col, :locals => { :copy => "We stayed in the mountainous outskirts of the city, with two incredibly friendly and welcoming Airbnb hosts, Miho + Koji. By day, Koji is a breeder of staghorn ferns and Miho is an architect. Having these backgrounds led to an increibly gorgeous property, nestled deep in the winding streets of the Kyoto mountains. Miho graciously equipped us with electric bikes, which proved to be an amazing way of exploring the area, and led us down many paths less travelled." }) %>
+
+
+<%#= partial(:full_bleed, :locals => { :image_one => folder + "/IMG_3363.gif", :height => 750 }) %>
+
+<%#= partial(:triplet, :locals => { :image_one => folder + "/swaying.gif", :image_two => folder + "/IMG_8164 2.JPG", :image_three => folder + "/IMG_1010.JPG", :height => 600, :caption => "Serene, spring vibes in Kyoto."}) %>
+
+
+<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_8164 2.JPG", :image_two => folder + "/swaying.gif", :height => 600, :focus => "bottom" , :caption => "Our Airbnb was tucked up in the hills, we felt like locals."}) %>
 
 <%= partial(:headline, :locals => { :copy => "Food First Takes" }) %><%= partial(:text_one_col, :locals => { :copy => "Week 1 of eating in a new country came with a lot of interesting twists and turns - and honestly, a lot of hanger-fueled arguments. " }) %>
 
-<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_0012 2.jpg", :image_two => folder + "/IMG_8179 2.JPG", :caption => "Tofu set meal near the Bamboo Forest."}) %>
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_0012 2.jpg", :image_two => folder + "/IMG_8179 2.jpg", :caption => "Tofu set meal near the Bamboo Forest."}) %>
 
 <%= partial(:text_one_col, :locals => { :copy => "We’re obsessed with Teishoku (aka set meals), found at traditional Japanese restaurants. They come with 8-12 tiny plates of different foods (completely foreign to us). Lots of fermented items, tofu based dishes, a miso soup, a rice and usually a fish of some sort." }) %>
 
@@ -40,8 +49,11 @@ folder: kyoto
 
 <%= partial(:text_one_col, :locals => { :copy => "Desserts, especially ice cream, are everywhere here. For every lunch/dinner spot, there’s probably 2 spots for cookies, baked good or ice cream. We’re still learning the dessert lay of the land. " })
  %>
- 
- <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_3105.jpg", :image_two => folder + "/SushiScreenshot.png"}) %>
+
+ <%#= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_3105.jpg", :image_two => folder + "/SushiScreenshot.png"}) %>
+
+ <%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/sushi.png", :image_one_is_movie => true, :movies_one => folder + "/sushi.mov", :image_two => folder + "/IMG_3105.jpg", :caption => "That's the spot (watch the vid)", :height => 700}) %>
+
 
 <%= partial(:text_one_col, :locals => { :copy => "Sushi convey-ers are our best friend. The fish is high quality, super affordable and most importantly - you know exactly what you’re getting. Since menus are in English only about 50% of the time, a conveyer is a welcomed comfort." }) %>
 
