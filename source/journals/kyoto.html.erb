@@ -31,9 +31,12 @@ folder: kyoto
 <!-- DSC02416.jpg -->
 <%= partial(:triplet, :locals => { :image_one => folder + "/kickball.jpg", :image_two => folder + "/IMG_3169.jpg", :image_three => folder + "/IMG_3382.jpg", :height => 600 }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "We stayed in the mountainous outskirts of the city, with two incredibly friendly and welcoming Airbnb hosts, Miho + Koji. By day, Koji is a breeder of staghorn ferns and Miho is an architect. Having these backgrounds led to an increibly gorgeous property, nestled deep in the winding streets of the Kyoto mountains. Miho graciously equipped us with electric bikes, which proved to be an amazing way of exploring the area, and led us down many paths less travelled." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We stayed in the mountainous outskirts of the city, with two incredibly friendly and welcoming Airbnb hosts, Miho + Koji. By day, Koji is a breeder of staghorn ferns and Miho is an architect. Having these backgrounds led to an increibly gorgeous property, nestled deep in the winding streets of the Kyoto mountains." }) %>
 
 <%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_8164.JPG", :image_two => folder + "/IMG_34172.jpg", :height => 600, :focus => "bottom" , :caption => "Our Airbnb was tucked up in the hills, we felt like locals."}) %>
+
+
+<%= partial(:text_one_col, :locals => { :copy => "Miho graciously equipped us with electric bikes, which proved to be an amazing way of exploring the area, and led us down many paths less travelled." }) %>
 
 
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/DSC02416.jpg", :height => 750, :focus => "bottom" }) %>
@@ -44,27 +47,27 @@ folder: kyoto
 
 <%= partial(:headline, :locals => { :copy => "Food First Takes" }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "Week 1 of eating in a new country came with a lot of interesting twists and turns - and honestly, a lot of hanger-fueled arguments. " }) %>
 
-<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_81792.jpg", :image_two => folder + "/IMG_3743.jpg", :caption => "A few set meals we had near the Bamboo Forest."}) %>
+<section class="Wrapper Text">
+  <p>Week 1 of eating in a new country came with a lot of interesting twists and turns - and honestly, a lot of hanger-fueled arguments. As this was our first stop in Japan, we had little understading of which types of Japanese items we liked, let alone what was readily available in a given neighborhood. But eventually, we untangled the complex web of Japanese cuisine.</p>
 
-<%= partial(:text_one_col, :locals => { :copy => "We’re obsessed with Teishoku (aka set meals), found at traditional Japanese restaurants. They come with 8-12 tiny plates of different foods (completely foreign to us). Lots of fermented items, tofu based dishes, a miso soup, a rice and usually a fish of some sort." }) %>
+  <p>We’re obsessed with Teishoku (aka set meals), found at traditional Japanese restaurants. They come with 8-12 tiny plates of different foods (completely foreign to us). Lots of fermented items, tofu based dishes, a miso soup, a rice and usually a fish of some sort.</p>
+</section>
+
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_3743.jpg", :image_two => folder + "/IMG_81792.jpg", :caption => "A few set meals we had near the Bamboo Forest."}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Desserts, especially ice cream, can be found in any direction. For every Sushi or Teishoku spot, there’s probably 2 spots for desserts, be it cookies, baked goods or ice cream." })
+ %>
 
 <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_1016.JPG", :image_two => folder + "/IMG_0977.JPG", :caption => "Matcha everywhere, all the time."}) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "Desserts, especially ice cream, are everywhere here. For every lunch/dinner spot, there’s probably 2 spots for cookies, baked good or ice cream. We’re still learning the dessert lay of the land. " })
- %>
-
- <%#= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_3105.jpg", :image_two => folder + "/SushiScreenshot.png"}) %>
+<%= partial(:text_one_col, :locals => { :copy => "Sushi convey-ers are our best friend. The fish is high quality, super affordable and most importantly - you know exactly what you’re getting. Since menus are in English only about 50% of the time, a conveyer is a welcomed comfort." }) %>
 
  <%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/sushi.png", :image_one_is_movie => true, :movies_one => folder + "/sushi.mov", :image_two => folder + "/IMG_3105.jpg", :caption => "That's the spot (watch the vid)", :height => 700}) %>
 
-
-<%= partial(:text_one_col, :locals => { :copy => "Sushi convey-ers are our best friend. The fish is high quality, super affordable and most importantly - you know exactly what you’re getting. Since menus are in English only about 50% of the time, a conveyer is a welcomed comfort." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We visited 7/11s (which are on every block) at least twice a day in Week 1. When we get hangry (a travel faux paus we’re working on), we grab a 7/11 sushi or soba and eat it on a curb. It’s a fun little tradition we’ve developed. We’re not-so-obsessed with grocery stores (no recognizable products) and any non-Japanese food (we’ve tried getting pizza and pasta - no bueno). " }) %>
 
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_3142 3.jpg", :image_two => folder + "/IMG_33762.jpg", :caption => "Nothing like sitting on a curb with sushi."}) %>
-
-<%= partial(:text_one_col, :locals => { :copy => "We visited 7/11s (which are on every block) at least twice a day in Week 1. When we get hangry (a travel faux paus we’re working on), we grab a 7/11 sushi or soba and eat it on a curb. It’s a fun little tradition we’ve developed. We’re not-so-obsessed with grocery stores (no recognizable products) and any non-Japanese food (we’ve tried getting pizza and pasta - no bueno). " }) %>
 
 <%= partial(:subheader, :locals => { :copy => "Arashiyama Bamboo + Monkey Forest" }) %>
 
