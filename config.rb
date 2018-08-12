@@ -25,8 +25,17 @@ config[:images_dir] = 'images'
 activate :directory_indexes
 set :relative_links, true
 
+activate :images do |images|
+  # Optimize all images by default (default: false)
+  images.optimize = false
 
-activate :middleman_simple_thumbnailer
+  # Provide additional options for image_optim
+  # See https://github.com/toy/image_optim for all available options
+  images.image_optim = {
+    nice: 10,
+    gifsicle: false
+  }
+end
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -78,6 +87,8 @@ configure :build do
   activate :minify_css
   activate :asset_hash
   activate :relative_assets
+  #activate :imageoptim
+  #activate :images
 end
 
 
