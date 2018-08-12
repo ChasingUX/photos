@@ -26,7 +26,7 @@ activate :directory_indexes
 set :relative_links, true
 
 
-activate :middleman_simple_thumbnailer
+#activate :middleman_simple_thumbnailer
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -78,6 +78,7 @@ configure :build do
   activate :minify_css
   activate :asset_hash
   activate :relative_assets
+  activate :imageoptim
 end
 
 

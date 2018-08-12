@@ -8,7 +8,7 @@
           <% link_to article, class: "link" do %>
           <% dimensions = '500x500' %>
           <% backgroundImagePath = article.data.folder + '/cover.jpg' %>
-          <%= image_tag backgroundImagePath, resize_to: dimensions, class: 'thumb' %>
+          <%= image_tag backgroundImagePath, class: 'thumb' %>
 
           <div class="inner">
             <span><%= article.date.strftime('%b %e') %> · <%= article.data.location %></span>
@@ -51,7 +51,7 @@
         <% image_path = '/images/' %>
         <% cover_path = '/cover.jpg' %>
         <% dimensions = '2000x2000' %>
-        <% imageURL = image_path image_path + current_article.data.folder + cover_path, resize_to: dimensions %>
+        <% imageURL = image_path image_path + current_article.data.folder + cover_path %>
         <div class="Header--bg" style="background-image: url(<%= imageURL %>)"></div>
         <div class="Header--copy">
           <div class="Wrapper">

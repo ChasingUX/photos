@@ -15,7 +15,7 @@
 
   <% if defined?(image_one_is_movie).nil? %>
     <a class="img_wrap" href="/images/<%= image_one %>">
-      <% imageURL = image_path image_path + image_one, resize_to: dimensions %>
+      <% imageURL = image_path image_path + image_one %>
       <%= image_tag "blank.png", :data => { :src => imageURL }  %>
     </a>
   <% else %>

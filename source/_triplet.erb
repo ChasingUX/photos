@@ -15,7 +15,7 @@
 
   <% if defined?(image_one_is_movie).nil? %>
     <a class="img_wrap" href="/images/<%= image_one %>">
-      <% imageURL = image_path image_path + image_one, resize_to: dimensions %>
+      <% imageURL = image_path image_path + image_one %>
       <%= image_tag "blank.png", :data => { :src => imageURL }  %>
     </a>
   <% else %>
@@ -31,7 +31,7 @@
 
   <% if defined?(image_two_is_movie).nil? %>
     <a class="img_wrap" href="/images/<%= image_two %>">
-      <% imageURL = image_path image_path + image_two, resize_to: dimensions %>
+      <% imageURL = image_path image_path + image_two %>
       <%= image_tag "blank.png", :data => { :src => imageURL }  %>
     </a>
   <% else %>
@@ -47,7 +47,7 @@
 
   <% if defined?(image_three_is_movie).nil? %>
     <a class="img_wrap" href="/images/<%= image_three %>">
-      <% imageURL = image_path image_path + image_three, resize_to: dimensions %>
+      <% imageURL = image_path image_path + image_three %>
       <%= image_tag "blank.png", :data => { :src => imageURL }  %>
     </a>
   <% else %>

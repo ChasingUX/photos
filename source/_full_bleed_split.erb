@@ -14,11 +14,11 @@
   <% end %>
 
   <a class="<%= classes %>" href="/images/<%= image_one %>">
-    <% imageURL = image_path image_path + image_one, resize_to: dimensions %>
+    <% imageURL = image_path image_path + image_one %>
     <%= image_tag "blank.png", :data => { :src => imageURL }  %>
   </a>
   <a class="<%= classes %>" href="/images/<%= image_two %>">
-    <% imageURL = image_path image_path + image_two, resize_to: dimensions %>
+    <% imageURL = image_path image_path + image_two %>
     <%= image_tag "blank.png", :data => { :src => imageURL }  %>
   </a>
 </section>

@@ -1,4 +1,3 @@
-<% dimensions = '700x700' %>
 <% image_path = '/images/' %>
 
 <% if defined?(height).nil? %>
@@ -15,7 +14,7 @@
 
   <% if defined?(image_one_is_movie).nil? %>
     <a class="img_wrap" href="/images/<%= image_one %>">
-      <% imageURL = image_path image_path + image_one, resize_to: dimensions %>
+      <% imageURL = image_path image_path + image_one %>
       <%= image_tag "blank.png", :data => { :src => imageURL }  %>
     </a>
   <% else %>
@@ -31,7 +30,7 @@
 
   <% if defined?(image_two_is_movie).nil? %>
     <a class="img_wrap" href="/images/<%= image_two %>">
-      <% imageURL = image_path image_path + image_two, resize_to: dimensions %>
+      <% imageURL = image_path image_path + image_two %>
       <%= image_tag "blank.png", :data => { :src => imageURL }  %>
     </a>
   <% else %>
