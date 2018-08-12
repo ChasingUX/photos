@@ -13,14 +13,27 @@
     <% classes = "img_wrap " + focus %>
   <% end %>
 
-  <a class="<%= classes %>" href="/images/<%= image_one %>">
-    <% imageURL = image_path image_path + image_one %>
-    <%= image_tag "blank.png", :data => { :src => imageURL }  %>
-  </a>
-  <a class="<%= classes %>" href="/images/<%= image_two %>">
-    <% imageURL = image_path image_path + image_two %>
-    <%= image_tag "blank.png", :data => { :src => imageURL }  %>
-  </a>
+  <% if defined?(compress).nil? %>
+      <a class="<%= classes %>" href="/images/<%= image_one %>">
+        <% imageURL = image_path image_one, resize: dimensions %>
+        <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+      </a>
+
+      <a class="<%= classes %>" href="/images/<%= image_two %>">
+        <% imageURL = image_path image_two, resize: dimensions %>
+        <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+      </a>
+    <% else %>
+      <a class="<%= classes %>" href="/images/<%= image_one %>">
+        <% imageURL = image_path image_one %>
+        <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+      </a>
+
+      <a class="<%= classes %>" href="/images/<%= image_two %>">
+        <% imageURL = image_path image_two %>
+        <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+      </a>
+    <% end %>
 </section>
 
 <% if defined?(caption).nil? %>

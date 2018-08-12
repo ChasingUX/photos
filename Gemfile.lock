@@ -9,6 +9,16 @@ GIT
       middleman-cli
       middleman-core (>= 3.1)
 
+GIT
+  remote: https://github.com/zweitag/middleman-images
+  revision: a5890b7150a116259890eb34393ef49c45ca83fe
+  branch: master
+  specs:
+    middleman-images (0.0.1)
+      image_optim (>= 0.24.2)
+      middleman-core (>= 4.2.1)
+      mini_magick (>= 4.7.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -102,6 +112,7 @@ GEM
       servolux
       tilt (~> 2.0)
       uglifier (~> 3.0)
+    mini_magick (4.8.0)
     minitest (5.10.2)
     padrino-helpers (0.13.3.4)
       i18n (~> 0.6, >= 0.6.7)
@@ -137,6 +148,7 @@ DEPENDENCIES
   middleman-autoprefixer (~> 2.7.1)
   middleman-blog
   middleman-imageoptim!
+  middleman-images!
   redcarpet (~> 3.3, >= 3.3.3)
 
 BUNDLED WITH

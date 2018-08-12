@@ -16,10 +16,18 @@
 <% end %>
 
   <% if defined?(image_one_is_movie).nil? %>
-    <a class="img_wrap" href="/images/<%= image_one %>">
-      <% imageURL = image_path image_path + image_one %>
-      <%= image_tag "blank.png", :data => { :src => imageURL }  %>
-    </a>
+    <% if defined?(compress).nil? %>
+      <a class="img_wrap" href="/images/<%= image_one %>">
+        <% imageURL = image_path image_one, resize: dimensions %>
+        <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+      </a>
+    <% else %>
+      <a class="img_wrap" href="/images/<%= image_one %>">
+        <% imageURL = image_path image_one %>
+        <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+      </a>
+    <% end %>
+
   <% else %>
     <% videoURL = image_path image_path + movies_one %>
     <% imageURL = image_path image_path + image_one %>
@@ -32,10 +40,18 @@
   <% end %>
 
   <% if defined?(image_two_is_movie).nil? %>
-    <a class="img_wrap" href="/images/<%= image_two %>">
-      <% imageURL = image_path image_path + image_two %>
-      <%= image_tag "blank.png", :data => { :src => imageURL }  %>
-    </a>
+    <% if defined?(compress).nil? %>
+      <a class="img_wrap" href="/images/<%= image_two %>">
+        <% imageURL = image_path image_two, resize: dimensions %>
+        <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+      </a>
+    <% else %>
+      <a class="img_wrap" href="/images/<%= image_two %>">
+        <% imageURL = image_path image_two %>
+        <%= image_tag "blank.png", :data => { :src => imageURL }  %>
+      </a>
+    <% end %>
+
   <% else %>
     <% videoURL = image_path image_path + movies_two %>
     <% imageURL = image_path image_path + image_two %>

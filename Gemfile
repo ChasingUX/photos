@@ -20,7 +20,8 @@ gem "builder", "~> 3.0"
 gem 'middleman-autoprefixer', '~> 2.7.1'
 # gem 'middleman-simple-thumbnailer'
 
-gem "middleman-imageoptim", :git => "https://github.com/plasticine/middleman-imageoptim", :branch => "master"
 # gem 'image_optim_pack'
-# gem 'middleman-images'
+
+gem "middleman-imageoptim", :git => "https://github.com/plasticine/middleman-imageoptim", :branch => "master"
+gem "middleman-images", :git => "https://github.com/zweitag/middleman-images", :branch => "master"
 # gem 'middleman-thumbnailer', '~> 0.1'
