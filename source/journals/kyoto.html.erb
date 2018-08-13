@@ -7,8 +7,6 @@ country: Japan
 folder: kyoto
 ---
 
-<!-- IMG_3351.gif -->
-
 <% folder = current_article.data.folder %>
 
 <%= partial(:headline, :locals => { :copy => "Touchdown in Kyoto" }) %>
@@ -18,75 +16,82 @@ folder: kyoto
 
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_3215.jpg", :image_two => folder + "/IMG_1008.JPG", :height => 650, :focus => "bottom", :caption => "Traditional dress (Kimono) and traditional drink (Sake)." }) %>
 
-<%= partial(:subheader, :locals => { :copy => "First takes on the culture
-" }) %><%= partial(:text_one_col, :locals => { :copy => "Politeness or death. The cliche that Japanese people deeply value respect and civility stands. You receive at least 12 “arigatou gozaimasu” (thank you very much) each time you dine.  God forbid, a small unintentional error is made...apologies for days. If the walk light is red and there isn’t a car in sight, the Japanese will typically  wait patiently at the light. It’s ingrained in all the little things.
+<%= partial(:subheader, :locals => { :copy => "First takes on the culture" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Politeness or death. The cliche that Japanese people deeply value respect and civility stands. You receive at least 12 “arigatou gozaimasu” (thank you very much) each time you dine.  God forbid, a small unintentional error is made...apologies for days. If the walk light is red and there isn’t a car in sight, the Japanese will typically  wait patiently at the light. It’s ingrained in all the little things.
 " }) %>
 
 <%= partial(:full_bleed, :locals => { :image_one => folder + "/IMG_0202.jpg", :caption => "Jesse was very obedient, following all the rules to a T.", :height => 750, :focus => "bottom" }) %>
 
 <%= partial(:text_one_col, :locals => { :copy => "It's crazy safe. People don’t lock their bikes when they go in a store. A man left his wallet, cash and cellphone on a streetside cafe table while he went in the bathroom. Crime doesn’t seem to be a viable concern. This created a really warm, community feeling - as a tourist, this was a relief. " }) %>
 
-<%#= partial(:triplet, :locals => { :image_one => folder + "/IMG_8164.JPG", :image_two => folder + "/staghorn.jpg", :image_three => folder + "/IMG_3113.jpg", :height => 600 }) %>
 
 <!-- DSC02416.jpg -->
 <%= partial(:triplet, :locals => { :image_one => folder + "/kickball.jpg", :image_two => folder + "/IMG_3169.jpg", :image_three => folder + "/IMG_3382.jpg", :height => 600 }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "We stayed in the mountainous outskirts of the city, with two incredibly friendly and welcoming Airbnb hosts, Miho + Koji. By day, Koji is a breeder of staghorn ferns and Miho is an architect. Having these backgrounds led to an increibly gorgeous property, nestled deep in the winding streets of the Kyoto mountains." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "We stayed in the mountainous outskirts of the city with two incredibly friendly and welcoming Airbnb hosts, Miho + Koji. Koji is a breeder of staghorn ferns and Miho is an architect. Having these backgrounds led to an increibly gorgeous property, adorned with ferns and flowers, nestled deep in the winding streets of the Kyoto mountains." }) %>
 
-<%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/IMG_8164.JPG", :image_two => folder + "/IMG_34172.jpg", :height => 600, :focus => "bottom" , :caption => "Our Airbnb was tucked up in the hills, we felt like locals."}) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_8164.JPG", :image_two => folder + "/staghorn.jpg", :image_three => folder + "/IMG_3113.jpg", :caption => "Our Airbnb was tucked up in the lush, winding hills of Kyoto.", :height => 600 }) %>
 
 
 <%= partial(:text_one_col, :locals => { :copy => "Miho graciously equipped us with electric bikes, which proved to be an amazing way of exploring the area, and led us down many paths less travelled." }) %>
 
 
-<%= partial(:full_bleed, :locals => { :image_one => folder + "/DSC02416.jpg", :height => 750, :focus => "bottom" }) %>
+<%= partial(:full_bleed, :locals => { :image_one => folder + "/DSC02416.jpg", :height => 800, :focus => "bottom", :caption => "A bike ride led us to a gorgeous rock garden, tucked inside a bamboo grove." }) %>
 
 
-
-<%= partial(:half_heavy, :locals => { :heavy_side => "right", :compress => false, :image_one => folder + "/IMG_1010.JPG", :image_two => folder + "/swaying.gif", :height => 600, :focus => "bottom" , :caption => "Our Airbnb was tucked up in the hills, we felt like locals."}) %>
+<%= partial(:half_heavy, :locals => { :heavy_side => "right", :compress => false, :image_one => folder + "/IMG_1010.JPG", :image_two => folder + "/swaying.gif", :height => 600, :caption => "Japanese store fronts are often mysterious, inviting us to poke our heads in", :focus => "bottom"}) %>
 
 <%= partial(:headline, :locals => { :copy => "Food First Takes" }) %>
 
 
-<section class="Wrapper Text">
-  <p>Week 1 of eating in a new country came with a lot of interesting twists and turns - and honestly, a lot of hanger-fueled arguments. As this was our first stop in Japan, we had little understading of which types of Japanese items we liked, let alone what was readily available in a given neighborhood. But eventually, we untangled the complex web of Japanese cuisine.</p>
+<%= partial(:text_one_col, :locals => { :copy => "Week 1 of eating in a new country came with a lot of interesting twists and turns - and honestly, a lot of hanger-fueled arguments. As this was our first stop in Japan, we had little understading of which types of Japanese items we liked, let alone what was readily available in a given area. It was common for us to sit down and glance at an all-Japanese menu. We would attempt to translate it with Google, but a series of Japanese characters would usually result into something wildly wonky. Care for some, 'Octopus tree seahorse marigold' anyone? We would do out best to extrapolate the menu item based on certain key words, but we often failed. Eventually, we untangled the complex web of Japanese cuisine and knew what to look out for." }) %>
 
-  <p>We’re obsessed with Teishoku (aka set meals), found at traditional Japanese restaurants. They come with 8-12 tiny plates of different foods (completely foreign to us). Lots of fermented items, tofu based dishes, a miso soup, a rice and usually a fish of some sort.</p>
+
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_3743.jpg", :image_two => folder + "/IMG_81792.jpg", :caption => "A few set meals we had near the Bamboo Forest"}) %>
+
+
+<section class="Wrapper Text">
+  <p>We became obsessed with Teishoku (aka set meals), found at traditional Japanese restaurants. They come with 8-12 tiny plates of different foods (completely foreign to us). Lots of fermented items, tofu-based dishes, a miso soup, a rice and fish of some sort.</p>
+
+  <p>Sushi conveyer belts were our best friend. The fish is high quality, super affordable and most importantly - you know exactly what you’re getting. Since menus are in English only about 50% of the time, a conveyer is a welcomed comfort. What you see is what you get!</p>
 </section>
 
-<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_3743.jpg", :image_two => folder + "/IMG_81792.jpg", :caption => "A few set meals we had near the Bamboo Forest."}) %>
+<%= partial(:triplet, :locals => { :image_one => folder + "/sushi.png", :image_one_is_movie => true, :movies_one => folder + "/sushi.mov", :image_two => folder + "/IMG_3105.jpg", :image_three => folder + "/stacks.jpg", :caption => "At the end of a meal, they add up your bbill based on your plate stack", :height => 680}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "We visited 7/11s (which are on every block) at least twice a day in Week 1. When we get hangry (a travel faux paus we’re working on), we grab a 7/11 sushi or soba and ate it on a curb. It’s a fun little tradition we developed. We’re not-so-obsessed with grocery stores (no recognizable products) and any non-Japanese food (we’ve tried getting pizza and pasta - no bueno). " }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_31423.jpg", :image_two => folder + "/IMG_33762.jpg", :image_three => folder + "/bikesushi.jpg", :caption => "Nothing like eating sushi on a curb...or a bike seat", :height => 600 }) %>
+
+<%= partial(:subheader, :locals => { :copy => "Oh, the sugar high" }) %>
 
 <%= partial(:text_one_col, :locals => { :copy => "Desserts, especially ice cream, can be found in any direction. For every Sushi or Teishoku spot, there’s probably 2 spots for desserts, be it cookies, baked goods or ice cream." })
  %>
 
 <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_1016.JPG", :image_two => folder + "/IMG_0977.JPG", :caption => "Matcha everywhere, all the time."}) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "Sushi convey-ers are our best friend. The fish is high quality, super affordable and most importantly - you know exactly what you’re getting. Since menus are in English only about 50% of the time, a conveyer is a welcomed comfort." }) %>
-
- <%= partial(:half_heavy, :locals => { :heavy_side => "right", :image_one => folder + "/sushi.png", :image_one_is_movie => true, :movies_one => folder + "/sushi.mov", :image_two => folder + "/IMG_3105.jpg", :caption => "That's the spot (watch the vid)", :height => 700}) %>
-
-<%= partial(:text_one_col, :locals => { :copy => "We visited 7/11s (which are on every block) at least twice a day in Week 1. When we get hangry (a travel faux paus we’re working on), we grab a 7/11 sushi or soba and eat it on a curb. It’s a fun little tradition we’ve developed. We’re not-so-obsessed with grocery stores (no recognizable products) and any non-Japanese food (we’ve tried getting pizza and pasta - no bueno). " }) %>
-
-<%= partial(:half, :locals => { :image_one => folder + "/IMG_31423.jpg", :image_two => folder + "/IMG_33762.jpg", :caption => "Nothing like sitting on a curb with sushi."}) %>
-
 <%= partial(:subheader, :locals => { :copy => "Arashiyama Bamboo + Monkey Forest" }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "We rode our beloved e-bikes to the Arashiyama Bamboo forest and Iwatayama Monkey forest. We strolled through gardens and hiked trails to recover from our jet lag." }) %>
+<section class="Wrapper Text">
+  <p>We rode our beloved e-bikes to the Arashiyama Bamboo forest and Iwatayama Monkey forest. We strolled through gardens and hiked trails to recover from our jet lag.</p>
 
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1006.JPG", :image_two => folder + "/IMG_3193.jpg", :image_three => folder + "/IMG_3167.jpg", :height => 600, :focus => "bottom", :caption => "Serene, spring vibes in Kyoto."}) %>
+  <p>Our rainy day in Arashiyama felt like our first foray into Traditional Japan. We happened to be there on a holiday, Constitution Memorial Day, so we saw many women in traditional kimonos and wooden sandals. The bamboo and temples set the very Japanese feeling scene.</p>
+</section>
 
-<%= partial(:text_one_col, :locals => { :copy => "Our rainy day in Arashiyama felt like our first foray into Traditional Japan. We happened to be there on a holiday, the ___, so we saw many women in traditional kimonos and wooden sandals. The bamboo and temples set the very Japanese feeling scene." }) %>
-
-
-<%= partial(:full_bleed, :locals => { :image_one => folder + "/IMG_1005.JPG", :caption => "Jesse was very obedient, following all the rules to a T.", :height => 600, :focus => "bottom" }) %>
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_1006.JPG", :image_two => folder + "/IMG_3193.jpg", :image_three => folder + "/statue.jpg", :height => 600, :focus => "bottom", :caption => "Serene, spring vibes in Kyoto."}) %>
 
 <%= partial(:text_one_col, :locals => { :copy => "Emas, prayer cards with wishes and requests are left at the temples so the gods will receive them. These little wooden pieces are ceremonially burned, freeing the wisher from their request." }) %>
 
-<%= partial(:half, :locals => { :image_one => folder + "/IMG_1003.JPG", :image_two => folder + "/DSC02394.jpg", :height => 700, :focus => "bottom"}) %>
+<%= partial(:full_bleed, :locals => { :image_one => folder + "/emas.jpg", :caption => "Emas", :height => 800 }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "After a short hike, we arrived in the Monkey Forest. Hundreds of monkeys (including tons of babies clung to their Mamas) sauntered around nonchalantly. This park is home to the Japanese macaque monkey, aka Snow Monkeys as they also live up north. These are the ones you see bathing in Onsens with big white beards. Large signs warned us not to stare at the monkeys and to keep 3m distance. Naturally, that didn't stop Jesse from getting all up in their face. As a bonus, the views of Kyoto from the monkey forest were epic." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "After a short hike, we arrived in the Monkey Forest. Hundreds of monkeys (including tons of babies clung to their mums) sauntered around nonchalantly. This park is home to the Japanese macaque monkey, aka 'Snow Monkeys' as they also live up north, in the Alps. These are the ones you see bathing in Onsens with big white beards." }) %>
 
-<%= partial(:full, :locals => { :image_one => folder + "/IMG_1002.JPG"}) %>
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/monkeyview.jpg", :image_two => folder + "/monkey1.jpg", :caption => "Monkey love, with a view", :focus => "bottom" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Large signs warned us not to stare at the monkeys and to keep 3m distance. Naturally, that didn't stop Jesse from getting up close and personal. As a bonus, the views of Kyoto from the monkey forest were epic." }) %>
+
+<%= partial(:full_bleed, :locals => { :image_one => folder + "/monkey2.jpg", :caption => "Maintaining a 'safe' distance", :height => 750 }) %>
 
 <%= partial(:subheader, :locals => { :copy => "Nishiki Market" }) %>
 
@@ -98,11 +103,11 @@ folder: kyoto
 
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_0162.jpg", :image_two => folder + "/IMG_1012.JPG", :caption => "Dried fish of every kind. Green buns with sweet red bean paste inside."}) %>
 
-<%= partial(:half, :locals => { :image_one => folder + "/IMG_0965.JPG", :image_two => folder + "/IMG_1007.JPG", :caption => "Octupus pops. Fresh wasabi root, ready to be ground."}) %>
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_0965.JPG", :image_two => folder + "/IMG_1007.JPG", :image_three => folder + "/crabs.gif", :height => 600, :focus => "bottom", :caption => "Octopus pops. Fresh wasabi root, and bite-sized live crabs."}) %>
 
-<%= partial(:half, :locals => { :compress => false, :image_one => folder + "/IMG_3351.gif", :image_two => folder + "/IMG_3351.gif", :caption => "Octupus pops. Fresh wasabi root, ready to be ground."}) %>
+<%= partial(:text_one_col, :locals => { :copy => "This was our first dose of market stimuli overload. It satisfied every bit of our Japanese culinary curiousities, and little bites of food here and there opened our minds to cuisine far beyond sushi and ramen." }) %>
 
-
+<%= partial(:triplet, :locals => { :image_one => folder + "/kimonogirls.jpg", :image_two => folder + "/sakepour.jpg", :image_three => folder + "/IMG_3351.gif", :height => 600, :caption => "Octupus pops. Fresh wasabi root, and bite-sized live crabs."}) %>
 
 <%= partial(:subheader, :locals => { :copy => " The Owl Cafe Trauma" }) %>
 
@@ -123,8 +128,10 @@ folder: kyoto
 
 <%= partial(:text_one_col, :locals => { :copy => "On our first sleep, Jesse woke up to go to the bathroom and slammed his head against the door frame :( Thus began his constant struggle to fit in this country (and Madison’s constant source of entertainment). His head scraped the ceiling of grocery stores, he ducked through every doorway and his size 13 feet didn’t fit any of the slippers. " }) %>
 
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_00162.jpg", :image_two => folder + "/IMG_31882.jpg", :image_three => folder + "/IMG_34942.jpg", :height => 600, :focus => "bottom", :caption => "Luckily, the bathrooms had a attachable showerhead unit."}) %>
+<%= partial(:quad, :locals => { :image_one => folder + "/bigjesse.jpg", :image_two => folder + "/IMG_34942.jpg", :image_three => folder + "/IMG_00162.jpg", :image_four => folder + "/IMG_31882.jpg", :caption => "Luckily, the bathrooms had a attachable showerhead unit.", :height => 430}) %>
 
 <%= partial(:subheader, :locals => { :copy => "Travel Woes" }) %>
 
 <%= partial(:text_one_col, :locals => { :copy => "What this doesn’t show was the times we were jetlagged, when we got stranded without money and fumbled with the currency, when we ordered some awful meals and various other real-life travel situations. Our travelling skills were put to the test on week 1 and I’d give us a B minus - lots of room for improvement :) " }) %>
+
+<%= partial(:full_bleed, :locals => { :image_one => folder + "/madi-forest.jpg", :caption => "We'll be back, Kyoto", :height => 800}) %>
