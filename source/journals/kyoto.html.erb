@@ -67,7 +67,7 @@ folder: kyoto
 
 <%= partial(:text_one_col, :locals => { :copy => "We visited 7/11s (which are on every block) at least twice a day in Week 1. When we get hangry (a travel faux paus we’re working on), we grab a 7/11 sushi or soba and eat it on a curb. It’s a fun little tradition we’ve developed. We’re not-so-obsessed with grocery stores (no recognizable products) and any non-Japanese food (we’ve tried getting pizza and pasta - no bueno). " }) %>
 
-<%= partial(:half, :locals => { :image_one => folder + "/IMG_3142 3.jpg", :image_two => folder + "/IMG_33762.jpg", :caption => "Nothing like sitting on a curb with sushi."}) %>
+<%= partial(:half, :locals => { :image_one => folder + "/IMG_31423.jpg", :image_two => folder + "/IMG_33762.jpg", :caption => "Nothing like sitting on a curb with sushi."}) %>
 
 <%= partial(:subheader, :locals => { :copy => "Arashiyama Bamboo + Monkey Forest" }) %>
 
@@ -77,7 +77,8 @@ folder: kyoto
 
 <%= partial(:text_one_col, :locals => { :copy => "Our rainy day in Arashiyama felt like our first foray into Traditional Japan. We happened to be there on a holiday, the ___, so we saw many women in traditional kimonos and wooden sandals. The bamboo and temples set the very Japanese feeling scene." }) %>
 
-<%= partial(:full, :locals => { :image_one => folder + "/IMG_1005.JPG"}) %>
+
+<%= partial(:full_bleed, :locals => { :image_one => folder + "/IMG_1005.JPG", :caption => "Jesse was very obedient, following all the rules to a T.", :height => 600, :focus => "bottom" }) %>
 
 <%= partial(:text_one_col, :locals => { :copy => "Emas, prayer cards with wishes and requests are left at the temples so the gods will receive them. These little wooden pieces are ceremonially burned, freeing the wisher from their request." }) %>
 
@@ -98,6 +99,10 @@ folder: kyoto
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_0162.jpg", :image_two => folder + "/IMG_1012.JPG", :caption => "Dried fish of every kind. Green buns with sweet red bean paste inside."}) %>
 
 <%= partial(:half, :locals => { :image_one => folder + "/IMG_0965.JPG", :image_two => folder + "/IMG_1007.JPG", :caption => "Octupus pops. Fresh wasabi root, ready to be ground."}) %>
+
+<%= partial(:half, :locals => { :compress => false, :image_one => folder + "/IMG_3351.gif", :image_two => folder + "/IMG_3351.gif", :caption => "Octupus pops. Fresh wasabi root, ready to be ground."}) %>
+
+
 
 <%= partial(:subheader, :locals => { :copy => " The Owl Cafe Trauma" }) %>
 
