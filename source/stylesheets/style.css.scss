@@ -599,24 +599,6 @@ section:focus {
     transform: translateY(0);
   }
 
-  &:hover {
-    &:before {
-      opacity: 1;
-    }
-  }
-
-  &:before {
-    content: '';
-    transition: opacity .8s ease;
-    position: absolute;
-    left: 6px;
-    bottom: 6px;
-    right: 6px;
-    top: 6px;
-    background: linear-gradient(165deg, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
-    opacity: 0;
-  }
-
   div {
     height: 100%;
     width: 100%;
