@@ -82,6 +82,8 @@ $(function() {
         zoom = 4.5;
       } else if(location =='Israel'){
         zoom = 6;
+      } else if(location =='Indonesia'){
+        zoom = 9;
       } else if(location =='Singapore'){
         zoom = 9;
       } else {
