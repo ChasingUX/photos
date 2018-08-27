@@ -10,30 +10,43 @@ folder: koyasan
 <% folder = current_article.data.folder %>
 
 
-<%= partial(:headline, :locals => { :copy => "In the Mountains with Monks" }) %>
+<%= partial(:headline, :locals => { :copy => "Misty Mountain Top" }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "Mt. Koyosan is a tiny town, on top of a mountain (only reachable by cablecar) in which the main attraction is a graveyard and it's always raining - not the most appealing locale on paper, but this 2 day trip turned out to be the most magical part of Japan." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Koyosan is a quiet and holy town, nesteld in the enchanted mountains of Wakayama. It is only reachable by cablecar and is considered to be the center of Shingon Buddhism. We had heard remarkable stories about Koyasan from our friend Catherine, so we decided to take the trek to see what it was all about. This 2-day trip turned out to be the most magical part of Japan that we visited." }) %>
 
 <%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_3621.jpg", :image_two => folder + "/IMG_3627.jpg", :caption => "The Kongobu-ji Temple and Stone Garden."}) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "Koyasan is considered Japan's holiest place. We observed a population of ~50 percent monks. It's an unusual place in which monks are in line to with you at 7/11, on your bus and your waiter at a restaurant. Despite the peculiarity, something about it felt safe and peaceful." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "Koyasan is considered Japan's holiest place. We observed a population of ~50 percent monks. It's an unusual place in which monks are in line with you at 7/11, on your bus, and your waiter at a restaurant. Despite the peculiarity, it felt safe and above all, peaceful." }) %>
 
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3725.jpg", :image_two => folder + "/IMG_3634.jpg", :image_three => folder + "/IMG_3708.jpg", :caption => "Temple 3 some."}) %>
+<%= partial(:full_bleed, :locals => { :image_one => folder + "/bridgeB.jpg", :height => 750 }) %>
+
 
 <%= partial(:subheader, :locals => { :copy => "Okunion Graveyard" }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "When we arrived in Koyosan, it had been less than a month since my father passed. Walking miles through a redwood forest with gravestones surrounding you as far as the eye can see sounded scary at first, but I found it to be a surprisingly serene and healing experience. We were in awe of how they honor the dead, their ancestors - so much respect. The presence of grace was undeniable. " }) %>
+<%= partial(:text_one_col, :locals => { :copy => "When we arrived in Koyosan, it had been less than a month since Madi's father passed. Walking miles through a redwood forest with gravestones surrounding you as far as the eye can see sounded scary at first, but we found it to be surprisingly serene and a healing experience. We were in awe of how they honor the dead, their ancestors - so much respect. The presence of grace was undeniable. " }) %>
 
-<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3684.jpg", :image_two => folder + "/IMG_3659.jpg", :image_three => folder + "/IMG_3653.jpg", :caption => "Graveyard triplet."}) %>
 
-<%= partial(:subheader, :locals => { :copy => "___sound file here___!" }) %>
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3684.jpg", :image_two => folder + "/IMG_3659.jpg", :image_three => folder + "/IMG_3653.jpg", :caption => "Graveyard triplet.", :height => 550 }) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "On one particularly special morning, we woke up at 5:15am and began climbing the mountain in the dark, through the graveyard, facing heavy rain. We arrived at the ___@Jesse to write!___ temple at 6am, just in time to see the morning chanting." }) %>
+<%= partial(:text_one_col, :locals => { :copy => "On one particularly special morning, we woke up at 5:15am to catch the monks chanting during their morning service. We began trekking through the graveyard in the dark, facing heavy rain. We arrived at the temple at 6am, just in time to see chanting. During our walk, it was extremely quiet, the rain pattering off the gravestones and pebbled ground. We remained silent, in complete awe of our surroundings. When we arrived at the monestary, we sat in silence, closed our eyes and listened to the monks chant." }) %>
 
-<%= partial(:half_heavy, :locals => { :heavy_side => "left", :image_one => folder + "/IMG_3737.jpg", :image_two => folder + "/IMG_3713.jpg"}) %>
+<%= partial(:audio, :locals => { :clip => folder + "/japanese_monks.mp3", :caption => "Monks chanting during the morning service" }) %>
 
-<%= partial(:subheader, :locals => { :copy => "The ___ Airbnb" }) %>
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_4670.jpg", :image_two => folder + "/IMG_3713.jpg", :focus => "bottom", :height => 700}) %>
 
-<%= partial(:text_one_col, :locals => { :copy => "Our Koyasan Airbnb deserves a special shoutout. We slept in tiny little pods (about 3x8x3 ft) with only a mattress inside. With the rain pattering and the monks chanting, it was a cootzy oasis. Turns out our host ___, was a friend of a friend, had an epic ceramics collection, and supplied the finest Japanese whiskey :) " }) %>
 
-<%= partial(:full, :locals => { :image_one => folder + "/IMG_3608.jpg", :caption => "Airbnb.", :height => 650}) %>
+<%= partial(:subheader, :locals => { :copy => "The Capsule Hostel" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "Our hostel deserves a very special shoutout. We booked this place a few months in advance, excited to sleep in our own tiny pods, roughly 3x8x3 feet in size. Inside each elf-sized door was a mattress that extended from wall to wall. While it rained the entire time, seeking refuge inside these capsules was strangely cozy and warming. We were worried about the calustraphobic tendencies they might have, but instead we felt hugged by having our own tiny space.  " }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/hostel.jpg", :image_two => folder + "/hostelB.jpg", :image_three => folder + "/hostelA.jpg", :height => 550}) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "One evening, Jesse stayed up late drinking whiskey with the owner of the hostel, Ryochi. After talking about coffee, ceramics, DJing, and travels, they discovered they have a mutual friend who lives in Vancouver. Small world, indeed! " }) %>
+
+<%= partial(:full_bleed_split, :locals => { :image_one => folder + "/IMG_3608.jpg", :image_two => folder + "/IMG_3679.jpg"}) %>
+
+<%= partial(:subheader, :locals => { :copy => "The Magic of Mt. Koya" }) %>
+
+<%= partial(:text_one_col, :locals => { :copy => "On our last day, we reflected on our time thus far. There was something quite magical about Koyasan. Was it the enchanted nature of the cemetary? The lush forest? The spirituality that exudes from every nook and cranny? Perhaps it was the peacefulness that we felt from the pouring rain and rolling fog. As we walked through the town, visiting temples, and hiking through the woods, we had entered a state of tranquility and ease that we hadn't felt on our trip thus far." }) %>
+
+<%= partial(:triplet, :locals => { :image_one => folder + "/IMG_3725.jpg", :image_two => folder + "/IMG_3634.jpg", :image_three => folder + "/IMG_3708.jpg", :height => 600, :caption => "Temple 3 some."}) %>
