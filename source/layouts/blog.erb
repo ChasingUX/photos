@@ -2,7 +2,7 @@
   <div id="Stories_dropdown" class="Dropdown">
     <h2>Other stories</h2>
     <ul class="cards">
-    <% page_articles.each_with_index do |article, i| %>
+    <% page_articles.first(5).each_with_index do |article, i| %>
       <% if article.title != current_article.data.title %>
         <li>
           <% link_to article, class: "link" do %>
